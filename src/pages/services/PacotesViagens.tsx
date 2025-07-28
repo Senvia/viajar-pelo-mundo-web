@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,7 +25,8 @@ import {
   CheckCircle,
   Plane,
   Eye,
-  Sparkles
+  Sparkles,
+  X
 } from "lucide-react";
 
 const packageData = {
@@ -144,12 +146,22 @@ const experiences = [
 ];
 
 const PacotesViagens = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const handleBooking = () => {
     window.open(packageData.bookingLink, '_blank');
   };
 
   const handleWhatsApp = () => {
     window.open('https://wa.me/351911734711?text=Olá! Gostaria de saber mais sobre o pacote Portugal Essence.', '_blank');
+  };
+
+  const openImageModal = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
   };
 
   return (
@@ -535,17 +547,20 @@ const PacotesViagens = () => {
           
           {/* Main Featured Image */}
           <div className="mb-12">
-            <div className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-2xl">
+            <div 
+              className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-2xl"
+              onClick={() => openImageModal("/lovable-uploads/f66305b1-a495-44b6-9ca9-f94713bf3c3f.png")}
+            >
               <img 
                 src="/lovable-uploads/f66305b1-a495-44b6-9ca9-f94713bf3c3f.png" 
-                alt="Barcos no Douro com vista do Porto"
+                alt="Passeio no Douro com vista do Porto"
                 className="w-full h-96 object-cover transition-all duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500" />
               <div className="absolute bottom-8 left-8 right-8 text-white">
                 <h3 className="text-3xl font-bold mb-3 transform group-hover:translate-y-[-4px] transition-transform duration-500">
-                  Cruzeiro no Douro
+                  Passeio no Douro
                 </h3>
                 <p className="text-lg opacity-90 transform group-hover:translate-y-[-4px] transition-transform duration-500 delay-100">
                   Navegue pelas águas históricas do Rio Douro com vista privilegiada do Porto
@@ -562,9 +577,9 @@ const PacotesViagens = () => {
             {[
               { 
                 image: "/lovable-uploads/0fb3e923-766d-4f0c-8a72-31c3a2c77eab.png", 
-                title: "Vale do Douro Romântico", 
+                title: "Vale do Douro", 
                 description: "Paisagens de vinhedos com degustação a dois",
-                category: "Romance"
+                category: "Paisagens"
               },
               { 
                 image: "/lovable-uploads/eb7ea28f-22ea-4c21-9f85-981a3c261019.png", 
@@ -597,7 +612,11 @@ const PacotesViagens = () => {
                 category: "Cultura"
               }
             ].map((moment, index) => (
-              <div key={index} className="group cursor-pointer">
+              <div 
+                key={index} 
+                className="group cursor-pointer"
+                onClick={() => openImageModal(moment.image)}
+              >
                 <div className="relative overflow-hidden rounded-xl shadow-lg bg-white">
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4 z-20">
@@ -737,6 +756,29 @@ const PacotesViagens = () => {
           </div>
         </div>
       </section>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          onClick={closeImageModal}
+        >
+          <div className="relative max-w-5xl max-h-full">
+            <button 
+              onClick={closeImageModal}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <img 
+              src={selectedImage} 
+              alt="Imagem ampliada"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
 
       <Contact />
       <Footer />
