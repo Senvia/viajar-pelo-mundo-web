@@ -65,7 +65,7 @@ const NewHero = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-brand-dark backdrop-blur-sm font-semibold px-8 py-4 text-lg transition-all duration-300 hover:scale-105"
+              className="border-2 border-white text-brand-dark hover:bg-white hover:text-brand-dark backdrop-blur-sm font-semibold px-8 py-4 text-lg transition-all duration-300 hover:scale-105"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <MapPin className="w-5 h-5 mr-2" />
