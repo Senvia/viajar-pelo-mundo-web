@@ -29,8 +29,12 @@ const Header = () => {
       <div className="container flex items-center justify-between py-6">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-14 h-14 rounded-full bg-gradient-primary flex items-center justify-center shadow-elegant">
-            <Plane className="w-6 h-6 text-white" />
+          <div className="w-14 h-14 rounded-full overflow-hidden shadow-elegant">
+            <img 
+              src="/lovable-uploads/0b201daa-3ae5-430f-97a8-689420a140ac.png" 
+              alt="Viajar Pelo Mundo" 
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <h2 className={`text-xl font-bold transition-colors ${
