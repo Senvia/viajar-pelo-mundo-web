@@ -1,0 +1,156 @@
+import { Plane, Instagram, Mail, Phone, MapPin } from "lucide-react";
+
+const Footer = () => {
+  return (
+    <footer className="bg-secondary text-secondary-foreground">
+      <div className="container py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Logo and Description */}
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center">
+                <Plane className="h-4 w-4 text-white" />
+              </div>
+              <span className="text-lg font-bold">Viajar Pelo Mundo</span>
+            </div>
+            <p className="text-sm text-secondary-foreground/80 leading-relaxed">
+              Transformamos o seu sonho de viagem em realidade. Especialistas em curadoria 
+              de viagens personalizadas na Europa.
+            </p>
+            <div className="text-xs text-secondary-foreground/60">
+              Cadastur: 46.600.374/0001-49<br />
+              RNAVT 3301
+            </div>
+          </div>
+
+          {/* Services */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Serviços</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="/servicos/planeamento" className="hover:text-brand-blue transition-colors">
+                  Planeamento Personalizado
+                </a>
+              </li>
+              <li>
+                <a href="/servicos/passagens" className="hover:text-brand-blue transition-colors">
+                  Passagens & Hospedagem
+                </a>
+              </li>
+              <li>
+                <a href="/servicos/atividades" className="hover:text-brand-blue transition-colors">
+                  Atividades Turísticas
+                </a>
+              </li>
+              <li>
+                <a href="/servicos/apoio" className="hover:text-brand-blue transition-colors">
+                  Serviços de Apoio
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Links Rápidos</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="#about" className="hover:text-brand-blue transition-colors">
+                  Sobre Nós
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-brand-blue transition-colors">
+                  Nossos Serviços
+                </a>
+              </li>
+              <li>
+                <a href="#testimonials" className="hover:text-brand-blue transition-colors">
+                  Depoimentos
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-brand-blue transition-colors">
+                  Contato
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Contato</h3>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-brand-blue" />
+                <a 
+                  href="https://wa.me/351911734711" 
+                  className="hover:text-brand-blue transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  +351 911 734 711
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-brand-blue" />
+                <a 
+                  href="mailto:viajarparaeuropaoficial@gmail.com" 
+                  className="hover:text-brand-blue transition-colors"
+                >
+                  viajarparaeuropaoficial@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-brand-blue" />
+                <span>Portugal</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Instagram className="h-4 w-4 text-brand-blue" />
+                <div className="space-y-1">
+                  <a 
+                    href="https://www.instagram.com/viajarparaeuropa/" 
+                    className="block hover:text-brand-blue transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    @viajarparaeuropa
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/travelagency_viajarpelomundo/" 
+                    className="block hover:text-brand-blue transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    @travelagency_viajarpelomundo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-secondary-foreground/20 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-secondary-foreground/60">
+              © 2024 Viajar Pelo Mundo. Todos os direitos reservados.
+            </p>
+            <div className="flex gap-6 text-sm">
+              <a href="#" className="hover:text-brand-blue transition-colors">
+                Política de Privacidade
+              </a>
+              <a href="#" className="hover:text-brand-blue transition-colors">
+                Termos de Uso
+              </a>
+              <a href="#" className="hover:text-brand-blue transition-colors">
+                Política de Cancelamento
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
