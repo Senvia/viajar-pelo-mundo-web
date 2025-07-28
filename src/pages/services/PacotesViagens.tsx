@@ -601,6 +601,30 @@ const PacotesViagens = () => {
                 title: "Espetáculo de Fado", 
                 description: "Música e cultura portuguesa autêntica",
                 category: "Cultura"
+              },
+              { 
+                image: "/lovable-uploads/9ab32bc4-e8d9-4ca3-815b-c983657a7b8e.png", 
+                title: "Costa Algarvia", 
+                description: "Formações rochosas únicas do Algarve",
+                category: "Paisagens"
+              },
+              { 
+                image: "/lovable-uploads/275f0664-9977-493e-8cba-fccf8addb1a3.png", 
+                title: "Passeio de Barco", 
+                description: "Navegando pelas águas cristalinas portuguesas",
+                category: "Experiências"
+              },
+              { 
+                image: "/lovable-uploads/ef7988f2-f6cf-4a8b-bfcb-570ee025bb04.png", 
+                title: "Torre Eiffel Especial", 
+                description: "Momentos únicos em destinos europeus",
+                category: "Experiências"
+              },
+              { 
+                image: "/lovable-uploads/25dd2392-9644-42fa-88e9-bbdd6b07c1c3.png", 
+                title: "Casal em Paris", 
+                description: "Viagens românticas pela Europa",
+                category: "Experiências"
               }
             ].map((moment, index) => (
               <div 
