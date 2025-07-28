@@ -5,10 +5,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import PlaneamentoPersonalizado from "./pages/services/PlaneamentoPersonalizado";
-import PassagensHospedagem from "./pages/services/PassagensHospedagem";
-import AtividadesTuristicas from "./pages/services/AtividadesTuristicas";
-import ServicosApoio from "./pages/services/ServicosApoio";
+import ConsultoriaImigrantes from "./pages/services/ConsultoriaImigrantes";
+import PacotesViagens from "./pages/services/PacotesViagens";
+import ConsultoriaEuropa from "./pages/services/ConsultoriaEuropa";
+import ServicosAvulsos from "./pages/services/ServicosAvulsos";
 
 const queryClient = new QueryClient();
 
@@ -20,10 +20,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/servicos/planeamento" element={<PlaneamentoPersonalizado />} />
-          <Route path="/servicos/passagens" element={<PassagensHospedagem />} />
-          <Route path="/servicos/atividades" element={<AtividadesTuristicas />} />
-          <Route path="/servicos/apoio" element={<ServicosApoio />} />
+          <Route path="/servicos/imigrantes" element={<ConsultoriaImigrantes />} />
+          <Route path="/servicos/pacotes" element={<PacotesViagens />} />
+          <Route path="/servicos/consultoria-europa" element={<ConsultoriaEuropa />} />
+          <Route path="/servicos/avulsos" element={<ServicosAvulsos />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
