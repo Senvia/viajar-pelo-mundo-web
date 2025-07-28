@@ -13,7 +13,7 @@ interface MediaContent {
 }
 
 const travelContent: MediaContent = {
-  src: '/lovable-uploads/0c03bd11-fb39-4c81-bf6f-1eea1e3b0a3b.png',
+  src: '/lovable-uploads/8fa3f1b7-114d-4719-9e3d-1a1b2f9f5451.png',
   background: '/lovable-uploads/50a145af-5d83-420a-814c-8f6f70ed394c.png',
   title: 'Viajar Pelo Mundo',
   date: 'Especialistas em Europa',
