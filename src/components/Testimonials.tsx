@@ -11,7 +11,7 @@ const testimonials = [
     name: "Laura Simões",
     quote: "Foi incrível! Quero agradecer todo seu compromisso com minha viagem e comigo! Deu tudo certo e não sei como teria sido sem sua ajuda! Parabéns pelo trabalho incrível!",
     designation: "Viajante Feliz",
-    src: "/lovable-uploads/16fafa5b-4057-4f8a-829f-4ca313a17056.png"
+    src: "/lovable-uploads/5beeea5c-5169-4c30-9a57-b58da3e4980a.png"
   },
   {
     name: "Alicia Arioli",
