@@ -22,7 +22,9 @@ import {
   CreditCard,
   Phone,
   CheckCircle,
-  Plane
+  Plane,
+  Eye,
+  Sparkles
 } from "lucide-react";
 
 const packageData = {
@@ -513,56 +515,136 @@ const PacotesViagens = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-20">
-        <div className="container">
+      {/* Unique Moments Gallery */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-5">
+          <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-24 h-24 rounded-full bg-secondary animate-pulse delay-1000" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
-              Momentos Únicos Te Esperam
+            <h2 className="text-4xl font-bold text-foreground mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Momentos Únicos te Esperam
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Cada experiência é uma nova descoberta
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Cada experiência foi cuidadosamente selecionada para criar memórias inesquecíveis da sua viagem a Portugal
             </p>
           </div>
+          
+          {/* Main Featured Image */}
+          <div className="mb-12">
+            <div className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src="/lovable-uploads/f66305b1-a495-44b6-9ca9-f94713bf3c3f.png" 
+                alt="Barcos no Douro com vista do Porto"
+                className="w-full h-96 object-cover transition-all duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+              <div className="absolute bottom-8 left-8 right-8 text-white">
+                <h3 className="text-3xl font-bold mb-3 transform group-hover:translate-y-[-4px] transition-transform duration-500">
+                  Cruzeiro no Douro
+                </h3>
+                <p className="text-lg opacity-90 transform group-hover:translate-y-[-4px] transition-transform duration-500 delay-100">
+                  Navegue pelas águas históricas do Rio Douro com vista privilegiada do Porto
+                </p>
+              </div>
+              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:rotate-12">
+                <Camera className="w-6 h-6 text-white" />
+              </div>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2 lg:row-span-2">
-              <div 
-                className="h-full min-h-96 rounded-2xl bg-cover bg-center relative overflow-hidden group cursor-pointer"
-                style={{
-                  backgroundImage: `url('/lovable-uploads/bb268a1f-b8df-4ffd-85bc-09600d379e96.png')`
-                }}
-              >
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300"></div>
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">Vale do Douro</h3>
-                  <p className="text-white/80">Paisagens deslumbrantes e vinhos excepcionais</p>
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { 
+                image: "/lovable-uploads/0fb3e923-766d-4f0c-8a72-31c3a2c77eab.png", 
+                title: "Vale do Douro Romântico", 
+                description: "Paisagens de vinhedos com degustação a dois",
+                category: "Romance"
+              },
+              { 
+                image: "/lovable-uploads/eb7ea28f-22ea-4c21-9f85-981a3c261019.png", 
+                title: "Adega Tradicional", 
+                description: "Experiência gastronômica com prova de vinhos",
+                category: "Gastronomia"
+              },
+              { 
+                image: "/lovable-uploads/de092f0d-8ba9-43c2-ac2e-81ad4450902e.png", 
+                title: "Culinária Portuguesa", 
+                description: "Sabores autênticos da gastronomia local",
+                category: "Gastronomia"
+              },
+              { 
+                image: "/lovable-uploads/969e2439-8547-4f1c-887b-8468ce91c64b.png", 
+                title: "Francesinha Tradicional", 
+                description: "O prato mais icônico do Porto",
+                category: "Gastronomia"
+              },
+              { 
+                image: "/lovable-uploads/95d11633-6490-46ce-a33b-b0a82aced13e.png", 
+                title: "Workshop de Azulejos", 
+                description: "Aprenda a arte tradicional portuguesa",
+                category: "Cultura"
+              },
+              { 
+                image: "/lovable-uploads/0a001f1d-01e3-458e-b5c3-9c931257c30a.png", 
+                title: "Espetáculo de Fado", 
+                description: "Música e cultura portuguesa autêntica",
+                category: "Cultura"
+              }
+            ].map((moment, index) => (
+              <div key={index} className="group cursor-pointer">
+                <div className="relative overflow-hidden rounded-xl shadow-lg bg-white">
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4 z-20">
+                    <span className="bg-primary/90 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">
+                      {moment.category}
+                    </span>
+                  </div>
+                  
+                  {/* Image Container */}
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={moment.image} 
+                      alt={moment.title}
+                      className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                    
+                    {/* Hover overlay with icon */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 transform scale-75 group-hover:scale-100 transition-transform duration-500">
+                        <Eye className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 bg-gradient-to-br from-white to-gray-50">
+                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                      {moment.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {moment.description}
+                    </p>
+                    
+                    {/* Animated underline */}
+                    <div className="mt-4 h-0.5 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            <div 
-              className="h-48 rounded-xl bg-cover bg-center relative overflow-hidden group cursor-pointer"
-              style={{
-                backgroundImage: `url('/lovable-uploads/4d30c19a-2f0b-4f78-9131-5c81467408b8.png')`
-              }}
-            >
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="text-lg font-semibold">Experiências Locais</h4>
-              </div>
-            </div>
-            
-            <div 
-              className="h-48 rounded-xl bg-cover bg-center relative overflow-hidden group cursor-pointer"
-              style={{
-                backgroundImage: `url('/lovable-uploads/fd90411d-9be1-4bb9-b299-e133b37d4565.png')`
-              }}
-            >
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="text-lg font-semibold">Gastronomia</h4>
-              </div>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+              <Sparkles className="w-5 h-5" />
+              <span>Viva cada momento dessa experiência única</span>
             </div>
           </div>
         </div>
