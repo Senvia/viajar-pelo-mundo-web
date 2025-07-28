@@ -173,7 +173,7 @@ const PacotesViagens = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/lovable-uploads/01ae50df-dbdf-42de-955f-70478cf089a6.png')`
+            backgroundImage: `url('/lovable-uploads/0d6db174-1deb-46b7-8372-803af136d59f.png')`
           }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
