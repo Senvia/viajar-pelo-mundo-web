@@ -154,15 +154,15 @@ const PacotesViagens = () => {
     <div className="min-h-screen">
       <Header />
       
-      {/* Hero Section with Porto Background */}
+      {/* Hero Section with Wine Experience Background */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png')`
+            backgroundImage: `url('/lovable-uploads/bb268a1f-b8df-4ffd-85bc-09600d379e96.png')`
           }}
         >
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
         
         <div className="relative z-10 container text-center text-white">
@@ -265,13 +265,13 @@ const PacotesViagens = () => {
                 <div 
                   className="rounded-2xl overflow-hidden shadow-2xl h-96 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/lovable-uploads/24778b1c-f658-4c3b-8681-1404aa6fecba.png')`
+                    backgroundImage: `url('/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png')`
                   }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-6 left-6 text-white">
-                    <p className="text-lg font-semibold">Cruzeiro ao Pôr do Sol</p>
-                    <p className="text-white/80">Vista privilegiada de Lisboa</p>
+                    <p className="text-lg font-semibold">Porto Autêntico</p>
+                    <p className="text-white/80">Descobrindo as belezas da cidade</p>
                   </div>
                 </div>
               </div>
@@ -280,80 +280,235 @@ const PacotesViagens = () => {
         </div>
       </section>
 
-      {/* Experiences Grid */}
+      {/* Elegant What's Included Section */}
       <section className="py-20">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
-              Experiências Incluídas
+              O Que Está Incluído
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Cada momento foi pensado para proporcionar uma conexão autêntica com Portugal
+              Cada experiência foi cuidadosamente selecionada para criar memórias inesquecíveis
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {experiences.map((experience, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={experience.image} 
-                    alt={experience.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute top-4 left-4">
-                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <experience.icon className="w-6 h-6 text-white" />
+          <div className="space-y-20">
+            {/* Traslado Executivo */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Car className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-secondary">Traslado de Luxo</h3>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Chegue ao seu destino com conforto e elegância. Nosso serviço de traslado em carro executivo garante que sua experiência comece da melhor forma possível.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Carro executivo confortável</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Motorista profissional</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="order-first lg:order-last">
+                <div 
+                  className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in"
+                  style={{ backgroundImage: `url('/lovable-uploads/f8848579-71ad-4fb3-8453-c0afddac6c57.png')` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* City Tour Porto */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div 
+                  className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in"
+                  style={{ backgroundImage: `url('/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png')` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Camera className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-secondary">City Tour Privativo</h3>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Descubra os segredos do Porto em um tour exclusivo e personalizado. Das casas coloridas da Ribeira às majestosas pontes sobre o Douro.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Guia local especializado</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Tour personalizado</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Experiência Vinícola */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Wine className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-secondary">Mundo do Vinho</h3>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Mergulhe na rica tradição vinícola portuguesa no Museu WOW e desfrute de degustações exclusivas com harmonizações gastronômicas únicas.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Museu da experiência do Vinho – WOW</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Experiência Gastronómica com Prova de Vinhos - 3h</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="order-first lg:order-last">
+                <div className="grid grid-cols-2 gap-4">
+                  <div 
+                    className="rounded-xl overflow-hidden shadow-xl h-40 bg-cover bg-center animate-fade-in"
+                    style={{ backgroundImage: `url('/lovable-uploads/a4315f8c-26b9-4bb7-9c20-81a4fd346d2d.png')` }}
+                  ></div>
+                  <div 
+                    className="rounded-xl overflow-hidden shadow-xl h-40 bg-cover bg-center animate-fade-in"
+                    style={{ backgroundImage: `url('/lovable-uploads/fd90411d-9be1-4bb9-b299-e133b37d4565.png')` }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Cruzeiro e Fado */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div 
+                  className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in"
+                  style={{ backgroundImage: `url('/lovable-uploads/24778b1c-f658-4c3b-8681-1404aa6fecba.png')` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Music className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-secondary">Tradições Portuguesas</h3>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Viva a alma portuguesa através de suas tradições mais autênticas: um cruzeiro romântico ao pôr do sol e uma noite inesquecível de Fado.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Cruzeiro Gourmet ao Pôr do Sol - 2h</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Espetáculo de Fado e Folclore com Jantar - 2h30</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Workshops e Relaxamento */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Palette className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-secondary">Arte & Bem-estar</h3>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Conecte-se com as tradições artísticas portuguesas e desfrute de momentos de puro relaxamento em instalações de primeira classe.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Workshop Pastel de Nata no Porto - 2h</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Workshop Privativo de Pintura de Azulejos - 2h</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Relaxar na piscina, sauna e sauna a vapor - 1h</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="order-first lg:order-last">
+                <div className="grid grid-cols-2 gap-4">
+                  <div 
+                    className="rounded-xl overflow-hidden shadow-xl h-40 bg-cover bg-center animate-fade-in"
+                    style={{ backgroundImage: `url('/lovable-uploads/53f3bea9-96f9-4228-b293-01136d266f85.png')` }}
+                  ></div>
+                  <div 
+                    className="rounded-xl overflow-hidden shadow-xl h-40 bg-cover bg-center animate-fade-in"
+                    style={{ backgroundImage: `url('/lovable-uploads/167e296a-843b-41b6-b556-42ac23882921.png')` }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Vale do Douro */}
+            <div className="text-center">
+              <div 
+                className="rounded-2xl overflow-hidden shadow-2xl h-96 bg-cover bg-center relative mx-auto max-w-4xl animate-fade-in"
+                style={{ backgroundImage: `url('/lovable-uploads/bb268a1f-b8df-4ffd-85bc-09600d379e96.png')` }}
+              >
+                <div className="absolute inset-0 bg-black/40"></div>
+                <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+                  <div>
+                    <h3 className="text-3xl font-bold mb-4">Tour Compartilhado no Vale do Douro</h3>
+                    <p className="text-xl mb-6">9 horas de paisagens deslumbrantes e vinhos excepcionais</p>
+                    <div className="flex justify-center gap-6">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="w-5 h-5" />
+                        <span>Paisagens UNESCO</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="w-5 h-5" />
+                        <span>Vinícolas tradicionais</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="w-5 h-5" />
+                        <span>Almoço incluso</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-secondary mb-2">{experience.title}</h3>
-                  <p className="text-muted-foreground">{experience.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Detailed Itinerary */}
-      <section className="py-20 bg-muted/30">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
-                O Que Está Incluído
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Todos os detalhes para uma experiência completa e inesquecível
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {packageData.highlights.map((highlight, index) => (
-                <Card key={index} className="p-6 hover:shadow-card transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0 mt-1">
-                      <CheckCircle className="w-5 h-5 text-white" />
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">{highlight}</p>
-                  </div>
-                </Card>
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-10 py-4 text-lg"
-                onClick={handleWhatsApp}
-              >
-                Personalizar Meu Pacote
-              </Button>
-            </div>
+          <div className="text-center mt-16">
+            <Button 
+              size="lg" 
+              className="bg-gradient-primary hover:opacity-90 shadow-elegant px-10 py-4 text-lg"
+              onClick={handleWhatsApp}
+            >
+              Personalizar Meu Pacote
+            </Button>
           </div>
         </div>
       </section>
