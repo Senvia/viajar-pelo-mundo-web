@@ -488,8 +488,8 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
             <div className="space-y-8">
               <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/lovable-uploads/0d43cfec-3a15-4c05-9581-8ebe25e4e9c2.png"
-                  alt="SNS Portugal"
+                  src="/lovable-uploads/75d86ecf-fba8-4c17-82b5-70544ccbf686.png"
+                  alt="Viagens para Portugal"
                   className="w-full h-full object-cover"
                 />
               </div>
