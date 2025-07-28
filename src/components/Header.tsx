@@ -28,7 +28,7 @@ const Header = () => {
     }`}>
       <div className="container flex items-center justify-between py-6">
         {/* Logo */}
-        <div className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3 cursor-pointer transition-transform duration-300 hover:scale-105">
           <div className="w-14 h-14 rounded-full overflow-hidden shadow-elegant">
             <img 
               src="/lovable-uploads/0b201daa-3ae5-430f-97a8-689420a140ac.png" 
@@ -48,7 +48,7 @@ const Header = () => {
               Especialistas em Viagens Europeias
             </p>
           </div>
-        </div>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
