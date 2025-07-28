@@ -185,7 +185,7 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="px-8 py-4 text-lg border-2 border-white text-white hover:bg-white hover:text-primary backdrop-blur-sm"
+                className="px-8 py-4 text-lg border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white backdrop-blur-sm"
                 onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
