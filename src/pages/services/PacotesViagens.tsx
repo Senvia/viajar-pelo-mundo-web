@@ -64,7 +64,7 @@ const faqData = [
     answer: packageData.services
   },
   {
-    question: "💳 Quais são as formas de pagamento aceitas?",
+    question: "Quais são as formas de pagamento aceitas?",
     answer: [
       "Transferência bancária (Portugal e Brasil)",
       "Cartão de crédito (com possibilidade de parcelamento via plataformas parceiras)",
@@ -72,15 +72,15 @@ const faqData = [
     ]
   },
   {
-    question: "🕓 Com quanto tempo de antecedência devo contratar?",
+    question: "Com quanto tempo de antecedência devo contratar?",
     answer: "Recomendamos contratar com pelo menos 60 dias de antecedência para garantir as melhores opções de hospedagem, experiências e preços. Para viagens em alta temporada, sugerimos 90 dias ou mais."
   },
   {
-    question: "🔁 Posso fazer alterações no roteiro depois de contratado?",
+    question: "Posso fazer alterações no roteiro depois de contratado?",
     answer: "Sim. Alterações pontuais são permitidas até 30 dias antes da viagem, sujeitas à disponibilidade e possíveis diferenças de valores. Após esse prazo, faremos o possível para ajustar, mas algumas modificações podem não ser viáveis."
   },
   {
-    question: "❌ Qual é a política de cancelamento?",
+    question: "Qual é a política de cancelamento?",
     answer: [
       "Até 45 dias antes da viagem: reembolso parcial (exceto taxas administrativas e reservas não reembolsáveis)",
       "Menos de 30 dias: possíveis multas ou retenção total em serviços já contratados",
@@ -89,19 +89,19 @@ const faqData = [
     ]
   },
   {
-    question: "✍️ Existe contrato formal?",
+    question: "Existe contrato formal?",
     answer: "Sim. Trabalhamos com um contrato simples e claro, que garante segurança para ambas as partes e descreve tudo o que está incluso, as responsabilidades, prazos e valores."
   },
   {
-    question: "👨‍👩‍👧‍👦 Os pacotes são personalizados ou padronizados?",
+    question: "Os pacotes são personalizados ou padronizados?",
     answer: "Totalmente personalizados. Nenhuma viagem é igual à outra. Criamos o pacote com base no perfil, desejos, ritmo e orçamento de cada cliente."
   },
   {
-    question: "📱 Terei suporte durante a viagem?",
+    question: "Terei suporte durante a viagem?",
     answer: "Sim. Oferecemos suporte via WhatsApp e e-mail durante a sua estadia, para eventuais dúvidas ou necessidades relacionadas ao planejamento contratado."
   },
   {
-    question: "✈️ E se eu quiser incluir passagem aérea?",
+    question: "E se eu quiser incluir passagem aérea?",
     answer: "Também podemos cuidar da emissão da sua passagem aérea, oferecendo as melhores opções disponíveis no mercado, com transparência e flexibilidade."
   }
 ];
