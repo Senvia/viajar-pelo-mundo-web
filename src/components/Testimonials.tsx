@@ -17,7 +17,7 @@ const testimonials = [
     name: "Alicia Arioli",
     quote: "O trabalho de vocês é sensacional. Desde o início, todo o suporte e atenção fizeram a diferença. A ajuda que me deram durante a viagem foi muito boa. O valor cobrado foi super justo e condizente com todo o apoio que recebi. Eu gostei tanto que já indiquei vocês pra outras pessoas. Obrigado por tudo, vocês realmente fazem um trabalho incrível!",
     designation: "Recomenda a Agência",
-    src: "/lovable-uploads/08186e99-7aa2-431a-a20a-7661b8bd507e.png"
+    src: "/lovable-uploads/cdfe011c-797b-4d1c-9adc-99a7888a1f21.png"
   },
   {
     name: "Lauro Batista Sarmento",
