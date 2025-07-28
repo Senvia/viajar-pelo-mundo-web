@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import TravelScrollExpansion from "@/components/TravelScrollExpansion";
-import TravelInteractiveBentoGallery from "@/components/TravelInteractiveBentoGallery";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
@@ -11,7 +10,6 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <TravelScrollExpansion />
-      <TravelInteractiveBentoGallery />
       <Services />
       <Testimonials />
       <Contact />
