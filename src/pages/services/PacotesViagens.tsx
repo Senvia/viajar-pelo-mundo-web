@@ -1,259 +1,502 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
-import { Plane, Building, CreditCard, Shield, Clock, Users } from "lucide-react";
+import { 
+  MapPin, 
+  Calendar, 
+  Star, 
+  Users, 
+  Car, 
+  Camera, 
+  Wine, 
+  Music, 
+  Utensils, 
+  Palette,
+  Heart,
+  Shield,
+  Clock,
+  CreditCard,
+  Phone,
+  CheckCircle,
+  Plane
+} from "lucide-react";
 
-const services = [
+const packageData = {
+  name: "Portugal Essence",
+  destination: "Porto - Portugal",
+  duration: "7 dias e 6 noites",
+  price: "3.510 €",
+  priceNote: "Total para 02 Adultos em quarto duplo",
+  bookingLink: "https://buy.stripe.com/fZufZg77H3La7iY7Fl87K0b",
+  highlights: [
+    "Traslado confortável em carro executivo até o hotel",
+    "City Tour: Porto (Privativo)",
+    "Museu da experiência do Vinho – WOW",
+    "Workshop Pastel de Nata no Porto - 2h",
+    "Cruzeiro Gourmet ao Pôr do Sol (Partilhado) - 2h",
+    "Experiência Gastronómica com Prova de Vinhos - 3h",
+    "Espetáculo de Fado e Folclore com Jantar Tradicional - 2h30",
+    "Tour Compartilhado no Vale do Douro - 9h",
+    "Workshop Privativo de Pintura de Azulejos - 2h",
+    "Relaxar na piscina, na sauna e na sauna a vapor - 1h"
+  ],
+  services: [
+    "Curadoria de viagem personalizada (roteiro completo e exclusivo)",
+    "Hospedagens selecionadas com padrão 4 e 5 estrelas",
+    "Transfers privados e confortáveis",
+    "Experiências gastronômicas, culturais e sensoriais",
+    "Atividades turísticas privadas ou em pequenos grupos",
+    "Suporte antes e durante a viagem"
+  ]
+};
+
+const faqData = [
   {
-    icon: Plane,
-    title: "Passagens Aéreas",
-    description: "Melhores preços e horários para todos os destinos europeus",
-    features: ["Voos diretos e conexões", "Melhor custo-benefício", "Flexibilidade de datas", "Seguro viagem incluído"]
+    question: "Quais são os serviços inclusos nos pacotes do Portugal Essence?",
+    answer: packageData.services
   },
   {
-    icon: Building,
-    title: "Hospedagem",
-    description: "Hotéis selecionados e acomodações únicas em toda a Europa",
-    features: ["Hotéis 3, 4 e 5 estrelas", "Pousadas boutique", "Apartamentos", "Localização privilegiada"]
+    question: "💳 Quais são as formas de pagamento aceitas?",
+    answer: [
+      "Transferência bancária (Portugal e Brasil)",
+      "Cartão de crédito (com possibilidade de parcelamento via plataformas parceiras)",
+      "MBWay (para clientes em Portugal)"
+    ]
+  },
+  {
+    question: "🕓 Com quanto tempo de antecedência devo contratar?",
+    answer: "Recomendamos contratar com pelo menos 60 dias de antecedência para garantir as melhores opções de hospedagem, experiências e preços. Para viagens em alta temporada, sugerimos 90 dias ou mais."
+  },
+  {
+    question: "🔁 Posso fazer alterações no roteiro depois de contratado?",
+    answer: "Sim. Alterações pontuais são permitidas até 30 dias antes da viagem, sujeitas à disponibilidade e possíveis diferenças de valores. Após esse prazo, faremos o possível para ajustar, mas algumas modificações podem não ser viáveis."
+  },
+  {
+    question: "❌ Qual é a política de cancelamento?",
+    answer: [
+      "Até 45 dias antes da viagem: reembolso parcial (exceto taxas administrativas e reservas não reembolsáveis)",
+      "Menos de 30 dias: possíveis multas ou retenção total em serviços já contratados",
+      "Para casos de força maior, analisamos individualmente com nossos parceiros",
+      "Sempre detalhamos essas condições no momento do contrato."
+    ]
+  },
+  {
+    question: "✍️ Existe contrato formal?",
+    answer: "Sim. Trabalhamos com um contrato simples e claro, que garante segurança para ambas as partes e descreve tudo o que está incluso, as responsabilidades, prazos e valores."
+  },
+  {
+    question: "👨‍👩‍👧‍👦 Os pacotes são personalizados ou padronizados?",
+    answer: "Totalmente personalizados. Nenhuma viagem é igual à outra. Criamos o pacote com base no perfil, desejos, ritmo e orçamento de cada cliente."
+  },
+  {
+    question: "📱 Terei suporte durante a viagem?",
+    answer: "Sim. Oferecemos suporte via WhatsApp e e-mail durante a sua estadia, para eventuais dúvidas ou necessidades relacionadas ao planejamento contratado."
+  },
+  {
+    question: "✈️ E se eu quiser incluir passagem aérea?",
+    answer: "Também podemos cuidar da emissão da sua passagem aérea, oferecendo as melhores opções disponíveis no mercado, com transparência e flexibilidade."
   }
 ];
 
-const benefits = [
+const experiences = [
   {
-    icon: CreditCard,
-    title: "Melhores Preços",
-    description: "Parcerias exclusivas garantem os melhores valores do mercado"
+    icon: Car,
+    title: "Traslado Executivo",
+    description: "Conforto desde a chegada",
+    image: "/lovable-uploads/f8848579-71ad-4fb3-8453-c0afddac6c57.png"
   },
   {
-    icon: Shield,
-    title: "Reservas Garantidas",
-    description: "Confirmação imediata e proteção total da sua reserva"
+    icon: Wine,
+    title: "Experiência Vinícola",
+    description: "Degustação e cultura do vinho",
+    image: "/lovable-uploads/a4315f8c-26b9-4bb7-9c20-81a4fd346d2d.png"
   },
   {
-    icon: Clock,
-    title: "Suporte Contínuo",
-    description: "Assistência antes, durante e após sua viagem"
+    icon: Utensils,
+    title: "Gastronomia Autêntica",
+    description: "Sabores tradicionais portugueses",
+    image: "/lovable-uploads/fd90411d-9be1-4bb9-b299-e133b37d4565.png"
   },
   {
-    icon: Users,
-    title: "Atendimento Personalizado",
-    description: "Cada cliente recebe atenção exclusiva e dedicada"
+    icon: Music,
+    title: "Fado & Folclore",
+    description: "Tradição musical portuguesa",
+    image: "/lovable-uploads/be5d15c6-c61c-4d63-8fe7-99cb929a0c66.png"
+  },
+  {
+    icon: Palette,
+    title: "Arte dos Azulejos",
+    description: "Workshop de pintura tradicional",
+    image: "/lovable-uploads/53f3bea9-96f9-4228-b293-01136d266f85.png"
+  },
+  {
+    icon: Heart,
+    title: "Relaxamento & Bem-estar",
+    description: "Momentos de descanso",
+    image: "/lovable-uploads/167e296a-843b-41b6-b556-42ac23882921.png"
   }
 ];
 
-const destinations = [
-  "Lisboa", "Porto", "Barcelona", "Madrid", "Paris", "Londres", 
-  "Roma", "Florença", "Amsterdã", "Berlim", "Viena", "Praga"
-];
+const PacotesViagens = () => {
+  const handleBooking = () => {
+    window.open(packageData.bookingLink, '_blank');
+  };
 
-const PassagensHospedagem = () => {
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/351911734711?text=Olá! Gostaria de saber mais sobre o pacote Portugal Essence.', '_blank');
+  };
+
   return (
     <div className="min-h-screen">
       <Header />
       
-      {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-primary text-white">
+      {/* Hero Section with Porto Background */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png')`
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        <div className="relative z-10 container text-center text-white">
+          <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30 text-lg px-6 py-2">
+            Experiência Exclusiva
+          </Badge>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+            Pacotes de Viagens
+          </h1>
+          <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-white/90">
+            Descubra Portugal através de experiências autênticas e inesquecíveis, 
+            cuidadosamente curadas para você
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button 
+              size="lg" 
+              className="px-10 py-4 text-lg bg-white text-secondary hover:bg-white/90 shadow-2xl"
+              onClick={handleBooking}
+            >
+              Reservar Agora
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="px-10 py-4 text-lg border-white text-white hover:bg-white hover:text-secondary shadow-2xl"
+              onClick={handleWhatsApp}
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Falar Conosco
+            </Button>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Package Overview */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
-              Melhor Custo-Benefício
-            </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Passagens & Hospedagem
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              Os melhores preços em passagens aéreas e hospedagem para toda a Europa. 
-              Reservas garantidas e suporte completo.
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+                {packageData.name}
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Uma jornada completa pelos encantos do Porto, combinando cultura, 
+                gastronomia e experiências únicas
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-secondary">Destino</h3>
+                    <p className="text-muted-foreground">{packageData.destination}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-secondary">Duração</h3>
+                    <p className="text-muted-foreground">{packageData.duration}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Star className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-secondary">Preço</h3>
+                    <p className="text-2xl font-bold text-brand-blue">{packageData.price}</p>
+                    <p className="text-sm text-muted-foreground">{packageData.priceNote}</p>
+                  </div>
+                </div>
+
+                <div className="pt-6">
+                  <Button 
+                    size="lg" 
+                    className="w-full bg-gradient-primary hover:opacity-90 shadow-elegant text-lg py-4"
+                    onClick={handleBooking}
+                  >
+                    Reservar Este Pacote
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div 
+                  className="rounded-2xl overflow-hidden shadow-2xl h-96 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url('/lovable-uploads/24778b1c-f658-4c3b-8681-1404aa6fecba.png')`
+                  }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <p className="text-lg font-semibold">Cruzeiro ao Pôr do Sol</p>
+                    <p className="text-white/80">Vista privilegiada de Lisboa</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experiences Grid */}
+      <section className="py-20">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+              Experiências Incluídas
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Cada momento foi pensado para proporcionar uma conexão autêntica com Portugal
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {experiences.map((experience, index) => (
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={experience.image} 
+                    alt={experience.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute top-4 left-4">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <experience.icon className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold text-secondary mb-2">{experience.title}</h3>
+                  <p className="text-muted-foreground">{experience.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Itinerary */}
+      <section className="py-20 bg-muted/30">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+                O Que Está Incluído
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Todos os detalhes para uma experiência completa e inesquecível
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {packageData.highlights.map((highlight, index) => (
+                <Card key={index} className="p-6 hover:shadow-card transition-all duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0 mt-1">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">{highlight}</p>
+                  </div>
+                </Card>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
               <Button 
                 size="lg" 
-                variant="secondary"
-                className="px-8 py-4 text-lg"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                variant="outline"
+                className="px-10 py-4 text-lg"
+                onClick={handleWhatsApp}
               >
-                Solicitar Cotação
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="px-8 py-4 text-lg border-white text-white hover:bg-white hover:text-secondary"
-                onClick={() => window.open('https://wa.me/351911734711', '_blank')}
-              >
-                WhatsApp Direto
+                Personalizar Meu Pacote
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Gallery Section */}
       <section className="py-20">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">
-              Nossos Serviços
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+              Momentos Únicos Te Esperam
             </h2>
             <p className="text-xl text-muted-foreground">
-              Tudo que você precisa para sua viagem em um só lugar
+              Cada experiência é uma nova descoberta
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-card transition-all duration-300 hover:-translate-y-2">
-                <CardHeader className="text-center pb-6">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <service.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <CardTitle className="text-2xl text-secondary">{service.title}</CardTitle>
-                  <CardDescription className="text-lg">{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-brand-blue"></div>
-                        <span className="text-muted-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-2 lg:row-span-2">
+              <div 
+                className="h-full min-h-96 rounded-2xl bg-cover bg-center relative overflow-hidden group cursor-pointer"
+                style={{
+                  backgroundImage: `url('/lovable-uploads/bb268a1f-b8df-4ffd-85bc-09600d379e96.png')`
+                }}
+              >
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300"></div>
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">Vale do Douro</h3>
+                  <p className="text-white/80">Paisagens deslumbrantes e vinhos excepcionais</p>
+                </div>
+              </div>
+            </div>
+            
+            <div 
+              className="h-48 rounded-xl bg-cover bg-center relative overflow-hidden group cursor-pointer"
+              style={{
+                backgroundImage: `url('/lovable-uploads/4d30c19a-2f0b-4f78-9131-5c81467408b8.png')`
+              }}
+            >
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <h4 className="text-lg font-semibold">Experiências Locais</h4>
+              </div>
+            </div>
+            
+            <div 
+              className="h-48 rounded-xl bg-cover bg-center relative overflow-hidden group cursor-pointer"
+              style={{
+                backgroundImage: `url('/lovable-uploads/fd90411d-9be1-4bb9-b299-e133b37d4565.png')`
+              }}
+            >
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <h4 className="text-lg font-semibold">Gastronomia</h4>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* FAQ Section */}
       <section className="py-20 bg-muted/30">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">
-              Por que Reservar Conosco?
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-2">
-                <CardHeader className="pb-4">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <benefit.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <CardTitle className="text-xl">{benefit.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="leading-relaxed">
-                    {benefit.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+                Perguntas Frequentes
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Tire todas as suas dúvidas sobre nossos pacotes
+              </p>
+            </div>
+
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqData.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg px-6">
+                  <AccordionTrigger className="text-left text-lg font-semibold text-secondary hover:text-primary">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
+                    {Array.isArray(faq.answer) ? (
+                      <ul className="space-y-2">
+                        {faq.answer.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-start gap-2">
+                            <div className="w-2 h-2 rounded-full bg-brand-blue mt-2 flex-shrink-0"></div>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p>{faq.answer}</p>
+                    )}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
 
-      {/* Destinations */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">
-              Principais Destinos
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Oferecemos voos e hospedagem para todos os principais destinos europeus
-            </p>
-          </div>
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-primary text-white">
+        <div className="container text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Pronto Para Sua Aventura Portuguesa?
+          </h2>
+          <p className="text-xl mb-12 max-w-3xl mx-auto text-white/90">
+            Reserve agora e garante sua experiência única em Portugal. 
+            Nossa equipe está pronta para tornar sua viagem inesquecível.
+          </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {destinations.map((destination, index) => (
-              <Card key={index} className="text-center p-4 hover:shadow-card transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-br hover:from-brand-blue/5 hover:to-brand-green/5">
-                <div className="font-semibold text-secondary">{destination}</div>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-6">
-              Não encontrou seu destino? Trabalhamos com toda a Europa!
-            </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
               size="lg" 
-              className="bg-gradient-primary hover:opacity-90 shadow-elegant"
-              onClick={() => window.open('https://wa.me/351911734711', '_blank')}
+              variant="secondary"
+              className="px-10 py-4 text-lg"
+              onClick={handleBooking}
             >
-              Consultar Outros Destinos
+              Reservar Agora
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="py-20 bg-muted/30">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">
-              Exemplos de Preços
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Valores aproximados para você ter uma ideia. Solicite uma cotação personalizada!
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center p-8 hover:shadow-card transition-all duration-300 hover:-translate-y-2">
-              <CardHeader>
-                <CardTitle className="text-2xl text-secondary">Portugal → Paris</CardTitle>
-                <div className="text-3xl font-bold text-brand-blue mt-4">€89</div>
-                <CardDescription>por pessoa, ida e volta</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Voo direto, bagagem incluída
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center p-8 hover:shadow-card transition-all duration-300 hover:-translate-y-2 border-brand-blue border-2">
-              <CardHeader>
-                <Badge className="mx-auto mb-4 bg-brand-blue">Mais Popular</Badge>
-                <CardTitle className="text-2xl text-secondary">Hotel 4★ Centro</CardTitle>
-                <div className="text-3xl font-bold text-brand-blue mt-4">€85</div>
-                <CardDescription>por noite, quarto duplo</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Café da manhã incluído, localização premium
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center p-8 hover:shadow-card transition-all duration-300 hover:-translate-y-2">
-              <CardHeader>
-                <CardTitle className="text-2xl text-secondary">Pacote Completo</CardTitle>
-                <div className="text-3xl font-bold text-brand-green mt-4">€299</div>
-                <CardDescription>por pessoa, 4 dias</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Voo + hotel + transfer + seguro
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-          
-          <div className="text-center mt-12">
             <Button 
               size="lg" 
-              className="bg-gradient-primary hover:opacity-90 shadow-elegant"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              variant="outline" 
+              className="px-10 py-4 text-lg border-white text-white hover:bg-white hover:text-secondary"
+              onClick={handleWhatsApp}
             >
-              Solicitar Cotação Personalizada
+              <Phone className="w-5 h-5 mr-2" />
+              Falar com Especialista
             </Button>
+          </div>
+          
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-3">
+              <Shield className="w-6 h-6" />
+              <span>Reserva Garantida</span>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <Clock className="w-6 h-6" />
+              <span>Suporte 24/7</span>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <CreditCard className="w-6 h-6" />
+              <span>Pagamento Seguro</span>
+            </div>
           </div>
         </div>
       </section>
@@ -264,4 +507,4 @@ const PassagensHospedagem = () => {
   );
 };
 
-export default PassagensHospedagem;
+export default PacotesViagens;
