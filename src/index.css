@@ -44,12 +44,15 @@ All colors MUST be HSL.
     --brand-green: 158 56% 58%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-dark)), hsl(var(--brand-blue)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-dark) / 0.8), hsl(var(--brand-blue) / 0.8));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-green)));
+    --gradient-hero: linear-gradient(135deg, rgba(16, 49, 66, 0.8), rgba(50, 183, 234, 0.6));
     
     /* Shadows */
     --shadow-elegant: 0 10px 30px -10px hsl(var(--brand-blue) / 0.3);
     --shadow-card: 0 4px 20px -4px hsl(var(--brand-blue) / 0.15);
+    
+    /* Animation utilities */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
