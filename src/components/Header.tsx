@@ -78,28 +78,28 @@ const Header = () => {
             <div className="absolute top-full left-0 mt-2 w-72 bg-white/95 backdrop-blur-xl rounded-xl shadow-elegant border border-border/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
               <div className="p-3">
                 <button 
-                  onClick={() => window.location.href = '/servicos/planeamento'}
+                  onClick={() => window.location.href = '/servicos/imigrantes'}
                   className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
                 >
-                  🎯 Planeamento Personalizado
+                  🛂 Consultoria para Imigrantes
                 </button>
                 <button 
-                  onClick={() => window.location.href = '/servicos/passagens'}
+                  onClick={() => window.location.href = '/servicos/pacotes'}
                   className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
                 >
-                  ✈️ Passagens & Hospedagem
+                  📦 Pacotes de Viagens
                 </button>
                 <button 
-                  onClick={() => window.location.href = '/servicos/atividades'}
+                  onClick={() => window.location.href = '/servicos/consultoria-europa'}
                   className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
                 >
-                  🗺️ Atividades Turísticas
+                  🌍 Consultoria de Viagens pelo Mundo
                 </button>
                 <button 
-                  onClick={() => window.location.href = '/servicos/apoio'}
+                  onClick={() => window.location.href = '/servicos/avulsos'}
                   className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
                 >
-                  🛡️ Serviços de Apoio
+                  🎯 Serviços Avulsos
                 </button>
               </div>
             </div>
@@ -122,7 +122,7 @@ const Header = () => {
           className="hidden lg:inline-flex bg-gradient-primary hover:opacity-90 shadow-elegant font-semibold px-6 py-3 transition-all duration-300 hover:scale-105"
           onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
         >
-          Consultoria Gratuita
+          Falar Connosco
         </Button>
 
         {/* Mobile Menu Button */}
@@ -153,28 +153,28 @@ const Header = () => {
               <div className="text-secondary font-semibold">Serviços</div>
               <div className="pl-4 space-y-3">
                 <button 
-                  onClick={() => window.location.href = '/servicos/planeamento'}
+                  onClick={() => window.location.href = '/servicos/imigrantes'}
                   className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
                 >
-                  🎯 Planeamento Personalizado
+                  🛂 Consultoria para Imigrantes
                 </button>
                 <button 
-                  onClick={() => window.location.href = '/servicos/passagens'}
+                  onClick={() => window.location.href = '/servicos/pacotes'}
                   className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
                 >
-                  ✈️ Passagens & Hospedagem
+                  📦 Pacotes de Viagens
                 </button>
                 <button 
-                  onClick={() => window.location.href = '/servicos/atividades'}
+                  onClick={() => window.location.href = '/servicos/consultoria-europa'}
                   className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
                 >
-                  🗺️ Atividades Turísticas
+                  🌍 Consultoria de Viagens pelo Mundo
                 </button>
                 <button 
-                  onClick={() => window.location.href = '/servicos/apoio'}
+                  onClick={() => window.location.href = '/servicos/avulsos'}
                   className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
                 >
-                  🛡️ Serviços de Apoio
+                  🎯 Serviços Avulsos
                 </button>
               </div>
             </div>
@@ -190,7 +190,7 @@ const Header = () => {
               className="w-full bg-gradient-primary hover:opacity-90 shadow-elegant font-semibold"
               onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
             >
-              Consultoria Gratuita
+              Falar Connosco
             </Button>
           </div>
         </div>

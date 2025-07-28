@@ -25,7 +25,7 @@ const services = [
     icon: Car,
     title: "Aluguel de Carro",
     description: "Liberdade total para explorar os destinos",
-    features: ["Carros novos", "Seguro incluído", "GPS gratuito", "Atendimento português"],
+    features: ["Carros novos", "Seguro incluído", "GPS incluído", "Atendimento português"],
     price: "A partir de €35/dia"
   },
   {

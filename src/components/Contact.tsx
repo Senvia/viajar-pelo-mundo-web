@@ -115,17 +115,10 @@ Mensagem: ${formData.message}`;
                           <SelectValue placeholder="Selecione um serviço" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="consultoria">Consultoria Gratuita</SelectItem>
-                          <SelectItem value="planeamento">Planeamento de Viagem</SelectItem>
-                          <SelectItem value="passagens">Compra de Passagens Aéreas</SelectItem>
-                          <SelectItem value="hospedagem">Reservas de Hospedagem</SelectItem>
-                          <SelectItem value="transfer">Transfer (aeroporto/cidade)</SelectItem>
-                          <SelectItem value="seguro">Seguro Viagem</SelectItem>
-                          <SelectItem value="carro">Aluguel de Carro</SelectItem>
-                          <SelectItem value="atividades">Reservas de Atividades Turísticas</SelectItem>
-                          <SelectItem value="receptivo">Receptivo</SelectItem>
-                          <SelectItem value="guia">Guia Turístico</SelectItem>
-                          <SelectItem value="pacote">Pacote Completo</SelectItem>
+                          <SelectItem value="imigrantes">Consultoria para Imigrantes</SelectItem>
+                          <SelectItem value="pacotes">Pacotes de Viagens</SelectItem>
+                          <SelectItem value="consultoria-europa">Consultoria de Viagens pelo Mundo</SelectItem>
+                          <SelectItem value="avulsos">Serviços Avulsos</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -241,7 +234,7 @@ Mensagem: ${formData.message}`;
             
             <Card className="shadow-card bg-gradient-primary text-white">
               <CardContent className="p-6 text-center">
-                <h3 className="font-bold text-lg mb-2">Consultoria Gratuita</h3>
+                <h3 className="font-bold text-lg mb-2">Primeira Consulta</h3>
                 <p className="text-white/90 mb-4">
                   Agende uma conversa sem compromisso para planejarmos sua viagem dos sonhos
                 </p>

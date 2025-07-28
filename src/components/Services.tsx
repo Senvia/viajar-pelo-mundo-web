@@ -169,7 +169,7 @@ const Services = () => {
               className="bg-white text-primary hover:bg-white/90"
               onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
             >
-              Solicitar Orçamento Gratuito
+              Solicitar Orçamento
             </Button>
           </Card>
         </div>
