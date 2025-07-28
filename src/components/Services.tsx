@@ -21,13 +21,17 @@ const services = [
   {
     icon: MapPin,
     title: "Pacotes de Viagens",
-    description: "Pacotes completos para descobrir o melhor da Europa. Roteiros cuidadosamente planeados com as melhores experiências em cada destino.",
+    description: "Portugal Essence - 7 dias e 6 noites no Porto. Pacote completo com experiências únicas e inesquecíveis na cidade mais charmosa de Portugal.",
     features: [
-      "Roteiros completos e organizados",
-      "Hospedagem em hotéis selecionados",
-      "Passagens aéreas incluídas",
-      "Guia turístico especializado",
-      "Atividades e experiências únicas"
+      "Traslado confortável em carro executivo até o hotel",
+      "City Tour Porto (Privativo) + Museu da experiência do Vinho – WOW",
+      "Workshop Pastel de Nata no Porto - 2h",
+      "Cruzeiro Gourmet ao Pôr do Sol (Partilhado) - 2h",
+      "Experiência Gastronómica com Prova de Vinhos - 3h",
+      "Espetáculo de Fado e Folclore com Jantar Tradicional - 2h30",
+      "Tour Compartilhado no Vale do Douro - 9h",
+      "Workshop Privativo de Pintura de Azulejos - 2h",
+      "Relaxar na piscina, na sauna e na sauna a vapor - 1h"
     ],
     price: "",
     image: "/lovable-uploads/f6e46f42-cc4f-42a3-8ff4-db6fd6fb97b8.png",
