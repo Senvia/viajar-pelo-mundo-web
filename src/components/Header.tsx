@@ -122,7 +122,7 @@ const Header = () => {
           className="hidden lg:inline-flex bg-gradient-primary hover:opacity-90 shadow-elegant font-semibold px-6 py-3 transition-all duration-300 hover:scale-105"
           onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
         >
-          Falar Connosco
+          Marcar Consultoria
         </Button>
 
         {/* Mobile Menu Button */}
@@ -190,7 +190,7 @@ const Header = () => {
               className="w-full bg-gradient-primary hover:opacity-90 shadow-elegant font-semibold"
               onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
             >
-              Falar Connosco
+              Marcar Consultoria
             </Button>
           </div>
         </div>

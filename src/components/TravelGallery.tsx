@@ -62,7 +62,7 @@ const TravelGallery = () => {
             Descubra a Europa Connosco
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Uma curadoria visual dos destinos mais deslumbrantes e experiências 
+            Uma consultoria visual dos destinos mais deslumbrantes e experiências 
             autênticas que esperam por si na Europa
           </p>
         </div>

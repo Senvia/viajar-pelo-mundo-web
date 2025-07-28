@@ -76,7 +76,7 @@ const TravelInteractiveBentoGallery = () => {
         <InteractiveBentoGallery
           mediaItems={travelMediaItems}
           title="Galeria de Destinos e Experiências"
-          description="Explore nossa curadoria visual de viagens pela Europa. Clique, arraste e descubra."
+          description="Explore nossa consultoria visual de viagens pela Europa. Clique, arraste e descubra."
         />
         
         {/* CTA Section */}

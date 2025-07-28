@@ -25,7 +25,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-            Especialistas em curadoria de viagens personalizadas na Europa. 
+            Especialistas em consultoria de viagens personalizadas na Europa. 
             Oferecemos experiências únicas, seguras e inesquecíveis.
           </p>
           

@@ -18,7 +18,7 @@ const Footer = () => {
               <span className="text-lg font-bold">Viajar Pelo Mundo</span>
             </div>
             <p className="text-sm text-secondary-foreground/80 leading-relaxed">
-              Transformamos o seu sonho de viagem em realidade. Especialistas em curadoria 
+              Transformamos o seu sonho de viagem em realidade. Especialistas em consultoria 
               de viagens personalizadas na Europa.
             </p>
             <div className="text-xs text-secondary-foreground/60">

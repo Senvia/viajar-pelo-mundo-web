@@ -43,7 +43,7 @@ const services = [
     description: "Especialista em Europa. A consultoria de viagem da Viajar Pelo Mundo é um serviço completo e personalizado que ajuda você a planejar cada detalhe da sua viagem internacional com segurança, economia e conforto.",
     features: [
       "Planejamento inteligente: escolha do melhor período, roteiros otimizados e sugestões exclusivas",
-      "Curadoria completa: passagens aéreas, hospedagens, transfers, passeios, seguros, restaurantes e muito mais",
+      "Consultoria completa: passagens aéreas, hospedagens, transfers, passeios, seguros, restaurantes e muito mais",
       "Atendimento humanizado: ouvimos suas preferências e criamos uma proposta que se encaixa no seu perfil",
       "Suporte antes, durante e depois da viagem",
       "Economia de tempo e dinheiro com recomendações confiáveis",

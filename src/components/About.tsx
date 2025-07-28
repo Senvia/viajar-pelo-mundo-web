@@ -35,7 +35,7 @@ const About = () => {
                 Sobre a Viajar Pelo Mundo
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                A Viajar Pelo Mundo é uma agência de turismo especializada em curadoria de viagens 
+                A Viajar Pelo Mundo é uma agência de turismo especializada em consultoria de viagens 
                 personalizadas na Europa, com sede em Portugal. Atuamos com casais, famílias e 
                 viajantes exigentes, oferecendo uma experiência única, segura e inesquecível em cada destino.
               </p>
@@ -57,7 +57,7 @@ const About = () => {
               <div className="p-6 rounded-lg bg-gradient-to-br from-brand-green/10 to-brand-blue/10 border border-brand-green/20">
                 <h3 className="font-bold text-secondary mb-2">Nossa Visão</h3>
                 <p className="text-sm text-muted-foreground">
-                  Ser referência no mercado europeu como especialistas em curadoria de viagens, 
+                  Ser referência no mercado europeu como especialistas em consultoria de viagens, 
                   reconhecidos pela excelência, confiança e atendimento personalizado.
                 </p>
               </div>

@@ -85,7 +85,7 @@ const services = [
     icon: Users,
     title: "Consultoria Especializada Europa",
     subtitle: "Planeamento completo personalizado",
-    description: "Curadoria completa de viagem com material visual exclusivo e suporte total para sua experiência na Europa.",
+    description: "Consultoria completa de viagem com material visual exclusivo e suporte total para sua experiência na Europa.",
     features: [
       "Reunião de alinhamento personalizada",
       "Pesquisa e seleção de serviços",

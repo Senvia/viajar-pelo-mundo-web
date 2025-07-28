@@ -49,7 +49,7 @@ const packageData = {
     "Relaxar na piscina, na sauna e na sauna a vapor - 1h"
   ],
   services: [
-    "Curadoria de viagem personalizada (roteiro completo e exclusivo)",
+    "Consultoria de viagem personalizada (roteiro completo e exclusivo)",
     "Hospedagens selecionadas com padrão 4 e 5 estrelas",
     "Transfers privados e confortáveis",
     "Experiências gastronômicas, culturais e sensoriais",
@@ -201,7 +201,7 @@ const PacotesViagens = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="px-10 py-4 text-lg border-white text-white hover:bg-white hover:text-secondary shadow-2xl"
+              className="px-10 py-4 text-lg border-white text-black bg-white/90 hover:bg-white hover:text-secondary shadow-2xl"
               onClick={handleWhatsApp}
             >
               <Phone className="w-5 h-5 mr-2" />
@@ -515,15 +515,6 @@ const PacotesViagens = () => {
             </div>
           </div>
 
-          <div className="text-center mt-16">
-            <Button 
-              size="lg" 
-              className="bg-gradient-primary hover:opacity-90 shadow-elegant px-10 py-4 text-lg"
-              onClick={handleWhatsApp}
-            >
-              Personalizar Meu Pacote
-            </Button>
-          </div>
         </div>
       </section>
 
