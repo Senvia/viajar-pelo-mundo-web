@@ -8,8 +8,12 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center">
-                <Plane className="h-4 w-4 text-white" />
+              <div className="w-8 h-8 rounded-full overflow-hidden">
+                <img 
+                  src="/lovable-uploads/0b201daa-3ae5-430f-97a8-689420a140ac.png" 
+                  alt="Viajar Pelo Mundo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="text-lg font-bold">Viajar Pelo Mundo</span>
             </div>
@@ -28,23 +32,23 @@ const Footer = () => {
             <h3 className="font-semibold text-lg">Serviços</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/servicos/planeamento" className="hover:text-brand-blue transition-colors">
-                  Planeamento Personalizado
+                <a href="/servicos/imigrantes" className="hover:text-brand-blue transition-colors">
+                  Consultoria para Imigrantes
                 </a>
               </li>
               <li>
-                <a href="/servicos/passagens" className="hover:text-brand-blue transition-colors">
-                  Passagens & Hospedagem
+                <a href="/servicos/pacotes" className="hover:text-brand-blue transition-colors">
+                  Pacotes de Viagens
                 </a>
               </li>
               <li>
-                <a href="/servicos/atividades" className="hover:text-brand-blue transition-colors">
-                  Atividades Turísticas
+                <a href="/servicos/consultoria-europa" className="hover:text-brand-blue transition-colors">
+                  Consultoria de Viagens pelo Mundo
                 </a>
               </li>
               <li>
-                <a href="/servicos/apoio" className="hover:text-brand-blue transition-colors">
-                  Serviços de Apoio
+                <a href="/servicos/avulsos" className="hover:text-brand-blue transition-colors">
+                  Serviços Avulsos
                 </a>
               </li>
             </ul>
