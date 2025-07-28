@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
-import ModernHero from "@/components/ModernHero";
+import TravelScrollExpansion from "@/components/TravelScrollExpansion";
 import TravelGallery from "@/components/TravelGallery";
-import PremiumServices from "@/components/PremiumServices";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
@@ -11,9 +10,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <ModernHero />
+      <TravelScrollExpansion />
       <TravelGallery />
-      <PremiumServices />
       <About />
       <Testimonials />
       <Contact />
