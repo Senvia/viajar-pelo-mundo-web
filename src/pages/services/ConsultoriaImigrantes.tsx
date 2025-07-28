@@ -20,7 +20,8 @@ import {
   MessageCircle,
   CheckCircle,
   User,
-  Briefcase
+  Briefcase,
+  Users
 } from "lucide-react";
 import { useState } from "react";
 
@@ -29,43 +30,43 @@ const documents = [
     icon: CreditCard,
     title: "NIF - Número de Identificação Fiscal",
     description: "Similar ao CPF brasileiro, essencial para contratos de trabalho e atividades fiscais em Portugal.",
-    importance: "Obrigatório para trabalhar"
+    image: "/lovable-uploads/b0847cb9-a5a0-4ccc-aeda-4f8c80b11681.png"
   },
   {
     icon: Shield,
     title: "NISS - Número de Identificação da Segurança Social",
     description: "Similar ao INSS brasileiro, necessário para contribuições da aposentadoria e contratos de trabalho.",
-    importance: "Essencial para trabalho"
+    image: "/lovable-uploads/b0847cb9-a5a0-4ccc-aeda-4f8c80b11681.png"
   },
   {
     icon: Heart,
     title: "Utente SNS - Sistema Nacional de Saúde",
     description: "Registro no sistema público de saúde português (similar ao SUS), necessário para consultas médicas.",
-    importance: "Acesso à saúde pública"
+    image: "/lovable-uploads/0d43cfec-3a15-4c05-9581-8ebe25e4e9c2.png"
   },
   {
     icon: MapPin,
     title: "Morada Fiscal",
     description: "Enquadramento tributário português. Define que todos os rendimentos serão tributados como residente fiscal.",
-    importance: "Residência fiscal"
+    image: "/lovable-uploads/b0847cb9-a5a0-4ccc-aeda-4f8c80b11681.png"
   },
   {
     icon: FileText,
     title: "Vistos e Títulos de Residência",
     description: "Vasta gama de vistos: Trabalho, Procura de Trabalho, Estudante, D2 (empreendedores), Nómada Digital, D7, Golden Visa.",
-    importance: "Legalização da estadia"
+    image: "/lovable-uploads/870516ce-a5c4-4110-8eab-0797e67cd6d9.png"
   },
   {
     icon: GraduationCap,
     title: "Validação/Equivalência de Estudos",
     description: "Reconhecimento acadêmico necessário para concorrer a oportunidades profissionais qualificadas.",
-    importance: "Reconhecimento profissional"
+    image: "/lovable-uploads/870516ce-a5c4-4110-8eab-0797e67cd6d9.png"
   },
   {
     icon: Building2,
     title: "Criação de Empresas",
     description: "Constituição de empresas para expansão de marca ou novos negócios voltados ao mercado europeu.",
-    importance: "Empreendedorismo"
+    image: "/lovable-uploads/b0847cb9-a5a0-4ccc-aeda-4f8c80b11681.png"
   }
 ];
 
@@ -114,7 +115,7 @@ const whoCanHire = [
     description: "Profissionais com ensino superior que desejam trabalhar em Portugal com reconhecimento acadêmico."
   },
   {
-    icon: Heart,
+    icon: Users,
     title: "Famílias",
     description: "Famílias completas que desejam imigrar para Portugal com toda documentação em ordem."
   },
@@ -123,6 +124,17 @@ const whoCanHire = [
     title: "Empreendedores",
     description: "Empresários que desejam expandir negócios ou criar empresas no mercado europeu."
   }
+];
+
+const benefits = [
+  "Assessoria para visto e documentação",
+  "Orientação sobre processo de imigração", 
+  "Suporte na procura de habitação",
+  "Assistência na abertura de conta bancária",
+  "Integração cultural e social",
+  "Acompanhamento durante todo o processo",
+  "Suporte especializado e personalizado",
+  "Orientação sobre direitos e deveres"
 ];
 
 const ConsultoriaImigrantes = () => {
@@ -200,34 +212,64 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
         </div>
       </section>
 
-      {/* Who Can Hire */}
+      {/* Service Description */}
       <section className="py-20">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Quem Pode Contratar Nossos Serviços
+              Descrição Completa do Serviço
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Atendemos diferentes perfis de imigrantes com soluções personalizadas
+            <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+              A nossa consultoria para imigrantes é um serviço especializado que oferece suporte integral 
+              para brasileiros que desejam emigrar para Portugal ou que já se encontram no país e precisam 
+              regularizar a sua situação.
             </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whoCanHire.map((profile, index) => (
-              <Card key={index} className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-2">
-                <CardHeader className="pb-4">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <profile.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <CardTitle className="text-xl">{profile.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="leading-relaxed">
-                    {profile.description}
-                  </CardDescription>
-                </CardContent>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+              <Card className="p-6">
+                <h3 className="text-xl font-bold mb-4 text-primary">Quem Pode Contratar</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <span>Brasileiros que desejam emigrar para Portugal</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <span>Imigrantes já em Portugal com documentação pendente</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <span>Profissionais qualificados que necessitam validação</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <span>Empreendedores que desejam criar empresas</span>
+                  </li>
+                </ul>
               </Card>
-            ))}
+
+              <Card className="p-6">
+                <h3 className="text-xl font-bold mb-4 text-primary">Principais Benefícios</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <span>Processo simplificado e orientado</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <span>Acompanhamento personalizado</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <span>Experiência e conhecimento especializado</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <span>Suporte em português do Brasil</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -246,18 +288,21 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {documents.map((doc, index) => (
-              <Card key={index} className="hover:shadow-card transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                      <doc.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <Badge variant="outline" className="text-xs">
-                        {doc.importance}
-                      </Badge>
+              <Card key={index} className="overflow-hidden hover:shadow-card transition-all duration-300">
+                <div className="aspect-video relative overflow-hidden">
+                  <img 
+                    src={doc.image}
+                    alt={doc.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <doc.icon className="h-5 w-5 text-white" />
                     </div>
                   </div>
+                </div>
+                <CardHeader>
                   <CardTitle className="text-lg">{doc.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -276,7 +321,7 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Como Funciona o Processo
+              Etapas do Processo
             </h2>
             <p className="text-xl text-muted-foreground">
               Um processo estruturado e transparente para garantir o sucesso da sua imigração
@@ -313,106 +358,8 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Valores e Formas de Orçamento
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Preços transparentes e opções flexíveis para cada necessidade
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="relative overflow-hidden border-2 border-primary/20">
-              <div className="absolute top-0 right-0 bg-gradient-primary text-white px-4 py-1 text-sm">
-                Mais Popular
-              </div>
-              <CardHeader className="text-center pt-8">
-                <CardTitle className="text-2xl mb-2">Pacote Completo</CardTitle>
-                <div className="text-4xl font-bold text-primary mb-2">€799</div>
-                <CardDescription>Todos os documentos principais</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
-                  {["NIF", "NISS", "Utente SNS", "Morada Fiscal", "Consultoria inicial gratuita", "Acompanhamento durante 6 meses"].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
-                      <span className="text-sm">{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <Button className="w-full bg-gradient-primary hover:opacity-90" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                  Escolher Pacote
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl mb-2">Documentos Avulsos</CardTitle>
-                <div className="text-4xl font-bold text-primary mb-2">€150-€300</div>
-                <CardDescription>Por documento individual</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
-                  {["Escolha específica de documentos", "Processo individualizado", "Consultoria incluída", "Suporte durante o processo"].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
-                      <span className="text-sm">{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <Button variant="outline" className="w-full" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                  Solicitar Orçamento
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl mb-2">Serviços Premium</CardTitle>
-                <div className="text-4xl font-bold text-primary mb-2">€1.200+</div>
-                <CardDescription>Criação de empresas e vistos</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
-                  {["Visto de trabalho/investimento", "Criação de empresa", "Validação de estudos", "Acompanhamento VIP", "Suporte 24/7"].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
-                      <span className="text-sm">{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <Button variant="outline" className="w-full" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                  Consultar Valores
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-12">
-            <Card className="inline-block p-6 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-950/30 dark:to-green-950/30">
-              <h3 className="text-xl font-bold mb-2">Consultoria Inicial Gratuita</h3>
-              <p className="text-muted-foreground mb-4">
-                Avaliação completa do seu caso sem compromisso
-              </p>
-              <Button 
-                size="lg" 
-                className="bg-gradient-primary hover:opacity-90"
-                onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
-              >
-                Agendar Consultoria Gratuita
-              </Button>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Form */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 bg-muted/30">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
@@ -496,12 +443,13 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
                         className="w-full px-3 py-2 border border-input bg-background rounded-md"
                       >
                         <option value="">Selecione...</option>
-                        <option value="pacote-completo">Pacote Completo</option>
                         <option value="nif-niss">NIF e NISS</option>
                         <option value="utente-sns">Utente SNS</option>
+                        <option value="morada-fiscal">Morada Fiscal</option>
                         <option value="visto-trabalho">Visto de Trabalho</option>
                         <option value="criacao-empresa">Criação de Empresa</option>
                         <option value="validacao-estudos">Validação de Estudos</option>
+                        <option value="todos">Todos os documentos</option>
                         <option value="outros">Outros</option>
                       </select>
                     </div>
@@ -545,52 +493,12 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
                         <MessageCircle className="mr-2 h-5 w-5" />
                         Enviar via WhatsApp
                       </Button>
-                      <Button 
-                        type="button"
-                        variant="outline" 
-                        size="lg" 
-                        className="w-full"
-                        onClick={() => window.location.href = `mailto:contato@exemplo.com?subject=Consultoria Imigrantes&body=${encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\nTelefone: ${formData.phone}\nSituação: ${formData.currentStatus}\nDocumentos: ${formData.documents}\nCronograma: ${formData.timeline}\nMensagem: ${formData.message}`)}`}
-                      >
-                        <Mail className="mr-2 h-5 w-5" />
-                        Enviar por Email
-                      </Button>
                     </div>
                   </form>
                 </CardContent>
               </Card>
 
               <div className="space-y-8">
-                <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5">
-                  <h3 className="text-xl font-bold mb-4">Por que Escolher-nos?</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                      <div>
-                        <strong>Experiência Comprovada:</strong> Mais de 500 clientes atendidos com sucesso
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                      <div>
-                        <strong>Processo Transparente:</strong> Acompanhamento em tempo real de todo o processo
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                      <div>
-                        <strong>Suporte Especializado:</strong> Equipa especializada em imigração para Portugal
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                      <div>
-                        <strong>Garantia de Resultado:</strong> Não cobramos se não conseguirmos o documento
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-
                 <Card className="p-6">
                   <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                     <Phone className="h-5 w-5" />
@@ -609,6 +517,18 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
                       <Clock className="h-5 w-5 text-muted-foreground" />
                       <span>Seg-Sex: 9h-18h | Sáb: 9h-13h</span>
                     </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-4">O que Incluímos</h3>
+                  <div className="space-y-3">
+                    {benefits.map((benefit, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
+                        <span className="text-sm">{benefit}</span>
+                      </div>
+                    ))}
                   </div>
                 </Card>
               </div>
