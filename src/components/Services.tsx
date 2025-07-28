@@ -65,7 +65,7 @@ const services = [
       "Assistência 24/7 durante a viagem"
     ],
     price: "",
-    image: "/lovable-uploads/c23fafcc-27fe-4e3a-b4aa-8061a9acfa1a.png",
+    image: "/lovable-uploads/a886c0ec-c4fb-4beb-ac44-aebb732c3676.png",
     href: "/servicos/avulsos"
   }
 ];
