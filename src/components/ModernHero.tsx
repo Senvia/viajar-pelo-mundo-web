@@ -102,7 +102,7 @@ const ModernHero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-white/50 text-white hover:bg-white hover:text-secondary px-8 py-4 text-lg backdrop-blur-sm font-semibold"
+              className="border-2 border-white/50 text-black bg-white/90 hover:bg-white hover:text-secondary px-8 py-4 text-lg backdrop-blur-sm font-semibold"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Ver Todos os Serviços

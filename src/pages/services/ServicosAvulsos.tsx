@@ -115,7 +115,7 @@ const ServicosApoio = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="px-8 py-4 text-lg border-white text-white hover:bg-white hover:text-secondary"
+                className="px-8 py-4 text-lg border-white text-black bg-white/90 hover:bg-white hover:text-secondary"
                 onClick={() => window.open('https://wa.me/351911734711', '_blank')}
               >
                 WhatsApp Direto
