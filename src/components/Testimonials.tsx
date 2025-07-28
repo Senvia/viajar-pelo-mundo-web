@@ -23,7 +23,7 @@ const testimonials = [
     name: "Lauro Batista Sarmento",
     quote: "Todos os meses eu viajo a trabalho, e durante muito tempo fiz por conta própria, até receber um orçamento muito melhor, diversos auxílios antes e durante a viagem e perceber que não há nada melhor do que contar com a ajuda profissional da equipa da viajar pelo mundo! Além de simpáticos e solícitos... O Max e a Vanessa entregam sempre um serviço muito superior ao mercado e ao que contratamos. Já são mais de 8 meses viajando com a assessoria deles e já tenho as próximas 2 planeadas com eles tbm. Super recomendo!!!",
     designation: "Viajante Corporativo",
-    src: "/lovable-uploads/84033495-958a-4c27-93f2-33f630f23230.png"
+    src: "/lovable-uploads/57fb62cd-5b0b-4d82-8416-2ced892d5736.png"
   }
 ];
 
