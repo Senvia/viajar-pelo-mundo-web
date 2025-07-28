@@ -14,7 +14,7 @@ const services = [
       "Assistência na abertura de conta bancária",
       "Integração cultural e social"
     ],
-    price: "A partir de €399",
+    price: "",
     image: "/lovable-uploads/c2187682-7e3d-4df9-93f1-cbb52d3d3dec.png",
     href: "/servicos/imigrantes"
   },
@@ -29,7 +29,7 @@ const services = [
       "Guia turístico especializado",
       "Atividades e experiências únicas"
     ],
-    price: "A partir de €899",
+    price: "",
     image: "/lovable-uploads/f6e46f42-cc4f-42a3-8ff4-db6fd6fb97b8.png",
     href: "/servicos/pacotes"
   },
@@ -44,7 +44,7 @@ const services = [
       "Networking profissional",
       "Acompanhamento personalizado"
     ],
-    price: "A partir de €599",
+    price: "",
     image: "/lovable-uploads/d473c4c5-98ec-4c93-ac26-d2dc26c06c80.png",
     href: "/servicos/consultoria-europa"
   },
@@ -59,7 +59,7 @@ const services = [
       "Aluguel de carro",
       "Assistência 24/7 durante a viagem"
     ],
-    price: "Preços sob consulta",
+    price: "",
     image: "/lovable-uploads/c23fafcc-27fe-4e3a-b4aa-8061a9acfa1a.png",
     href: "/servicos/avulsos"
   }
@@ -95,9 +95,6 @@ const Services = () => {
                       <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
                         {service.title}
                       </h3>
-                      <p className="text-lg text-primary font-semibold">
-                        {service.price}
-                      </p>
                     </div>
                   </div>
                   
