@@ -79,44 +79,59 @@ const Services = () => {
           </p>
         </div>
         
-        <div className="space-y-32">
+        <div className="space-y-24">
           {services.map((service, index) => (
-            <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
+            <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch ${
               index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
             }`}>
+              {/* Image */}
+              <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <Card className="overflow-hidden border-0 shadow-card h-full">
+                  <CardContent className="p-0 h-full">
+                    <div className="aspect-[16/10] overflow-hidden h-full min-h-[400px]">
+                      <img 
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+              
               {/* Content */}
-              <div className={`space-y-8 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+              <div className={`space-y-8 flex flex-col justify-center ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
-                      <service.icon className="h-8 w-8 text-white" />
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-lg">
+                      <service.icon className="h-10 w-10 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
+                      <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight">
                         {service.title}
                       </h3>
                     </div>
                   </div>
                   
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-xl text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>
                   
-                  <ul className="space-y-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-3">
-                        <div className="w-5 h-5 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
-                          <Check className="w-3 h-3 text-green-600 dark:text-green-400" />
+                      <div key={featureIndex} className="flex items-center gap-3">
+                        <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
+                          <Check className="w-4 h-4 text-green-600 dark:text-green-400" />
                         </div>
-                        <span className="text-foreground">{feature}</span>
-                      </li>
+                        <span className="text-foreground font-medium">{feature}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                   
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <Button 
                       size="lg"
-                      className="bg-gradient-primary hover:opacity-90 shadow-elegant px-8"
+                      className="bg-gradient-primary hover:opacity-90 shadow-elegant px-10 py-6 text-lg font-semibold"
                       onClick={() => window.location.href = service.href}
                     >
                       Saiba Mais
@@ -124,27 +139,13 @@ const Services = () => {
                     <Button 
                       variant="outline" 
                       size="lg"
+                      className="px-10 py-6 text-lg font-semibold border-2"
                       onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
                     >
                       Contactar Agora
                     </Button>
                   </div>
                 </div>
-              </div>
-              
-              {/* Image */}
-              <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                <Card className="overflow-hidden border-0 shadow-card">
-                  <CardContent className="p-0">
-                    <div className="aspect-[4/3] overflow-hidden">
-                      <img 
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
               </div>
             </div>
           ))}
