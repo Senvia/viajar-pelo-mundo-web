@@ -150,8 +150,8 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
       <section className="relative pt-20 pb-32 overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="/lovable-uploads/137fc274-629a-4c80-8993-95e4a878c84b.png"
-            alt="Casal em Londres"
+            src="/lovable-uploads/7b6e8e37-cdbe-4748-9935-4e376db134cf.png"
+            alt="Portugal"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
