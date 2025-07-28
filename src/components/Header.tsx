@@ -81,25 +81,25 @@ const Header = () => {
                   onClick={() => window.location.href = '/servicos/imigrantes'}
                   className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
                 >
-                  🛂 Consultoria para Imigrantes
+                  Consultoria para Imigrantes
                 </button>
                 <button 
                   onClick={() => window.location.href = '/servicos/pacotes'}
                   className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
                 >
-                  📦 Pacotes de Viagens
+                  Pacotes de Viagens
                 </button>
                 <button 
                   onClick={() => window.location.href = '/servicos/consultoria-europa'}
                   className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
                 >
-                  🌍 Consultoria de Viagens pelo Mundo
+                  Consultoria de Viagens pelo Mundo
                 </button>
                 <button 
                   onClick={() => window.location.href = '/servicos/avulsos'}
                   className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
                 >
-                  🎯 Serviços Avulsos
+                  Serviços Avulsos
                 </button>
               </div>
             </div>
@@ -156,25 +156,25 @@ const Header = () => {
                   onClick={() => window.location.href = '/servicos/imigrantes'}
                   className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
                 >
-                  🛂 Consultoria para Imigrantes
+                  Consultoria para Imigrantes
                 </button>
                 <button 
                   onClick={() => window.location.href = '/servicos/pacotes'}
                   className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
                 >
-                  📦 Pacotes de Viagens
+                  Pacotes de Viagens
                 </button>
                 <button 
                   onClick={() => window.location.href = '/servicos/consultoria-europa'}
                   className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
                 >
-                  🌍 Consultoria de Viagens pelo Mundo
+                  Consultoria de Viagens pelo Mundo
                 </button>
                 <button 
                   onClick={() => window.location.href = '/servicos/avulsos'}
                   className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
                 >
-                  🎯 Serviços Avulsos
+                  Serviços Avulsos
                 </button>
               </div>
             </div>
