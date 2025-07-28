@@ -95,8 +95,8 @@ const ServiceContent = () => (
       
       <ServiceHighlight
         icon={Euro}
-        title="Consultoria Europa"
-        description="Planeamento completo personalizado com material visual exclusivo."
+        title="Consultoria de Viagens pelo Mundo"
+        description="Planeamento completo personalizado com material visual exclusivo. Especialista em Europa com processo dividido em 4 etapas."
         price="250€"
         cta="Começar Planeamento"
         onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}

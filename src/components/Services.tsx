@@ -35,16 +35,17 @@ const services = [
   },
   {
     icon: Calendar,
-    title: "Consultoria Especializada Europa",
-    description: "Consultoria especializada para negócios, estudos ou investimentos na Europa. Orientação profissional para decisões importantes.",
+    title: "Consultoria de Viagens pelo Mundo",
+    description: "Especialista em Europa. A consultoria de viagem da Viajar Pelo Mundo é um serviço completo e personalizado que ajuda você a planejar cada detalhe da sua viagem internacional com segurança, economia e conforto.",
     features: [
-      "Consultoria para negócios na Europa",
-      "Orientação para estudos no exterior",
-      "Assessoria para investimentos",
-      "Networking profissional",
-      "Acompanhamento personalizado"
+      "Planejamento inteligente: escolha do melhor período, roteiros otimizados e sugestões exclusivas",
+      "Curadoria completa: passagens aéreas, hospedagens, transfers, passeios, seguros, restaurantes e muito mais",
+      "Atendimento humanizado: ouvimos suas preferências e criamos uma proposta que se encaixa no seu perfil",
+      "Suporte antes, durante e depois da viagem",
+      "Economia de tempo e dinheiro com recomendações confiáveis",
+      "Material visual exclusivo com o passo a passo da viagem (formato PDF ou digital)"
     ],
-    price: "",
+    price: "250€",
     image: "/lovable-uploads/d473c4c5-98ec-4c93-ac26-d2dc26c06c80.png",
     href: "/servicos/consultoria-europa"
   },
