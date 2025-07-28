@@ -4,64 +4,64 @@ import { Calendar, Plane, MapPin, Shield, Check } from "lucide-react";
 
 const services = [
   {
-    icon: Calendar,
-    title: "Planeamento Personalizado",
-    description: "Viagens sob medida para casais, famílias e viajantes exigentes. Cuidamos de cada detalhe do seu roteiro para garantir uma experiência única e inesquecível.",
+    icon: Shield,
+    title: "Consultoria para Imigrantes",
+    description: "Suporte completo para quem quer emigrar para a Europa. Desde documentação até integração no novo país, estamos contigo em cada passo.",
     features: [
-      "Roteiro exclusivo personalizado",
-      "Consultoria especializada 1:1",
-      "Suporte 24/7 durante a viagem",
-      "Reservas em restaurantes exclusivos",
-      "Atividades adaptadas ao seu perfil"
+      "Assessoria para visto e documentação",
+      "Orientação sobre processo de imigração",
+      "Suporte na procura de habitação",
+      "Assistência na abertura de conta bancária",
+      "Integração cultural e social"
     ],
-    price: "A partir de €299",
+    price: "A partir de €399",
     image: "/lovable-uploads/c2187682-7e3d-4df9-93f1-cbb52d3d3dec.png",
-    href: "/servicos/planeamento"
-  },
-  {
-    icon: Plane,
-    title: "Passagens & Hospedagem",
-    description: "Encontramos as melhores ofertas em passagens aéreas e hospedagem em toda a Europa. Trabalhamos com parceiros de confiança para garantir os melhores preços.",
-    features: [
-      "Passagens aéreas com melhores preços",
-      "Hotéis selecionados e verificados",
-      "Flexibilidade de cancelamento",
-      "Programa de fidelidade",
-      "Seguro viagem incluído"
-    ],
-    price: "Preços competitivos",
-    image: "/lovable-uploads/f6e46f42-cc4f-42a3-8ff4-db6fd6fb97b8.png",
-    href: "/servicos/passagens"
+    href: "/servicos/imigrantes"
   },
   {
     icon: MapPin,
-    title: "Atividades Turísticas",
-    description: "Experiências únicas e autênticas com guias especializados. Descubra os segredos mais bem guardados de cada destino europeu.",
+    title: "Pacotes de Viagens",
+    description: "Pacotes completos para descobrir o melhor da Europa. Roteiros cuidadosamente planeados com as melhores experiências em cada destino.",
     features: [
-      "Guias turísticos especializados",
-      "Atividades exclusivas e autênticas",
-      "Tours privados personalizados",
-      "Experiências gastronómicas locais",
-      "Acesso a locais únicos"
+      "Roteiros completos e organizados",
+      "Hospedagem em hotéis selecionados",
+      "Passagens aéreas incluídas",
+      "Guia turístico especializado",
+      "Atividades e experiências únicas"
     ],
-    price: "A partir de €89",
-    image: "/lovable-uploads/d473c4c5-98ec-4c93-ac26-d2dc26c06c80.png",
-    href: "/servicos/atividades"
+    price: "A partir de €899",
+    image: "/lovable-uploads/f6e46f42-cc4f-42a3-8ff4-db6fd6fb97b8.png",
+    href: "/servicos/pacotes"
   },
   {
-    icon: Shield,
-    title: "Serviços de Apoio",
-    description: "Todo o suporte necessário para sua tranquilidade durante a viagem. Transfer, seguro, aluguel de carro e assistência completa.",
+    icon: Calendar,
+    title: "Consultoria Especializada Europa",
+    description: "Consultoria especializada para negócios, estudos ou investimentos na Europa. Orientação profissional para decisões importantes.",
+    features: [
+      "Consultoria para negócios na Europa",
+      "Orientação para estudos no exterior",
+      "Assessoria para investimentos",
+      "Networking profissional",
+      "Acompanhamento personalizado"
+    ],
+    price: "A partir de €599",
+    image: "/lovable-uploads/d473c4c5-98ec-4c93-ac26-d2dc26c06c80.png",
+    href: "/servicos/consultoria-europa"
+  },
+  {
+    icon: Plane,
+    title: "Serviços Avulsos",
+    description: "Serviços individuais para necessidades específicas. Transfer, seguro viagem, reservas de hotéis e muito mais.",
     features: [
       "Transfer aeroporto-hotel",
-      "Seguro viagem completo",
+      "Seguro viagem personalizado",
+      "Reservas de hotéis e restaurantes",
       "Aluguel de carro",
-      "Assistência em emergências",
-      "Suporte multilíngue"
+      "Assistência 24/7 durante a viagem"
     ],
-    price: "Serviços complementares",
+    price: "Preços sob consulta",
     image: "/lovable-uploads/c23fafcc-27fe-4e3a-b4aa-8061a9acfa1a.png",
-    href: "/servicos/apoio"
+    href: "/servicos/avulsos"
   }
 ];
 
