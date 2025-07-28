@@ -163,9 +163,9 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
               <Star className="w-4 h-4 mr-2" />
               Especialistas em Imigração
             </Badge>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] pb-2">
               Consultoria para
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80">
+              <span className="block text-white">
                 Imigrantes em Portugal
               </span>
             </h1>
@@ -176,7 +176,7 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
             <div className="flex flex-col sm:flex-row gap-6">
               <Button 
                 size="lg" 
-                className="px-8 py-4 text-lg bg-white text-primary hover:bg-white/90 shadow-2xl"
+                className="px-8 py-4 text-lg bg-primary text-white hover:bg-primary/90 shadow-2xl"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Começar Agora
