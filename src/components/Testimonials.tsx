@@ -5,7 +5,7 @@ const testimonials = [
     name: "Celestina Rodrigues",
     quote: "Quero agradecer toda a atenção recebida da agência Viajar Pelo Mundo foi uma experiência maravilhosa. Tudo que precisei foi feito com excelência, cada detalhe desde a cotação dentro do preço esperado, check in, vôo, programação e passeios, até acomodação. Viajar e conhecer lugares novos é ótimo, mas ser atendido e tratado como família tornou a viagem inesquecível um verdadeiro sonho. Parabéns Viajar Pelo Mundo vocês são incríveis.",
     designation: "Cliente Satisfeita",
-    src: "/lovable-uploads/ff15d855-f57f-4c4c-a478-37dee547efc0.png"
+    src: "/lovable-uploads/f64ae3f8-469d-4622-94b1-53e6d5ec29dc.png"
   },
   {
     name: "Laura Simões",
