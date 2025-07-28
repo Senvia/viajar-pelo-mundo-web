@@ -34,7 +34,7 @@ const services = [
       "Relaxar na piscina, na sauna e na sauna a vapor - 1h"
     ],
     price: "",
-    image: "/lovable-uploads/f6e46f42-cc4f-42a3-8ff4-db6fd6fb97b8.png",
+    image: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png",
     href: "/servicos/pacotes"
   },
   {
