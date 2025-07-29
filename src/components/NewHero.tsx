@@ -8,7 +8,7 @@ const NewHero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `var(--gradient-hero), url('https://images.unsplash.com/photo-1469474968028-56623f02e42d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80')`
+          backgroundImage: `var(--gradient-hero), url('/lovable-uploads/b98e1a54-f373-4e98-a573-a595c1c7a136.png')`
         }}
       />
       
