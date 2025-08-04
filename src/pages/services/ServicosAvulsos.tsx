@@ -11,49 +11,57 @@ const services = [
     icon: Plane,
     title: "Compra de Passagens Aéreas",
     description: "Encontramos as melhores opções de voo para seu destino",
-    features: ["Pesquisa em múltiplas companhias", "Melhor preço garantido", "Alterações sem taxa extra", "Suporte em português"]
+    features: ["Pesquisa em múltiplas companhias", "Melhor preço garantido", "Alterações sem taxa extra", "Suporte em português"],
+    whatsappMessage: "Olá! Gostaria de solicitar um orçamento para *compra de passagens aéreas*. Podem me ajudar?"
   },
   {
     icon: Hotel,
     title: "Reservas de Hospedagem",
     description: "Hotéis e acomodações selecionadas para sua estadia",
-    features: ["Localizações estratégicas", "Verificados pela nossa equipe", "Cancelamento flexível", "Suporte 24h"]
+    features: ["Localizações estratégicas", "Verificados pela nossa equipe", "Cancelamento flexível", "Suporte 24h"],
+    whatsappMessage: "Olá! Gostaria de solicitar um orçamento para *reservas de hospedagem*. Podem me ajudar?"
   },
   {
     icon: Navigation,
     title: "Transfer (Aeroporto / Cidade)",
     description: "Transporte confortável e seguro",
-    features: ["Motorista profissional", "Veículo climatizado", "Acompanhamento do voo", "Sinalização personalizada"]
+    features: ["Motorista profissional", "Veículo climatizado", "Acompanhamento do voo", "Sinalização personalizada"],
+    whatsappMessage: "Olá! Gostaria de solicitar um orçamento para *transfer aeroporto/cidade*. Podem me ajudar?"
   },
   {
     icon: Shield,
     title: "Seguro Viagem",
     description: "Proteção completa para toda sua viagem",
-    features: ["Cobertura médica", "Cancelamento de viagem", "Bagagem extraviada", "Assistência 24h"]
+    features: ["Cobertura médica", "Cancelamento de viagem", "Bagagem extraviada", "Assistência 24h"],
+    whatsappMessage: "Olá! Gostaria de solicitar um orçamento para *seguro viagem*. Podem me ajudar?"
   },
   {
     icon: Car,
     title: "Aluguel de Carro",
     description: "Liberdade total para explorar os destinos",
-    features: ["Carros novos", "Seguro incluído", "GPS incluído", "Atendimento português"]
+    features: ["Carros novos", "Seguro incluído", "GPS incluído", "Atendimento português"],
+    whatsappMessage: "Olá! Gostaria de solicitar um orçamento para *aluguel de carro*. Podem me ajudar?"
   },
   {
     icon: MapPin,
     title: "Reservas de Atividades Turísticas",
     description: "Experiências únicas nos melhores destinos",
-    features: ["Tours exclusivos", "Ingressos antecipados", "Grupos pequenos", "Guias especializados"]
+    features: ["Tours exclusivos", "Ingressos antecipados", "Grupos pequenos", "Guias especializados"],
+    whatsappMessage: "Olá! Gostaria de solicitar um orçamento para *reservas de atividades turísticas*. Podem me ajudar?"
   },
   {
     icon: Users,
     title: "Receptivo",
     description: "Recepção e acompanhamento personalizado",
-    features: ["Recepção no aeroporto", "Orientação inicial", "Dicas locais", "Suporte durante a estadia"]
+    features: ["Recepção no aeroporto", "Orientação inicial", "Dicas locais", "Suporte durante a estadia"],
+    whatsappMessage: "Olá! Gostaria de solicitar um orçamento para *serviço de receptivo*. Podem me ajudar?"
   },
   {
     icon: UserCheck,
     title: "Guia Turístico",
     description: "Guias especializados em cada destino",
-    features: ["Guias credenciados", "Roteiros personalizados", "Idioma português", "Conhecimento local profundo"]
+    features: ["Guias credenciados", "Roteiros personalizados", "Idioma português", "Conhecimento local profundo"],
+    whatsappMessage: "Olá! Gostaria de solicitar um orçamento para *guia turístico*. Podem me ajudar?"
   }
 ];
 
@@ -112,7 +120,7 @@ const ServicosAvulsos = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-2">
+              <Card key={index} className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
                 <CardHeader className="pb-4">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
                     <service.icon className="h-8 w-8 text-white" />
@@ -120,8 +128,8 @@ const ServicosAvulsos = () => {
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                   <CardDescription>{service.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm mb-6">
+                <CardContent className="flex-1 flex flex-col">
+                  <ul className="space-y-2 text-sm mb-6 flex-1">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-brand-green"></div>
@@ -130,8 +138,8 @@ const ServicosAvulsos = () => {
                     ))}
                   </ul>
                   <Button 
-                    className="w-full bg-gradient-primary hover:opacity-90"
-                    onClick={() => window.open('https://wa.me/351911734711', '_blank')}
+                    className="w-full bg-gradient-primary hover:opacity-90 mt-auto"
+                    onClick={() => window.open(`https://wa.me/351911734711?text=${encodeURIComponent(service.whatsappMessage)}`, '_blank')}
                   >
                     Solicitar
                   </Button>
