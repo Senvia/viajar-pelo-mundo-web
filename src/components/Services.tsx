@@ -51,7 +51,7 @@ const services = [
     ],
     price: "250€",
     image: "/lovable-uploads/d473c4c5-98ec-4c93-ac26-d2dc26c06c80.png",
-    href: "/servicos/consultoria-europa"
+    href: "/servicos/consultoria-viagens"
   },
   {
     icon: Plane,
