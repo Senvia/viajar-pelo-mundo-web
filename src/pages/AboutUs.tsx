@@ -133,7 +133,7 @@ const AboutUs = () => {
                   className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover"
                   style={{ 
                     backgroundImage: "url('/lovable-uploads/b24f0e12-9456-4407-aa14-f00fb5483042.png')",
-                    backgroundPosition: 'center top'
+                    backgroundPosition: 'center 30%'
                   }}
                 >
                   <div className="h-full bg-gradient-to-t from-black/30 to-transparent flex items-end">
