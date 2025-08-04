@@ -130,8 +130,11 @@ const AboutUs = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
                 <div 
-                  className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center"
-                  style={{ backgroundImage: "url('/lovable-uploads/b24f0e12-9456-4407-aa14-f00fb5483042.png')" }}
+                  className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover"
+                  style={{ 
+                    backgroundImage: "url('/lovable-uploads/b24f0e12-9456-4407-aa14-f00fb5483042.png')",
+                    backgroundPosition: 'center top'
+                  }}
                 >
                   <div className="h-full bg-gradient-to-t from-black/30 to-transparent flex items-end">
                     <div className="p-6 text-white">
