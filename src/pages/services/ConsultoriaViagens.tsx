@@ -249,7 +249,7 @@ const ConsultoriaViagens = () => {
                 <div 
                   className="rounded-2xl overflow-hidden shadow-2xl h-96 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png')`
+                    backgroundImage: `url('/lovable-uploads/89d275a3-14eb-4066-a880-e885f17c2dd0.png')`
                   }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
