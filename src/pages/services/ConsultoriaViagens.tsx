@@ -323,9 +323,8 @@ const ConsultoriaViagens = () => {
                 </div>
                 <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                   <div 
-                    className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in cursor-pointer hover:scale-105 transition-transform duration-300"
+                    className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in hover:scale-105 transition-transform duration-300"
                     style={{ backgroundImage: `url('${step.image}')` }}
-                    onClick={() => openImageModal(step.image)}
                   >
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                   </div>
