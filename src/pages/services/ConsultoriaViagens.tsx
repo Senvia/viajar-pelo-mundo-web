@@ -59,7 +59,7 @@ const processSteps = [
     icon: Settings,
     title: "Confirmação e reserva dos serviços",
     description: "Após aprovação, realizamos as reservas dos produtos e serviços: passagens aéreas, hotéis, transfers, passeios, seguro-viagem, entre outros.",
-    image: "/lovable-uploads/a4315f8c-26b9-4bb7-9c20-81a4fd346d2d.png"
+    image: "/lovable-uploads/e4b4eacc-e341-4457-8695-38235af5f8cf.png"
   },
   {
     icon: FileText,
