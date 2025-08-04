@@ -70,17 +70,35 @@ const processSteps = [
 ];
 
 const includedServices = [
-  "Reunião de alinhamento",
-  "Pesquisa e seleção personalizada de serviços",
-  "Consultoria em tempo real",
-  "Reservas e confirmações",
-  "Material visual exclusivo da viagem",
-  "Suporte antes e durante a viagem"
+  {
+    title: "Reunião de alinhamento",
+    description: "Entendemos seu perfil, objetivos, orçamento e expectativas para criar uma viagem sob medida."
+  },
+  {
+    title: "Pesquisa e seleção personalizada de serviços",
+    description: "Cuidamos de cada detalhe: destinos, roteiros, hospedagens, voos, transfers, seguro, chip de internet, passeios e experiências."
+  },
+  {
+    title: "Consultoria em tempo real",
+    description: "Acompanhamento durante o processo de decisão, com esclarecimento de dúvidas e ajustes no plano conforme necessário."
+  },
+  {
+    title: "Reservas e confirmações",
+    description: "Intermediamos as reservas e orientamos sobre as melhores opções, sempre com foco em segurança, conforto e economia."
+  },
+  {
+    title: "Material visual exclusivo da viagem",
+    description: "Entregamos um guia digital organizado com roteiro completo e informações detalhadas."
+  },
+  {
+    title: "Suporte antes e durante a viagem",
+    description: "Estaremos disponíveis para apoiar você com qualquer dúvida ou necessidade relacionada ao plano contratado."
+  }
 ];
 
 const materialIncludes = [
   "Roteiro dia a dia",
-  "Endereços e horários",
+  "Endereços e horários", 
   "Links úteis e mapas interativos",
   "Sugestões de restaurantes",
   "Atrações e Experiências inclusas na viagem",
@@ -284,7 +302,7 @@ const ConsultoriaViagens = () => {
               Processo em 4 Etapas
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Nossa consultoria abrange todas as etapas do planejamento da sua viagem
+              Nossa consultoria abrange todas as etapas do planejamento da sua viagem, com atenção total aos detalhes e foco em transformar seus desejos em uma experiência inesquecível.
             </p>
           </div>
 
@@ -335,11 +353,16 @@ const ConsultoriaViagens = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-bold text-secondary mb-8">Serviços Inclusos</h3>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {includedServices.map((service, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <CheckCircle className="w-6 h-6 text-brand-blue flex-shrink-0 mt-1" />
-                    <span className="text-lg text-muted-foreground">{service}</span>
+                  <div key={index} className="space-y-2">
+                    <div className="flex items-start gap-4">
+                      <CheckCircle className="w-6 h-6 text-brand-blue flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-secondary">{service.title}</h4>
+                        <p className="text-muted-foreground">{service.description}</p>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
