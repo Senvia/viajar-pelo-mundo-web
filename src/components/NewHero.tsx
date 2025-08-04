@@ -4,16 +4,13 @@ import { ArrowRight, MapPin, Users, Star } from "lucide-react";
 const NewHero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
+      {/* Background with brand colors overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('/lovable-uploads/f0b04da2-316f-4e85-af49-72055d6e2e4f.png')`
         }}
       />
-      
-      {/* Blue fade overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-blue-800/30 to-blue-900/50" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
