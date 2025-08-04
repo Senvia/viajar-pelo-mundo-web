@@ -241,7 +241,7 @@ Mensagem: ${formData.message}`;
                 <Button 
                   variant="secondary" 
                   className="w-full"
-                  onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
+                  onClick={() => window.open(`https://wa.me/351911734711?text=${encodeURIComponent('Olá! Gostaria de agendar uma primeira consulta gratuita para planejar minha viagem.')}`, '_blank')}
                 >
                   Agendar Agora
                 </Button>
