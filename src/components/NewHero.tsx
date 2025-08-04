@@ -25,7 +25,7 @@ const NewHero = () => {
           {/* Main Title */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Descubra o
-            <span className="bg-gradient-primary bg-clip-text text-transparent block">
+            <span className="text-white block">
               Mundo Conosco
             </span>
           </h1>
