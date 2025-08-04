@@ -65,7 +65,7 @@ const processSteps = [
     icon: FileText,
     title: "Entrega do material visual completo",
     description: "Criamos um guia digital exclusivo com o passo a passo da sua viagem, contendo todas as informações organizadas de forma clara, prática e elegante.",
-    image: "/lovable-uploads/53f3bea9-96f9-4228-b293-01136d266f85.png"
+    image: "/lovable-uploads/30d84693-6080-4631-8243-f1d0abb88cbe.png"
   }
 ];
 
