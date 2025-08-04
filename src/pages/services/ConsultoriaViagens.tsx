@@ -47,7 +47,7 @@ const processSteps = [
     icon: MessageCircle,
     title: "Reunião inicial personalizada",
     description: "Conversa para entender o perfil do viajante, objetivos, expectativas e necessidades específicas da viagem.",
-    image: "/lovable-uploads/f8848579-71ad-4fb3-8453-c0afddac6c57.png"
+    image: "/lovable-uploads/a1ceb288-0f64-4749-93da-3cf33f43dda4.png"
   },
   {
     icon: Search,
