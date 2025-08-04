@@ -393,52 +393,6 @@ const ConsultoriaViagens = () => {
         </div>
       </section>
 
-      {/* Form Questions Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
-              Formulário de Consultoria
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Para oferecer o melhor atendimento, precisamos conhecer suas preferências e necessidades
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Card className="p-8">
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl">Perguntas Importantes</CardTitle>
-                <CardDescription className="text-lg">
-                  Responda às seguintes questões para que possamos criar sua proposta personalizada
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {formQuestions.map((question, index) => (
-                    <div key={index} className="p-4 border rounded-lg bg-muted/30">
-                      <p className="text-muted-foreground font-medium">{question}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="text-center mt-8">
-                  <Button 
-                    size="lg" 
-                    className="px-10 py-4 text-lg bg-gradient-primary hover:opacity-90 shadow-elegant"
-                    onClick={handleFormLink}
-                  >
-                    <FileText className="w-5 h-5 mr-2" />
-                    Preencher Formulário
-                  </Button>
-                  <p className="text-sm text-muted-foreground mt-4">
-                    Link: https://agencia.iddas.com.br/so/k8cqdbwp
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Image Modal */}
       {selectedImage && (
@@ -459,7 +413,7 @@ const ConsultoriaViagens = () => {
         </div>
       )}
 
-      <Contact />
+      
       <Footer />
     </div>
   );
