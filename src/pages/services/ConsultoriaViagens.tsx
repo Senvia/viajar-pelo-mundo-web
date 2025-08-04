@@ -170,14 +170,13 @@ const ConsultoriaViagens = () => {
             >
               Solicitar Consultoria
             </Button>
-            <Button 
-              size="lg" 
-              className="px-10 py-4 text-lg border-2 border-white text-white bg-transparent hover:bg-white hover:text-secondary shadow-2xl transition-all duration-300"
+            <button 
+              className="px-10 py-4 text-lg border-2 border-white text-white bg-transparent hover:bg-white hover:text-secondary rounded-md shadow-2xl transition-colors duration-300 font-medium"
               onClick={handleWhatsApp}
             >
-              <Phone className="w-5 h-5 mr-2" />
+              <Phone className="w-5 h-5 mr-2 inline" />
               Falar Conosco
-            </Button>
+            </button>
           </div>
         </div>
         
