@@ -12,24 +12,122 @@ const AboutUs = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-primary text-white">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
-              Nossa História
-            </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Sobre Nós
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              Conectando sonhos a experiências inesquecíveis na Europa
-            </p>
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Background with overlay */}
+        <div className="absolute inset-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/lovable-uploads/ad9b424d-c4d1-4387-90df-0789a8a9e0c2.png')" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/90 via-brand-blue/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="container relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+            <div className="text-white space-y-8">
+              <div className="space-y-4">
+                <Badge variant="secondary" className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                  ✨ Nossa Jornada
+                </Badge>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                  Sobre 
+                  <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent block">
+                    Nós
+                  </span>
+                </h1>
+                <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl">
+                  Uma história de <strong>paixão</strong>, <strong>experiência</strong> e <strong>dedicação</strong> 
+                  em transformar sonhos de viagem em realidade.
+                </p>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="flex items-center gap-4 text-white/90">
+                  <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <Heart className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Fundada com Propósito</h3>
+                    <p className="text-white/80">Em 2023, em Portugal</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4 text-white/90">
+                  <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <Users className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Vanessa & Max Santos</h3>
+                    <p className="text-white/80">Especialistas em viagens europeias</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-white text-brand-blue hover:bg-white/90 shadow-elegant font-semibold px-8 py-4 text-lg"
+                  onClick={() => document.getElementById('nossa-historia')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Descobrir Nossa História
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm px-8 py-4 text-lg"
+                  onClick={() => window.open(`https://wa.me/351911734711?text=${encodeURIComponent('Olá! Gostaria de conhecer mais sobre os serviços da Viajar Pelo Mundo.')}`, '_blank')}
+                >
+                  Falar Conosco
+                </Button>
+              </div>
+            </div>
+            
+            <div className="relative lg:block hidden">
+              <div className="relative">
+                <div 
+                  className="w-80 h-96 rounded-3xl overflow-hidden shadow-2xl transform rotate-6 hover:rotate-3 transition-transform duration-500"
+                  style={{ backgroundImage: "url('/lovable-uploads/b24f0e12-9456-4407-aa14-f00fb5483042.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+                
+                <div className="absolute -bottom-6 -left-6 w-72 h-80 rounded-3xl overflow-hidden shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500 border-4 border-white/20">
+                  <div 
+                    className="w-full h-full bg-cover bg-center"
+                    style={{ backgroundImage: "url('/lovable-uploads/ad9b424d-c4d1-4387-90df-0789a8a9e0c2.png')" }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  </div>
+                </div>
+                
+                {/* Floating elements */}
+                <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center animate-pulse">
+                  <span className="text-2xl">✈️</span>
+                </div>
+                
+                <div className="absolute top-1/2 -left-8 w-16 h-16 rounded-full bg-brand-green/20 backdrop-blur-sm flex items-center justify-center animate-bounce">
+                  <span className="text-xl">🌍</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 animate-bounce">
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-sm">Deslize para conhecer</span>
+            <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Nossa História */}
-      <section className="py-20">
+      <section id="nossa-historia" className="py-20">
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
