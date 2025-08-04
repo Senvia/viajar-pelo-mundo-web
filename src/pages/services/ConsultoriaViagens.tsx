@@ -53,7 +53,7 @@ const processSteps = [
     icon: Search,
     title: "Elaboração da proposta de viagem",
     description: "Apresentamos um roteiro preliminar com sugestões de destinos, hospedagens, atividades, voos e experiências adaptadas ao seu estilo.",
-    image: "/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png"
+    image: "/lovable-uploads/c1a024d7-41f3-461a-9faf-b902a53ce7fc.png"
   },
   {
     icon: Settings,
