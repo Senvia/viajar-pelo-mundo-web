@@ -172,8 +172,7 @@ const ConsultoriaViagens = () => {
             </Button>
             <Button 
               size="lg" 
-              variant="outline" 
-              className="px-10 py-4 text-lg border-white text-white hover:bg-white hover:text-secondary shadow-2xl"
+              className="px-10 py-4 text-lg border-2 border-white text-white bg-transparent hover:bg-white hover:text-secondary shadow-2xl transition-all duration-300"
               onClick={handleWhatsApp}
             >
               <Phone className="w-5 h-5 mr-2" />
