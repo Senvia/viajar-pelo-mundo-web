@@ -27,6 +27,22 @@ const Footer = () => {
             </div>
           </div>
 
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Navegação</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="/" className="hover:text-brand-blue transition-colors">
+                  Início
+                </a>
+              </li>
+              <li>
+                <a href="/sobre-nos" className="hover:text-brand-blue transition-colors">
+                  Sobre Nós
+                </a>
+              </li>
+            </ul>
+          </div>
+
           {/* Services */}
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Serviços</h3>
@@ -49,33 +65,6 @@ const Footer = () => {
               <li>
                 <a href="/servicos/avulsos" className="hover:text-brand-blue transition-colors">
                   Serviços Avulsos
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Links Rápidos</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#about" className="hover:text-brand-blue transition-colors">
-                  Sobre Nós
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-brand-blue transition-colors">
-                  Nossos Serviços
-                </a>
-              </li>
-              <li>
-                <a href="#testimonials" className="hover:text-brand-blue transition-colors">
-                  Depoimentos
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-brand-blue transition-colors">
-                  Contato
                 </a>
               </li>
             </ul>

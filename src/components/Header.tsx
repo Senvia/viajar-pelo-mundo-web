@@ -53,7 +53,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           <button 
-            onClick={() => scrollToSection('about')}
+            onClick={() => window.location.href = '/sobre-nos'}
             className={`font-medium transition-all duration-300 hover:scale-105 ${
               isScrolled 
                 ? 'text-muted-foreground hover:text-primary' 
@@ -143,7 +143,7 @@ const Header = () => {
         <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-border/50 shadow-elegant">
           <div className="container py-6 space-y-4">
             <button 
-              onClick={() => scrollToSection('about')}
+              onClick={() => window.location.href = '/sobre-nos'}
               className="block w-full text-left font-medium text-muted-foreground hover:text-primary transition-colors py-2"
             >
               Sobre Nós
