@@ -339,7 +339,7 @@ const PacotesViagens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div 
-                  className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in"
+                  className="relative rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in"
                   style={{ backgroundImage: `url('/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png')` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -409,7 +409,7 @@ const PacotesViagens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div 
-                  className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in"
+                  className="relative rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in"
                   style={{ backgroundImage: `url('/lovable-uploads/24778b1c-f658-4c3b-8681-1404aa6fecba.png')` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
