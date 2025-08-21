@@ -198,8 +198,8 @@ const PacotesViagens = () => {
 
           <div className="space-y-12 max-w-7xl mx-auto">
             {packagesData.map((pkg, index) => (
-              <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full max-h-[800px]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px] lg:h-[800px]">
+              <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full max-h-[700px]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px] lg:h-[700px]">
                   {/* Package Content - Always Left */}
                   <div className="p-8 lg:p-12 flex flex-col justify-between bg-white overflow-y-auto">
                     <div className="space-y-6">
@@ -236,15 +236,12 @@ const PacotesViagens = () => {
                       <div>
                         <h4 className="font-semibold text-secondary mb-4">Principais experiências incluídas:</h4>
                         <div className="grid grid-cols-1 gap-2">
-                          {pkg.highlights.slice(0, 4).map((highlight, highlightIndex) => (
+                          {pkg.highlights.map((highlight, highlightIndex) => (
                             <div key={highlightIndex} className="flex items-start gap-2">
                               <Star className="w-4 h-4 text-brand-blue mt-1 flex-shrink-0" />
                               <span className="text-sm text-muted-foreground">{highlight}</span>
                             </div>
                           ))}
-                          {pkg.highlights.length > 4 && (
-                            <p className="text-sm text-brand-blue">+ {pkg.highlights.length - 4} mais experiências...</p>
-                          )}
                         </div>
                       </div>
 
