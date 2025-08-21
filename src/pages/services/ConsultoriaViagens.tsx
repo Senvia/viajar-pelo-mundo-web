@@ -308,7 +308,7 @@ const ConsultoriaViagens = () => {
                       <step.icon className="w-8 h-8 text-white" />
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-3xl font-bold text-brand-blue">{index + 1}</span>
+                      <span className="text-3xl font-bold text-secondary">{index + 1}</span>
                       <h3 className="text-2xl font-bold text-secondary">{step.title}</h3>
                     </div>
                   </div>
