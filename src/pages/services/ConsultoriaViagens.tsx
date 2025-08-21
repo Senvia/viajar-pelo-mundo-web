@@ -153,10 +153,10 @@ const ConsultoriaViagens = () => {
         
         <div className="relative container">
           <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] pb-2">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-secondary mb-8 leading-[1.1] pb-2 drop-shadow-lg">
               {consultoriaData.name}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
+            <p className="text-xl md:text-2xl text-secondary/90 mb-12 leading-relaxed max-w-3xl drop-shadow-md">
               A consultoria de viagem da Viajar Pelo Mundo é um serviço completo e personalizado que ajuda você a planejar cada detalhe da sua viagem internacional com segurança, economia e conforto.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
@@ -170,7 +170,7 @@ const ConsultoriaViagens = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="px-8 py-4 text-lg border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white backdrop-blur-sm"
+                className="px-8 py-4 text-lg border-2 border-secondary bg-white text-secondary hover:bg-secondary hover:text-white backdrop-blur-sm"
                 onClick={handleWhatsApp}
               >
                 <Phone className="w-5 h-5 mr-2" />
