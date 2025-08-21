@@ -79,7 +79,7 @@ const includedServices = [
     description: "Cuidamos de cada detalhe: destinos, roteiros, hospedagens, voos, transfers, seguro, chip de internet, passeios e experiências."
   },
   {
-    title: "Consultoria em tempo real",
+    title: "Acompanhamento em tempo real",
     description: "Acompanhamento durante o processo de decisão, com esclarecimento de dúvidas e ajustes no plano conforme necessário."
   },
   {
@@ -158,7 +158,7 @@ const ConsultoriaViagens = () => {
               {consultoriaData.name}
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
-              A consultoria de viagem da Viajar Pelo Mundo é um serviço completo e personalizado que ajuda você a planejar cada detalhe da sua viagem internacional com segurança, economia e conforto.
+              O planejamento de viagem personalizado da Viajar Pelo Mundo é um serviço completo que ajuda você a organizar cada detalhe da sua viagem internacional com segurança, economia e conforto.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Button 
@@ -166,7 +166,7 @@ const ConsultoriaViagens = () => {
                 className="px-8 py-4 text-lg bg-gradient-primary text-white hover:opacity-90 shadow-2xl"
                 onClick={handleFormLink}
               >
-                Solicitar Consultoria
+                Solicitar Planejamento
               </Button>
               <Button 
                 size="lg" 
@@ -188,7 +188,7 @@ const ConsultoriaViagens = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
-                Consultoria Personalizada
+                Planejamento Personalizado
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Transformamos seus sonhos de viagem em realidade com planejamento inteligente e atendimento humanizado
@@ -224,7 +224,7 @@ const ConsultoriaViagens = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-secondary">Valor</h3>
                     <p className="text-2xl font-bold text-brand-blue">{consultoriaData.price}</p>
-                    <p className="text-sm text-muted-foreground">Valor fixo por consultoria</p>
+                    <p className="text-sm text-muted-foreground">Valor fixo por planejamento</p>
                   </div>
                 </div>
 
@@ -234,7 +234,7 @@ const ConsultoriaViagens = () => {
                     className="w-full bg-gradient-primary hover:opacity-90 shadow-elegant text-lg py-4"
                     onClick={handleFormLink}
                   >
-                    Contratar Consultoria
+                    Contratar Planejamento
                   </Button>
                 </div>
               </div>
@@ -263,7 +263,7 @@ const ConsultoriaViagens = () => {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
-              Benefícios da Nossa Consultoria
+              Benefícios do Nosso Planejamento
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Um serviço completo que vai além do planejamento básico
@@ -295,7 +295,7 @@ const ConsultoriaViagens = () => {
               Processo em 4 Etapas
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Nossa consultoria abrange todas as etapas do planejamento da sua viagem, com atenção total aos detalhes e foco em transformar seus desejos em uma experiência inesquecível.
+              Nosso planejamento personalizado abrange todas as etapas da sua viagem, com atenção total aos detalhes e foco em transformar seus desejos em uma experiência inesquecível.
             </p>
           </div>
 
@@ -384,7 +384,7 @@ const ConsultoriaViagens = () => {
               className="px-10 py-4 text-lg bg-gradient-primary hover:opacity-90 shadow-elegant"
               onClick={handleFormLink}
             >
-              Solicitar Consultoria Agora
+              Solicitar Planejamento Agora
             </Button>
           </div>
         </div>
