@@ -36,8 +36,25 @@ const packagesData = [
       "Tour pelo Vale do Douro"
     ],
     description: "Uma jornada completa pelos encantos do Porto, combinando cultura, gastronomia e experiências únicas"
+  },
+  {
+    id: "lisboa-imperial",
+    name: "Lisboa Imperial",
+    destination: "Lisboa - Portugal",
+    duration: "5 dias e 4 noites",
+    price: "2.850 €",
+    priceNote: "Total para 02 Adultos em quarto duplo",
+    image: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png",
+    highlights: [
+      "Tour pelos bairros históricos",
+      "Visita ao Mosteiro dos Jerónimos",
+      "Experiência gastronômica em Belém",
+      "Passeio de elétrico tradicional",
+      "Espetáculo de Fado em Alfama",
+      "Excursão a Sintra e Cascais"
+    ],
+    description: "Descubra a majestosa capital portuguesa com suas tradições milenares, arquitetura deslumbrante e gastronomia única"
   }
-  // Novos pacotes serão adicionados aqui
 ];
 
 const PacotesViagens = () => {
@@ -91,9 +108,9 @@ const PacotesViagens = () => {
                 size="lg" 
                 variant="outline" 
                 className="px-8 py-4 text-lg border-2 border-secondary bg-white text-secondary hover:bg-secondary hover:text-white backdrop-blur-sm"
-                onClick={handleWhatsApp}
+                onClick={() => navigate('/admin/cadastrar-pacotes')}
               >
-                Falar Conosco
+                Cadastrar Pacote
               </Button>
             </div>
           </div>
@@ -112,24 +129,12 @@ const PacotesViagens = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-5xl mx-auto">
-            {packagesData.map((pkg) => (
-              <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  {/* Package Image */}
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={pkg.image}
-                      alt={pkg.name}
-                      className="w-full h-80 lg:h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <Badge className="bg-brand-dark text-white">Destaque</Badge>
-                    </div>
-                  </div>
-
-                  {/* Package Content */}
-                  <div className="p-8 lg:p-12 flex flex-col justify-between">
+          <div className="space-y-12">
+            {packagesData.map((pkg, index) => (
+              <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-auto lg:h-96">
+                  {/* Package Content - Always Left */}
+                  <div className={`p-8 lg:p-12 flex flex-col justify-between ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-1'}`}>
                     <div>
                       <h3 className="text-3xl font-bold text-secondary mb-4">{pkg.name}</h3>
                       <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -179,6 +184,18 @@ const PacotesViagens = () => {
                       Ver Mais Detalhes
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
+                  </div>
+
+                  {/* Package Image - Always Right */}
+                  <div className={`relative overflow-hidden ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-2'}`}>
+                    <img 
+                      src={pkg.image}
+                      alt={pkg.name}
+                      className="w-full h-80 lg:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-brand-dark text-white">Destaque</Badge>
+                    </div>
                   </div>
                 </div>
               </Card>
