@@ -199,7 +199,7 @@ const PacotesViagens = () => {
           <div className="space-y-12 max-w-7xl mx-auto">
             {packagesData.map((pkg, index) => (
               <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 max-h-[400px]">
                   {/* Package Content - Always Left */}
                   <div className="p-8 lg:p-12 flex flex-col justify-between bg-white">
                     <div className="space-y-6">
@@ -271,11 +271,11 @@ const PacotesViagens = () => {
                   </div>
 
                   {/* Package Gallery - Always Right */}
-                  <div className="relative overflow-hidden h-full min-h-[500px]">
+                  <div className="relative overflow-hidden h-full max-h-[400px]">
                     <img 
                       src={pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.image || pkg.image}
                       alt={pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.title || pkg.name}
-                      className="w-full h-full min-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full max-h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     
