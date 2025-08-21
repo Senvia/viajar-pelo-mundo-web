@@ -191,24 +191,15 @@ const PacotesViagens = () => {
                       </div>
                     </div>
 
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-3 mt-8">
+                    {/* CTA Button */}
+                    <div className="mt-8">
                       <Button 
                         size="lg" 
-                        className="bg-brand-dark hover:bg-brand-dark/90 text-white shadow-elegant flex-1"
+                        className="w-full bg-brand-dark hover:bg-brand-dark/90 text-white shadow-elegant"
                         onClick={() => handleViewPackage(pkg.id)}
                       >
                         Ver Mais Detalhes
                         <ArrowRight className="w-5 h-5 ml-2" />
-                      </Button>
-                      <Button 
-                        size="lg" 
-                        variant="outline"
-                        className="flex-1"
-                        onClick={handleWhatsApp}
-                      >
-                        <Phone className="w-5 h-5 mr-2" />
-                        Solicitar Orçamento
                       </Button>
                     </div>
                   </div>
