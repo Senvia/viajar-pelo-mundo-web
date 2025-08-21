@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -29,30 +28,12 @@ const packagesData = [
     priceNote: "Total para 02 Adultos em quarto duplo",
     image: "/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png",
     highlights: [
-      {
-        text: "City Tour privativo pelo Porto",
-        image: "/lovable-uploads/d473c4c5-98ec-4c93-ac26-d2dc26c06c80.png"
-      },
-      {
-        text: "Experiência vinícola no Museu WOW",
-        image: "/lovable-uploads/b98e1a54-f373-4e98-a573-a595c1c7a136.png"
-      },
-      {
-        text: "Workshop de Pastel de Nata",
-        image: "/lovable-uploads/c23fafcc-27fe-4e3a-b4aa-8061a9acfa1a.png"
-      },
-      {
-        text: "Cruzeiro gourmet ao pôr do sol",
-        image: "/lovable-uploads/78890d5a-286d-4b4f-b8a4-a5d44461d3d4.png"
-      },
-      {
-        text: "Espetáculo de Fado tradicional",
-        image: "/lovable-uploads/25dd2392-9644-42fa-88e9-bbdd6b07c1c3.png"
-      },
-      {
-        text: "Tour pelo Vale do Douro",
-        image: "/lovable-uploads/ef7988f2-f6cf-4a8b-bfcb-570ee025bb04.png"
-      }
+      "City Tour privativo pelo Porto",
+      "Experiência vinícola no Museu WOW",
+      "Workshop de Pastel de Nata",
+      "Cruzeiro gourmet ao pôr do sol",
+      "Espetáculo de Fado tradicional",
+      "Tour pelo Vale do Douro"
     ],
     description: "Uma jornada completa pelos encantos do Porto, combinando cultura, gastronomia e experiências únicas"
   },
@@ -65,30 +46,12 @@ const packagesData = [
     priceNote: "Total para 02 Adultos em quarto duplo",
     image: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png",
     highlights: [
-      {
-        text: "Tour pelos bairros históricos",
-        image: "/lovable-uploads/a886c0ec-c4fb-4beb-ac44-aebb732c3676.png"
-      },
-      {
-        text: "Visita ao Mosteiro dos Jerónimos",
-        image: "/lovable-uploads/89d275a3-14eb-4066-a880-e885f17c2dd0.png"
-      },
-      {
-        text: "Experiência gastronômica em Belém",
-        image: "/lovable-uploads/604537d9-c3eb-430c-9d01-820b1bec9336.png"
-      },
-      {
-        text: "Passeio de elétrico tradicional",
-        image: "/lovable-uploads/167e296a-843b-41b6-b556-42ac23882921.png"
-      },
-      {
-        text: "Espetáculo de Fado em Alfama",
-        image: "/lovable-uploads/95d11633-6490-46ce-a33b-b0a82aced13e.png"
-      },
-      {
-        text: "Excursão a Sintra e Cascais",
-        image: "/lovable-uploads/f66305b1-a495-44b6-9ca9-f94713bf3c3f.png"
-      }
+      "Tour pelos bairros históricos",
+      "Visita ao Mosteiro dos Jerónimos",
+      "Experiência gastronômica em Belém",
+      "Passeio de elétrico tradicional",
+      "Espetáculo de Fado em Alfama",
+      "Excursão a Sintra e Cascais"
     ],
     description: "Descubra a majestosa capital portuguesa com suas tradições milenares, arquitetura deslumbrante e gastronomia única"
   }
@@ -96,7 +59,6 @@ const packagesData = [
 
 const PacotesViagens = () => {
   const navigate = useNavigate();
-  const [currentImageIndexes, setCurrentImageIndexes] = useState<{[key: string]: number}>({});
 
   const handleViewPackage = (packageId: string) => {
     navigate(`/servicos/pacotes/${packageId}`);
@@ -104,17 +66,6 @@ const PacotesViagens = () => {
 
   const handleWhatsApp = () => {
     window.open('https://wa.me/351911734711?text=Olá! Gostaria de saber mais sobre os pacotes de viagem.', '_blank');
-  };
-
-  const setCurrentImageIndex = (packageId: string, index: number) => {
-    setCurrentImageIndexes(prev => ({
-      ...prev,
-      [packageId]: index
-    }));
-  };
-
-  const getCurrentImageIndex = (packageId: string) => {
-    return currentImageIndexes[packageId] || 0;
   };
 
   return (
@@ -182,68 +133,66 @@ const PacotesViagens = () => {
           <div className="space-y-12 max-w-7xl mx-auto">
             {packagesData.map((pkg, index) => (
               <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px]">
                   {/* Package Content - Always Left */}
-                  <div className="p-6 lg:p-8 flex flex-col justify-between bg-white">
-                    <div className="space-y-4">
+                  <div className="p-8 lg:p-12 flex flex-col justify-between bg-white">
+                    <div className="space-y-6">
                       <div>
-                        <h3 className="text-2xl lg:text-3xl font-bold text-secondary mb-3">{pkg.name}</h3>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <h3 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">{pkg.name}</h3>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
                           {pkg.description}
                         </p>
                       </div>
 
                       {/* Package Details */}
-                      <div className="flex items-center gap-6">
-                        <div className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4 text-brand-blue" />
-                          <span className="text-sm text-muted-foreground">{pkg.destination}</span>
+                      <div className="grid grid-cols-1 gap-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
+                            <MapPin className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">Destino</p>
+                            <p className="font-semibold text-secondary">{pkg.destination}</p>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4 text-brand-blue" />
-                          <span className="text-sm text-muted-foreground">{pkg.duration}</span>
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
+                            <Calendar className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">Duração</p>
+                            <p className="font-semibold text-secondary">{pkg.duration}</p>
+                          </div>
                         </div>
                       </div>
 
-                      {/* Highlights - Interactive Gallery */}
+                      {/* Highlights */}
                       <div>
-                        <h4 className="font-semibold text-secondary mb-3">Principais experiências:</h4>
-                        <div className="grid grid-cols-1 gap-1">
-                          {pkg.highlights.slice(0, 3).map((highlight, highlightIndex) => (
-                            <div 
-                              key={highlightIndex} 
-                              className={`flex items-center gap-2 cursor-pointer transition-all duration-300 p-2 rounded-lg text-sm ${
-                                getCurrentImageIndex(pkg.id) === highlightIndex 
-                                  ? 'bg-primary/10 text-primary font-medium' 
-                                  : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground'
-                              }`}
-                              onClick={() => setCurrentImageIndex(pkg.id, highlightIndex)}
-                            >
-                              <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
-                                getCurrentImageIndex(pkg.id) === highlightIndex 
-                                  ? 'bg-primary' 
-                                  : 'bg-muted-foreground/40'
-                              }`} />
-                              <span>{highlight.text}</span>
+                        <h4 className="font-semibold text-secondary mb-4">Principais experiências incluídas:</h4>
+                        <div className="grid grid-cols-1 gap-2">
+                          {pkg.highlights.slice(0, 4).map((highlight, highlightIndex) => (
+                            <div key={highlightIndex} className="flex items-start gap-2">
+                              <Star className="w-4 h-4 text-brand-blue mt-1 flex-shrink-0" />
+                              <span className="text-sm text-muted-foreground">{highlight}</span>
                             </div>
                           ))}
-                          {pkg.highlights.length > 3 && (
-                            <p className="text-xs text-brand-blue ml-4">+ {pkg.highlights.length - 3} mais experiências</p>
+                          {pkg.highlights.length > 4 && (
+                            <p className="text-sm text-brand-blue">+ {pkg.highlights.length - 4} mais experiências...</p>
                           )}
                         </div>
                       </div>
 
                       {/* Price */}
-                      <div className="bg-gradient-to-r from-brand-blue/5 to-primary/5 rounded-lg p-4">
-                        <div className="flex items-baseline gap-2">
-                          <span className="text-2xl font-bold text-brand-blue">{pkg.price}</span>
+                      <div className="bg-muted/30 rounded-lg p-4">
+                        <div className="flex items-baseline gap-2 mb-1">
+                          <span className="text-3xl font-bold text-brand-blue">{pkg.price}</span>
                         </div>
-                        <p className="text-xs text-muted-foreground">{pkg.priceNote}</p>
+                        <p className="text-sm text-muted-foreground">{pkg.priceNote}</p>
                       </div>
                     </div>
 
                     {/* CTA Button */}
-                    <div className="mt-6">
+                    <div className="mt-8">
                       <Button 
                         size="lg" 
                         className="w-full bg-brand-dark hover:bg-brand-dark/90 text-white shadow-elegant"
@@ -255,38 +204,21 @@ const PacotesViagens = () => {
                     </div>
                   </div>
 
-                  {/* Package Gallery - Always Right */}
+                  {/* Package Image - Always Right */}
                   <div className="relative overflow-hidden">
-                    <div className="relative h-64 lg:h-72">
-                      <img 
-                        src={pkg.highlights[getCurrentImageIndex(pkg.id)]?.image || pkg.image}
-                        alt={pkg.highlights[getCurrentImageIndex(pkg.id)]?.text || pkg.name}
-                        className="w-full h-full object-cover transition-all duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                      
-                      {/* Navigation Dots - Smaller and cleaner */}
-                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1">
-                        {pkg.highlights.slice(0, 4).map((_, dotIndex) => (
-                          <button
-                            key={dotIndex}
-                            onClick={() => setCurrentImageIndex(pkg.id, dotIndex)}
-                            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                              getCurrentImageIndex(pkg.id) === dotIndex 
-                                ? 'bg-white w-4' 
-                                : 'bg-white/60 hover:bg-white/80'
-                            }`}
-                          />
-                        ))}
-                      </div>
-
-                      {/* Experience Title Overlay - Smaller */}
-                      <div className="absolute bottom-4 left-4 right-16">
-                        <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
-                          <p className="text-xs font-medium text-secondary truncate">
-                            {pkg.highlights[getCurrentImageIndex(pkg.id)]?.text}
-                          </p>
-                        </div>
+                    <img 
+                      src={pkg.image}
+                      alt={pkg.name}
+                      className="w-full h-full min-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    <div className="absolute top-6 left-6">
+                      <Badge className="bg-white/90 text-secondary backdrop-blur-sm">Pacote Exclusivo</Badge>
+                    </div>
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
+                        <p className="text-sm font-medium text-secondary">📍 {pkg.destination}</p>
+                        <p className="text-xs text-muted-foreground mt-1">⏱️ {pkg.duration}</p>
                       </div>
                     </div>
                   </div>

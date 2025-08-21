@@ -11,7 +11,7 @@ import PacotesViagens from "./pages/services/PacotesViagens";
 import ConsultoriaEuropa from "./pages/services/ConsultoriaEuropa";
 import ServicosAvulsos from "./pages/services/ServicosAvulsos";
 import ConsultoriaViagens from "./pages/services/ConsultoriaViagens";
-import PackageDetails from "./pages/services/pacotes/PackageDetails";
+import PortugalEssence from "./pages/services/pacotes/PortugalEssence";
 import CadastrarPacotes from "./pages/admin/CadastrarPacotes";
 import Dashboard from "./pages/admin/Dashboard";
 
@@ -31,7 +31,7 @@ const App = () => (
           <Route path="/servicos/consultoria-europa" element={<ConsultoriaEuropa />} />
           <Route path="/servicos/avulsos" element={<ServicosAvulsos />} />
           <Route path="/servicos/consultoria-viagens" element={<ConsultoriaViagens />} />
-          <Route path="/servicos/pacotes/:packageId" element={<PackageDetails />} />
+          <Route path="/servicos/pacotes/portugal-essence" element={<PortugalEssence />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/cadastrar-pacotes" element={<CadastrarPacotes />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
