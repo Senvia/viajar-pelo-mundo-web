@@ -108,9 +108,10 @@ const PacotesViagens = () => {
                 size="lg" 
                 variant="outline" 
                 className="px-8 py-4 text-lg border-2 border-secondary bg-white text-secondary hover:bg-secondary hover:text-white backdrop-blur-sm"
-                onClick={() => navigate('/admin/cadastrar-pacotes')}
+                onClick={handleWhatsApp}
               >
-                Cadastrar Pacote
+                <Phone className="w-5 h-5 mr-2" />
+                Falar Conosco
               </Button>
             </div>
           </div>
