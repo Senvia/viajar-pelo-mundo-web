@@ -159,10 +159,6 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
         
         <div className="relative container">
           <div className="max-w-4xl">
-            <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30 backdrop-blur-sm">
-              <Star className="w-4 h-4 mr-2" />
-              Especialistas em Imigração
-            </Badge>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] pb-2">
               Consultoria para
               <span className="block text-white">
