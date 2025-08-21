@@ -198,8 +198,8 @@ const ConsultoriaViagens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <Star className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Star className="w-8 h-8 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-secondary">Especialidade</h3>
@@ -208,8 +208,8 @@ const ConsultoriaViagens = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Clock className="w-8 h-8 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-secondary">Duração</h3>
@@ -218,8 +218,8 @@ const ConsultoriaViagens = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <CreditCard className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <CreditCard className="w-8 h-8 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-secondary">Valor</h3>
@@ -304,8 +304,8 @@ const ConsultoriaViagens = () => {
               <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                 <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                      <step.icon className="w-6 h-6 text-white" />
+                    <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                      <step.icon className="w-8 h-8 text-white" />
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-3xl font-bold text-brand-blue">{index + 1}</span>

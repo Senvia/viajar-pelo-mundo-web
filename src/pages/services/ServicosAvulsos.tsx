@@ -130,7 +130,7 @@ const ServicosAvulsos = () => {
             {services.map((service, index) => (
               <Card key={index} className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
                 <CardHeader className="pb-4">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-primary flex items-center justify-center">
                     <service.icon className="h-8 w-8 text-white" />
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
@@ -174,7 +174,7 @@ const ServicosAvulsos = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
                     1
                   </div>
                   <div>
@@ -186,7 +186,7 @@ const ServicosAvulsos = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
                     2
                   </div>
                   <div>
@@ -198,7 +198,7 @@ const ServicosAvulsos = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-brand-green text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-brand-green text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
                     3
                   </div>
                   <div>
@@ -210,7 +210,7 @@ const ServicosAvulsos = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-brand-green text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-brand-green text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
                     4
                   </div>
                   <div>

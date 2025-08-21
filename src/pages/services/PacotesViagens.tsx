@@ -230,8 +230,8 @@ const PacotesViagens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <MapPin className="w-8 h-8 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-secondary">Destino</h3>
@@ -240,8 +240,8 @@ const PacotesViagens = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <Calendar className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Calendar className="w-8 h-8 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-secondary">Duração</h3>
@@ -250,8 +250,8 @@ const PacotesViagens = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <Star className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Star className="w-8 h-8 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-secondary">Preço</h3>
@@ -307,8 +307,8 @@ const PacotesViagens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <Car className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Car className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-secondary">Traslado de Luxo</h3>
                 </div>
@@ -347,8 +347,8 @@ const PacotesViagens = () => {
               </div>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <Camera className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Camera className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-secondary">City Tour Privativo</h3>
                 </div>
@@ -372,8 +372,8 @@ const PacotesViagens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <Wine className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Wine className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-secondary">Mundo do Vinho</h3>
                 </div>
@@ -417,8 +417,8 @@ const PacotesViagens = () => {
               </div>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <Music className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Music className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-secondary">Tradições Portuguesas</h3>
                 </div>
@@ -442,8 +442,8 @@ const PacotesViagens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
-                    <Palette className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <Palette className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-secondary">Arte & Bem-estar</h3>
                 </div>
