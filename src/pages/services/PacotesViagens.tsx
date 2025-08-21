@@ -184,7 +184,7 @@ const PacotesViagens = () => {
               <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   {/* Package Content - Always Left */}
-                  <div className="p-6 lg:p-8 flex flex-col justify-between bg-white min-h-[400px]">
+                  <div className="p-6 lg:p-8 flex flex-col justify-between bg-white">
                     <div className="space-y-4">
                       <div>
                         <h3 className="text-2xl lg:text-3xl font-bold text-secondary mb-3">{pkg.name}</h3>
@@ -257,7 +257,7 @@ const PacotesViagens = () => {
 
                   {/* Package Gallery - Always Right */}
                   <div className="relative overflow-hidden">
-                    <div className="relative h-96 lg:h-full min-h-[400px]">
+                    <div className="relative h-64 lg:h-72">
                       <img 
                         src={pkg.highlights[getCurrentImageIndex(pkg.id)]?.image || pkg.image}
                         alt={pkg.highlights[getCurrentImageIndex(pkg.id)]?.text || pkg.name}
