@@ -201,7 +201,7 @@ const PacotesViagens = () => {
               <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full max-h-[700px]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px] lg:h-[700px]">
                   {/* Package Content - Always Left */}
-                  <div className="p-8 lg:p-12 flex flex-col justify-between bg-white overflow-y-auto">
+                  <div className="p-8 lg:p-12 flex flex-col justify-between bg-white">
                     <div className="space-y-6">
                       <div>
                         <h3 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">{pkg.name}</h3>
