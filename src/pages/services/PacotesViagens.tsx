@@ -198,8 +198,8 @@ const PacotesViagens = () => {
 
           <div className="space-y-12 max-w-7xl mx-auto">
             {packagesData.map((pkg, index) => (
-              <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full max-h-[700px]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px] lg:h-[700px]">
+              <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full max-h-[800px]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px] lg:h-[800px]">
                   {/* Package Content - Always Left */}
                   <div className="p-8 lg:p-12 flex flex-col justify-between bg-white">
                     <div className="space-y-6">
