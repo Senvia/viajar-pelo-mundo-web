@@ -40,11 +40,12 @@ All colors MUST be HSL.
 
     /* Custom brand colors */
     --brand-blue: 197 82% 56%;
-    --brand-dark: 204 61% 16%;
+    --brand-dark: 203 61% 17%;
     --brand-green: 158 56% 58%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(204, 61%, 16%), hsl(197, 82%, 56%));
+    --gradient-primary: linear-gradient(135deg, hsl(203, 61%, 17%), hsl(197, 82%, 56%));
+    --gradient-icons: linear-gradient(135deg, hsl(158, 64%, 65%), hsl(175, 58%, 70%));
     --gradient-hero: linear-gradient(135deg, rgba(16, 49, 66, 0.8), rgba(50, 183, 234, 0.6));
     
     /* Shadows */

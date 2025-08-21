@@ -163,7 +163,7 @@ const ConsultoriaViagens = () => {
             <div className="flex flex-col sm:flex-row gap-6">
               <Button 
                 size="lg" 
-                className="px-8 py-4 text-lg bg-gradient-primary text-white hover:opacity-90 shadow-2xl"
+                className="px-8 py-4 text-lg bg-brand-dark text-white hover:bg-brand-dark/90 shadow-2xl"
                 onClick={handleFormLink}
               >
                 Solicitar Planejamento
@@ -198,7 +198,7 @@ const ConsultoriaViagens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
                     <Star className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -208,7 +208,7 @@ const ConsultoriaViagens = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
                     <Clock className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -218,7 +218,7 @@ const ConsultoriaViagens = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
                     <CreditCard className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -231,7 +231,7 @@ const ConsultoriaViagens = () => {
                 <div className="pt-6">
                   <Button 
                     size="lg" 
-                    className="w-full bg-gradient-primary hover:opacity-90 shadow-elegant text-lg py-4"
+                    className="w-full bg-brand-dark hover:bg-brand-dark/90 shadow-elegant text-lg py-4 text-white"
                     onClick={handleFormLink}
                   >
                     Contratar Planejamento
@@ -275,7 +275,7 @@ const ConsultoriaViagens = () => {
               <Card key={index} className="p-6 border-2 hover:border-primary/20 transition-colors">
                 <CardContent className="p-0">
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
                       <CheckCircle className="w-8 h-8 text-white" />
                     </div>
                     <p className="text-xl text-muted-foreground leading-relaxed">{benefit}</p>
@@ -304,7 +304,7 @@ const ConsultoriaViagens = () => {
               <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                 <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
                       <step.icon className="w-8 h-8 text-white" />
                     </div>
                     <div className="flex items-center gap-3">
@@ -352,7 +352,7 @@ const ConsultoriaViagens = () => {
                 {includedServices.map((service, index) => (
                   <div key={index} className="space-y-2">
                     <div className="flex items-start gap-4">
-                      <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                      <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
                         <CheckCircle className="w-8 h-8 text-white" />
                       </div>
                       <div>
@@ -381,7 +381,7 @@ const ConsultoriaViagens = () => {
           <div className="text-center mt-12">
             <Button 
               size="lg" 
-              className="px-10 py-4 text-lg bg-gradient-primary hover:opacity-90 shadow-elegant"
+              className="px-10 py-4 text-lg bg-brand-dark hover:bg-brand-dark/90 shadow-elegant text-white"
               onClick={handleFormLink}
             >
               Solicitar Planejamento Agora
