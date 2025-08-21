@@ -173,7 +173,7 @@ const TravelGallery = () => {
           </p>
           <button 
             onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-primary text-white rounded-lg hover:opacity-90 transition-all duration-300 shadow-elegant hover:scale-105 font-semibold"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-brand-dark text-white rounded-lg hover:bg-brand-dark/90 transition-all duration-300 shadow-elegant hover:scale-105 font-semibold"
           >
             Planeie a Sua Viagem
           </button>

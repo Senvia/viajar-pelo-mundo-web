@@ -62,7 +62,7 @@ const AtividadesTuristicas = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-primary text-white">
+      <section className="pt-20 pb-16 bg-brand-dark text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
@@ -113,7 +113,7 @@ const AtividadesTuristicas = () => {
             {activities.map((activity, index) => (
               <Card key={index} className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-2">
                 <CardHeader className="pb-4">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-icons flex items-center justify-center">
                     <activity.icon className="h-8 w-8 text-white" />
                   </div>
                   <CardTitle className="text-xl">{activity.title}</CardTitle>
@@ -168,7 +168,7 @@ const AtividadesTuristicas = () => {
                     ))}
                   </div>
                   <Button 
-                    className="w-full mt-6 bg-gradient-primary hover:opacity-90"
+                    className="w-full mt-6 bg-brand-dark hover:bg-brand-dark/90 text-white"
                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Ver Atividades em {destination.city}
@@ -263,7 +263,7 @@ const AtividadesTuristicas = () => {
               <div className="text-center">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-primary hover:opacity-90 shadow-elegant"
+                  className="bg-brand-dark hover:bg-brand-dark/90 shadow-elegant text-white"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Reservar Atividade

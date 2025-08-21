@@ -137,7 +137,7 @@ Mensagem: ${formData.message}`;
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-primary hover:opacity-90 shadow-elegant"
+                    className="w-full bg-brand-dark hover:bg-brand-dark/90 shadow-elegant text-white"
                     size="lg"
                   >
                     Enviar Solicitação via WhatsApp
@@ -155,7 +155,7 @@ Mensagem: ${formData.message}`;
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
                     <Phone className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -172,7 +172,7 @@ Mensagem: ${formData.message}`;
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
                     <Mail className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -187,7 +187,7 @@ Mensagem: ${formData.message}`;
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
                     <MapPin className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -204,7 +204,7 @@ Mensagem: ${formData.message}`;
                 </div>
                 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
                     <Instagram className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -232,7 +232,7 @@ Mensagem: ${formData.message}`;
               </CardContent>
             </Card>
             
-            <Card className="shadow-card bg-gradient-primary text-white">
+            <Card className="shadow-card bg-brand-dark text-white">
               <CardContent className="p-6 text-center">
                 <h3 className="font-bold text-lg mb-2">Primeira Consulta</h3>
                 <p className="text-white/90 mb-4">

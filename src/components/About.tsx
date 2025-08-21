@@ -72,7 +72,7 @@ const About = () => {
               {values.map((value, index) => (
                 <Card key={index} className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-gradient-primary flex items-center justify-center">
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-gradient-icons flex items-center justify-center">
                       <value.icon className="h-6 w-6 text-white" />
                     </div>
                     <h4 className="font-bold text-secondary mb-2">{value.title}</h4>

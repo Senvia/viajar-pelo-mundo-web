@@ -14,7 +14,7 @@ const AboutUs = () => {
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 min-h-[80vh] flex items-center">
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-primary"></div>
+        <div className="absolute inset-0 bg-brand-dark"></div>
         
         {/* Content */}
         <div className="container relative z-10">
@@ -224,7 +224,7 @@ const AboutUs = () => {
                 </p>
                 <Button 
                   size="lg" 
-                  className="bg-gradient-primary hover:opacity-90"
+                  className="bg-brand-dark hover:bg-brand-dark/90 text-white"
                   onClick={() => window.open(`https://wa.me/351911734711?text=${encodeURIComponent('Olá! Gostaria de conhecer mais sobre os serviços da Viajar Pelo Mundo.')}`, '_blank')}
                 >
                   Fale Conosco
@@ -251,7 +251,7 @@ const AboutUs = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-gradient-primary hover:opacity-90"
+                className="bg-brand-dark hover:bg-brand-dark/90 text-white"
                 onClick={() => window.open(`https://wa.me/351911734711?text=${encodeURIComponent('Olá! Gostaria de conhecer mais sobre o Portugal Essence - turismo de luxo.')}`, '_blank')}
               >
                 Conheça o Portugal Essence

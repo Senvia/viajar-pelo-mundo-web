@@ -119,7 +119,7 @@ const Header = () => {
 
         {/* CTA Button */}
         <Button 
-          className="hidden lg:inline-flex bg-gradient-primary hover:opacity-90 shadow-elegant font-semibold px-6 py-3 transition-all duration-300 hover:scale-105"
+          className="hidden lg:inline-flex bg-brand-dark hover:bg-brand-dark/90 shadow-elegant font-semibold px-6 py-3 transition-all duration-300 hover:scale-105 text-white"
           onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
         >
           Marcar Consultoria
@@ -187,7 +187,7 @@ const Header = () => {
             </button>
             
             <Button 
-              className="w-full bg-gradient-primary hover:opacity-90 shadow-elegant font-semibold"
+              className="w-full bg-brand-dark hover:bg-brand-dark/90 shadow-elegant font-semibold text-white"
               onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
             >
               Marcar Consultoria

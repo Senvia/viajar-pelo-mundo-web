@@ -93,7 +93,7 @@ const TravelInteractiveBentoGallery = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-gradient-primary hover:opacity-90 shadow-elegant px-8 py-4 text-lg font-semibold group"
+                className="bg-brand-dark hover:bg-brand-dark/90 shadow-elegant px-8 py-4 text-lg font-semibold group text-white"
                 onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
               >
                 Planejar Minha Viagem

@@ -123,7 +123,7 @@ const Services = () => {
         </div>
         
         <div className="text-center mt-20">
-          <Card className="inline-block p-8 bg-gradient-primary text-white border-0">
+          <Card className="inline-block p-8 bg-brand-dark text-white border-0">
             <h3 className="text-2xl font-bold mb-4">
               Pronto para sua próxima aventura?
             </h3>
@@ -164,7 +164,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
       <div className={`space-y-8 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
               <service.icon className="h-8 w-8 text-white" />
             </div>
             <div>
@@ -214,7 +214,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               size="lg"
-              className="bg-gradient-primary hover:opacity-90 shadow-elegant px-8"
+              className="bg-brand-dark hover:bg-brand-dark/90 shadow-elegant px-8 text-white"
               onClick={() => window.location.href = service.href}
             >
               Saiba Mais

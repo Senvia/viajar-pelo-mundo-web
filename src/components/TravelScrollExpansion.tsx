@@ -29,14 +29,14 @@ const ServiceHighlight = ({ icon: Icon, title, description, price, cta, onClick 
   onClick: () => void;
 }) => (
   <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-elegant hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+    <div className="w-16 h-16 bg-gradient-icons rounded-2xl flex items-center justify-center mb-6 shadow-lg">
       <Icon className="w-8 h-8 text-white" />
     </div>
     <h3 className="text-2xl font-bold text-secondary mb-4">{title}</h3>
     <p className="text-muted-foreground leading-relaxed mb-6">{description}</p>
     <div className="text-2xl font-bold text-primary mb-6">{price}</div>
     <Button 
-      className="w-full bg-gradient-primary hover:opacity-90 shadow-elegant font-semibold group"
+      className="w-full bg-brand-dark hover:bg-brand-dark/90 shadow-elegant font-semibold group text-white"
       onClick={onClick}
     >
       {cta}

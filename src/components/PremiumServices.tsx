@@ -151,7 +151,7 @@ const PremiumServices = () => {
                   <div className="space-y-6">
                     <CardHeader className="p-0">
                       <div className="flex items-start gap-4 mb-4">
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-elegant">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-icons flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-elegant">
                           <service.icon className="h-8 w-8 text-white" />
                         </div>
                         
@@ -193,7 +193,7 @@ const PremiumServices = () => {
                       {/* CTA Button */}
                       <Button 
                         size="lg"
-                        className="bg-gradient-primary hover:opacity-90 shadow-elegant font-semibold group/btn"
+                        className="bg-brand-dark hover:bg-brand-dark/90 shadow-elegant font-semibold group/btn text-white"
                         onClick={service.ctaAction}
                       >
                         <span>{service.cta}</span>
@@ -238,7 +238,7 @@ const PremiumServices = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-gradient-primary hover:opacity-90 shadow-elegant px-8 py-4 text-lg font-semibold group"
+                className="bg-brand-dark hover:bg-brand-dark/90 shadow-elegant px-8 py-4 text-lg font-semibold group text-white"
                 onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
               >
                 <Phone className="mr-2 w-5 h-5" />

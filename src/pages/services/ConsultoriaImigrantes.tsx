@@ -287,7 +287,7 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
             {services.map((service, index) => (
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-white/80 backdrop-blur-sm">
                 <CardHeader className="pb-4">
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-icons flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <service.icon className="h-8 w-8 text-white" />
                   </div>
                   <CardTitle className="text-xl text-center">{service.title}</CardTitle>
@@ -327,7 +327,7 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
               {processSteps.map((step, index) => (
                 <div key={index} className="flex gap-8 items-start group">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center text-white text-2xl font-bold group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center text-white text-2xl font-bold group-hover:scale-110 transition-transform duration-300">
                       {step.step}
                     </div>
                   </div>
@@ -470,7 +470,7 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
                     <Button 
                       type="button"
                       size="lg" 
-                      className="w-full h-14 text-lg bg-gradient-primary hover:opacity-90 shadow-xl"
+                      className="w-full h-14 text-lg bg-brand-dark hover:bg-brand-dark/90 shadow-xl text-white"
                       onClick={handleWhatsAppContact}
                     >
                       <MessageCircle className="mr-3 h-6 w-6" />

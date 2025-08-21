@@ -68,7 +68,7 @@ const Testimonials = () => {
             href="https://wa.me/message/YNHNAUM2BAAHD1" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-primary text-white rounded-lg hover:opacity-90 transition-opacity shadow-elegant"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-dark text-white rounded-lg hover:bg-brand-dark/90 transition-opacity shadow-elegant"
           >
             Fale Conosco no WhatsApp
           </a>

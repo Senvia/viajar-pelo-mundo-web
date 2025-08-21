@@ -194,7 +194,7 @@ const PacotesViagens = () => {
             <div className="flex flex-col sm:flex-row gap-6">
               <Button 
                 size="lg" 
-                className="px-8 py-4 text-lg bg-gradient-primary text-white hover:opacity-90 shadow-2xl"
+                className="px-8 py-4 text-lg bg-brand-dark text-white hover:bg-brand-dark/90 shadow-2xl"
                 onClick={handleBooking}
               >
                 Reservar Agora
@@ -230,7 +230,7 @@ const PacotesViagens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
                     <MapPin className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -240,7 +240,7 @@ const PacotesViagens = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
                     <Calendar className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -250,7 +250,7 @@ const PacotesViagens = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
                     <Star className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -263,7 +263,7 @@ const PacotesViagens = () => {
                 <div className="pt-6">
                   <Button 
                     size="lg" 
-                    className="w-full bg-gradient-primary hover:opacity-90 shadow-elegant text-lg py-4"
+                    className="w-full bg-brand-dark hover:bg-brand-dark/90 shadow-elegant text-lg py-4 text-white"
                     onClick={handleBooking}
                   >
                     Reservar Este Pacote
@@ -307,7 +307,7 @@ const PacotesViagens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
                     <Car className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-secondary">Traslado de Luxo</h3>
@@ -347,7 +347,7 @@ const PacotesViagens = () => {
               </div>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
                     <Camera className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-secondary">City Tour Privativo</h3>
@@ -372,7 +372,7 @@ const PacotesViagens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
                     <Wine className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-secondary">Mundo do Vinho</h3>
@@ -417,7 +417,7 @@ const PacotesViagens = () => {
               </div>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
                     <Music className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-secondary">Tradições Portuguesas</h3>
@@ -442,7 +442,7 @@ const PacotesViagens = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
                     <Palette className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-secondary">Arte & Bem-estar</h3>
@@ -696,7 +696,7 @@ const PacotesViagens = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-primary text-white">
+      <section className="py-20 bg-brand-dark text-white">
         <div className="container text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Pronto Para Sua Aventura Portuguesa?
