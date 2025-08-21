@@ -94,13 +94,13 @@ const ServicosAvulsos = () => {
               o que precisa sem compromisso com pacotes completos.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <Button 
-                size="lg" 
-                className="px-8 py-4 text-lg bg-gradient-primary text-white hover:opacity-90 shadow-2xl"
-                onClick={() => window.open('https://wa.me/351911734711', '_blank')}
-              >
-                Solicitar Orçamento
-              </Button>
+                <Button 
+                  size="lg" 
+                  className="px-8 py-4 text-lg bg-brand-dark text-white hover:bg-brand-dark/90 shadow-2xl"
+                  onClick={() => window.open('https://wa.me/351911734711', '_blank')}
+                >
+                  Solicitar Orçamento
+                </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
@@ -130,7 +130,7 @@ const ServicosAvulsos = () => {
             {services.map((service, index) => (
               <Card key={index} className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
                 <CardHeader className="pb-4">
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-primary flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-icons flex items-center justify-center">
                     <service.icon className="h-8 w-8 text-white" />
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
@@ -146,7 +146,7 @@ const ServicosAvulsos = () => {
                     ))}
                   </ul>
                   <Button 
-                    className="w-full bg-gradient-primary hover:opacity-90 mt-auto"
+                    className="w-full bg-brand-dark hover:bg-brand-dark/90 mt-auto text-white"
                     onClick={() => window.open(`https://wa.me/351911734711?text=${encodeURIComponent(service.whatsappMessage)}`, '_blank')}
                   >
                     Solicitar
@@ -174,7 +174,7 @@ const ServicosAvulsos = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
                     1
                   </div>
                   <div>
@@ -186,7 +186,7 @@ const ServicosAvulsos = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
                     2
                   </div>
                   <div>
@@ -198,7 +198,7 @@ const ServicosAvulsos = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 rounded-full bg-brand-green text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
                     3
                   </div>
                   <div>
@@ -210,7 +210,7 @@ const ServicosAvulsos = () => {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 rounded-full bg-brand-green text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
                     4
                   </div>
                   <div>
@@ -278,7 +278,7 @@ const ServicosAvulsos = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-primary hover:opacity-90 px-8"
+                  className="bg-brand-dark hover:bg-brand-dark/90 px-8 text-white"
                   onClick={() => window.open('https://wa.me/351911734711', '_blank')}
                 >
                   Solicitar Orçamento Grátis
