@@ -182,90 +182,68 @@ const PacotesViagens = () => {
           <div className="space-y-12 max-w-7xl mx-auto">
             {packagesData.map((pkg, index) => (
               <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-auto lg:h-80">
                   {/* Package Content - Always Left */}
-                  <div className="p-8 lg:p-12 flex flex-col justify-between bg-white">
-                    <div className="space-y-6">
+                  <div className="p-6 lg:p-8 flex flex-col justify-between bg-white">
+                    <div className="space-y-4">
                       <div>
-                        <h3 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">{pkg.name}</h3>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <h3 className="text-2xl lg:text-3xl font-bold text-secondary mb-3">{pkg.name}</h3>
+                        <p className="text-muted-foreground leading-relaxed">
                           {pkg.description}
                         </p>
                       </div>
 
                       {/* Package Details */}
-                      <div className="grid grid-cols-1 gap-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
-                            <MapPin className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <p className="text-sm text-muted-foreground">Destino</p>
-                            <p className="font-semibold text-secondary">{pkg.destination}</p>
-                          </div>
+                      <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4 text-brand-blue" />
+                          <span className="text-sm text-muted-foreground">{pkg.destination}</span>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
-                            <Calendar className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <p className="text-sm text-muted-foreground">Duração</p>
-                            <p className="font-semibold text-secondary">{pkg.duration}</p>
-                          </div>
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-4 h-4 text-brand-blue" />
+                          <span className="text-sm text-muted-foreground">{pkg.duration}</span>
                         </div>
                       </div>
 
                       {/* Highlights - Interactive Gallery */}
                       <div>
-                        <h4 className="font-semibold text-secondary mb-4">Principais experiências incluídas:</h4>
-                        <div className="space-y-2">
-                          {pkg.highlights.slice(0, 4).map((highlight, highlightIndex) => (
+                        <h4 className="font-semibold text-secondary mb-3">Principais experiências:</h4>
+                        <div className="grid grid-cols-1 gap-1">
+                          {pkg.highlights.slice(0, 3).map((highlight, highlightIndex) => (
                             <div 
                               key={highlightIndex} 
-                              className={`flex items-start gap-2 cursor-pointer transition-all duration-300 p-2 rounded-lg ${
+                              className={`flex items-center gap-2 cursor-pointer transition-all duration-300 p-2 rounded-lg text-sm ${
                                 getCurrentImageIndex(pkg.id) === highlightIndex 
-                                  ? 'bg-primary/10 border-l-4 border-primary' 
-                                  : 'hover:bg-muted/50'
+                                  ? 'bg-primary/10 text-primary font-medium' 
+                                  : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground'
                               }`}
                               onClick={() => setCurrentImageIndex(pkg.id, highlightIndex)}
                             >
-                              <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${
+                              <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
                                 getCurrentImageIndex(pkg.id) === highlightIndex 
-                                  ? 'bg-primary text-white' 
-                                  : 'bg-green-100 dark:bg-green-900/30'
-                              }`}>
-                                <Star className={`w-3 h-3 ${
-                                  getCurrentImageIndex(pkg.id) === highlightIndex 
-                                    ? 'text-white' 
-                                    : 'text-green-600 dark:text-green-400'
-                                }`} />
-                              </div>
-                              <span className={`text-sm transition-colors ${
-                                getCurrentImageIndex(pkg.id) === highlightIndex 
-                                  ? 'text-primary font-medium' 
-                                  : 'text-muted-foreground'
-                              }`}>
-                                {highlight.text}
-                              </span>
+                                  ? 'bg-primary' 
+                                  : 'bg-muted-foreground/40'
+                              }`} />
+                              <span>{highlight.text}</span>
                             </div>
                           ))}
-                          {pkg.highlights.length > 4 && (
-                            <p className="text-sm text-brand-blue ml-7">+ {pkg.highlights.length - 4} mais experiências...</p>
+                          {pkg.highlights.length > 3 && (
+                            <p className="text-xs text-brand-blue ml-4">+ {pkg.highlights.length - 3} mais experiências</p>
                           )}
                         </div>
                       </div>
 
                       {/* Price */}
-                      <div className="bg-muted/30 rounded-lg p-4">
-                        <div className="flex items-baseline gap-2 mb-1">
-                          <span className="text-3xl font-bold text-brand-blue">{pkg.price}</span>
+                      <div className="bg-gradient-to-r from-brand-blue/5 to-primary/5 rounded-lg p-4">
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-2xl font-bold text-brand-blue">{pkg.price}</span>
                         </div>
-                        <p className="text-sm text-muted-foreground">{pkg.priceNote}</p>
+                        <p className="text-xs text-muted-foreground">{pkg.priceNote}</p>
                       </div>
                     </div>
 
                     {/* CTA Button */}
-                    <div className="mt-8">
+                    <div className="mt-6">
                       <Button 
                         size="lg" 
                         className="w-full bg-brand-dark hover:bg-brand-dark/90 text-white shadow-elegant"
@@ -279,66 +257,36 @@ const PacotesViagens = () => {
 
                   {/* Package Gallery - Always Right */}
                   <div className="relative overflow-hidden">
-                    <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full">
+                    <div className="relative h-80">
                       <img 
                         src={pkg.highlights[getCurrentImageIndex(pkg.id)]?.image || pkg.image}
                         alt={pkg.highlights[getCurrentImageIndex(pkg.id)]?.text || pkg.name}
-                        className="w-full h-full min-h-[500px] object-cover transition-all duration-500"
+                        className="w-full h-full object-cover transition-all duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                       
-                      {/* Navigation Dots */}
-                      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-2">
+                      {/* Navigation Dots - Smaller and cleaner */}
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1">
                         {pkg.highlights.slice(0, 4).map((_, dotIndex) => (
                           <button
                             key={dotIndex}
                             onClick={() => setCurrentImageIndex(pkg.id, dotIndex)}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
                               getCurrentImageIndex(pkg.id) === dotIndex 
-                                ? 'bg-white w-6' 
+                                ? 'bg-white w-4' 
                                 : 'bg-white/60 hover:bg-white/80'
                             }`}
                           />
                         ))}
                       </div>
 
-                      {/* Navigation Arrows */}
-                      <button
-                        onClick={() => {
-                          const currentIndex = getCurrentImageIndex(pkg.id);
-                          const newIndex = currentIndex > 0 ? currentIndex - 1 : pkg.highlights.length - 1;
-                          setCurrentImageIndex(pkg.id, newIndex);
-                        }}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100"
-                      >
-                        ←
-                      </button>
-                      
-                      <button
-                        onClick={() => {
-                          const currentIndex = getCurrentImageIndex(pkg.id);
-                          const newIndex = currentIndex < pkg.highlights.length - 1 ? currentIndex + 1 : 0;
-                          setCurrentImageIndex(pkg.id, newIndex);
-                        }}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100"
-                      >
-                        →
-                      </button>
-                    </div>
-                    
-                    {/* Package Info Overlay */}
-                    <div className="absolute top-6 left-6">
-                      <Badge className="bg-white/90 text-secondary backdrop-blur-sm">Pacote Exclusivo</Badge>
-                    </div>
-                    
-                    {/* Experience Title Overlay */}
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4">
-                        <p className="font-medium text-secondary mb-1">
-                          {pkg.highlights[getCurrentImageIndex(pkg.id)]?.text}
-                        </p>
-                        <p className="text-sm text-muted-foreground">📍 {pkg.destination}</p>
-                        <p className="text-xs text-muted-foreground mt-1">⏱️ {pkg.duration}</p>
+                      {/* Experience Title Overlay - Smaller */}
+                      <div className="absolute bottom-4 left-4 right-16">
+                        <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
+                          <p className="text-xs font-medium text-secondary truncate">
+                            {pkg.highlights[getCurrentImageIndex(pkg.id)]?.text}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
