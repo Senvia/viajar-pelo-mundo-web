@@ -24,6 +24,7 @@ const services = [
     title: "Serviços Avulsos",
     description: "Serviços individuais para necessidades específicas. Transfer, seguro viagem, reservas de hotéis e muito mais.",
     features: [
+      "Passagens aéreas",
       "Transfer aeroporto-hotel",
       "Seguro viagem personalizado",
       "Reservas de hotéis e restaurantes",
