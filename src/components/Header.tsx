@@ -45,7 +45,7 @@ const Header = () => {
             <p className={`text-xs transition-colors ${
               isScrolled ? 'text-muted-foreground' : 'text-white/80'
             }`}>
-              Especialistas em Viagens Europeias
+              Especialistas em Viagens
             </p>
           </div>
         </a>
