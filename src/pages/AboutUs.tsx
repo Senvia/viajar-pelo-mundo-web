@@ -14,7 +14,7 @@ const AboutUs = () => {
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 min-h-[80vh] flex items-center">
         {/* Background */}
-        <div className="absolute inset-0 bg-brand-dark"></div>
+        <div className="absolute inset-0 bg-gradient-primary"></div>
         
         {/* Content */}
         <div className="container relative z-10">
