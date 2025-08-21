@@ -153,10 +153,10 @@ const ConsultoriaViagens = () => {
         
         <div className="relative container">
           <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-secondary mb-8 leading-[1.1] pb-2 drop-shadow-lg">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] pb-2">
               {consultoriaData.name}
             </h1>
-            <p className="text-xl md:text-2xl text-secondary/90 mb-12 leading-relaxed max-w-3xl drop-shadow-md">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
               A consultoria de viagem da Viajar Pelo Mundo é um serviço completo e personalizado que ajuda você a planejar cada detalhe da sua viagem internacional com segurança, economia e conforto.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
@@ -245,7 +245,7 @@ const ConsultoriaViagens = () => {
                     backgroundImage: `url('/lovable-uploads/89d275a3-14eb-4066-a880-e885f17c2dd0.png')`
                   }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  
                   <div className="absolute bottom-6 left-6 text-white">
                     <p className="text-lg font-semibold">Planejamento Personalizado</p>
                     <p className="text-white/80">Cada detalhe pensado para você</p>
@@ -323,7 +323,7 @@ const ConsultoriaViagens = () => {
                       backgroundPosition: index === 3 ? 'center top' : 'center'
                     }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                    
                   </div>
                 </div>
               </div>

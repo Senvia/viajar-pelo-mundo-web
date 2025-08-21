@@ -180,13 +180,13 @@ const PacotesViagens = () => {
         
         <div className="relative container">
           <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-secondary mb-8 leading-[1.1] pb-2 drop-shadow-lg">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] pb-2">
               Pacotes de
-              <span className="block text-secondary">
+              <span className="block text-white">
                 Viagens
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-secondary/90 mb-12 leading-relaxed max-w-3xl drop-shadow-md">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
               Descubra Portugal através de experiências autênticas e inesquecíveis, 
               cuidadosamente curadas para você
             </p>
@@ -277,7 +277,7 @@ const PacotesViagens = () => {
                     backgroundImage: `url('/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png')`
                   }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  
                   <div className="absolute bottom-6 left-6 text-white">
                     <p className="text-lg font-semibold">Porto Autêntico</p>
                     <p className="text-white/80">Descobrindo as belezas da cidade</p>
@@ -330,7 +330,6 @@ const PacotesViagens = () => {
                   className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in"
                   style={{ backgroundImage: `url('/lovable-uploads/f8848579-71ad-4fb3-8453-c0afddac6c57.png')` }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 </div>
               </div>
             </div>
