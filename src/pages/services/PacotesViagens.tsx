@@ -271,49 +271,47 @@ const PacotesViagens = () => {
                   </div>
 
                   {/* Package Gallery - Always Right */}
-                  <div className="relative overflow-hidden">
-                    <div className="relative w-full h-64 lg:h-72">
-                      <img 
-                        src={pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.image || pkg.image}
-                        alt={pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.title || pkg.name}
-                        className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                      
-                      {/* Gallery Navigation Dots */}
-                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                        <div className="flex space-x-2">
-                          {pkg.experienceGallery.map((_, imgIndex) => (
-                            <button
-                              key={imgIndex}
-                              onClick={() => setActiveGalleryImages(prev => ({
-                                ...prev,
-                                [pkg.id]: imgIndex
-                              }))}
-                              className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                                (activeGalleryImages[pkg.id] || 0) === imgIndex 
-                                  ? 'bg-white scale-125' 
-                                  : 'bg-white/50 hover:bg-white/70'
-                              }`}
-                            />
-                          ))}
-                        </div>
+                  <div className="relative overflow-hidden h-full min-h-[500px]">
+                    <img 
+                      src={pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.image || pkg.image}
+                      alt={pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.title || pkg.name}
+                      className="w-full h-full min-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    
+                    {/* Gallery Navigation Dots */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                      <div className="flex space-x-2">
+                        {pkg.experienceGallery.map((_, imgIndex) => (
+                          <button
+                            key={imgIndex}
+                            onClick={() => setActiveGalleryImages(prev => ({
+                              ...prev,
+                              [pkg.id]: imgIndex
+                            }))}
+                            className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                              (activeGalleryImages[pkg.id] || 0) === imgIndex 
+                                ? 'bg-white scale-125' 
+                                : 'bg-white/50 hover:bg-white/70'
+                            }`}
+                          />
+                        ))}
                       </div>
-                      
-                      <div className="absolute top-6 left-6">
-                        <Badge className="bg-white/90 text-secondary backdrop-blur-sm">Pacote Exclusivo</Badge>
-                      </div>
-                      
-                      {/* Experience Label */}
-                      <div className="absolute bottom-12 left-6 right-6">
-                        <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
-                          <p className="text-xs font-medium text-brand-blue">
-                            {pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.title}
-                          </p>
-                          <div className="flex items-center justify-between mt-1">
-                            <p className="text-xs text-muted-foreground">📍 {pkg.destination}</p>
-                            <p className="text-xs text-muted-foreground">⏱️ {pkg.duration}</p>
-                          </div>
+                    </div>
+                    
+                    <div className="absolute top-6 left-6">
+                      <Badge className="bg-white/90 text-secondary backdrop-blur-sm">Pacote Exclusivo</Badge>
+                    </div>
+                    
+                    {/* Experience Label */}
+                    <div className="absolute bottom-12 left-6 right-6">
+                      <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
+                        <p className="text-xs font-medium text-brand-blue">
+                          {pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.title}
+                        </p>
+                        <div className="flex items-center justify-between mt-1">
+                          <p className="text-xs text-muted-foreground">📍 {pkg.destination}</p>
+                          <p className="text-xs text-muted-foreground">⏱️ {pkg.duration}</p>
                         </div>
                       </div>
                     </div>
