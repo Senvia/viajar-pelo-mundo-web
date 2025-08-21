@@ -214,7 +214,7 @@ const PacotesViagens = () => {
       </section>
 
       {/* Package Overview */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+      <section className="py-20">
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -514,7 +514,7 @@ const PacotesViagens = () => {
       </section>
 
       {/* Unique Moments Gallery */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full opacity-5">
           <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary animate-pulse" />
