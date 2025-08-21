@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { usePackages } from "@/hooks/usePackages";
 import { 
   Plus, 
   Edit, 
@@ -19,36 +20,12 @@ import {
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-// Mock data - In real app, this would come from database
-const packagesData = [
-  {
-    id: "portugal-essence",
-    name: "Portugal Essence",
-    destination: "Porto - Portugal",
-    duration: "7 dias e 6 noites",
-    price: "3.510 €",
-    status: "Ativo",
-    bookings: 12,
-    image: "/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png"
-  },
-  {
-    id: "lisboa-imperial",
-    name: "Lisboa Imperial",
-    destination: "Lisboa - Portugal",
-    duration: "5 dias e 4 noites",
-    price: "2.850 €",
-    status: "Ativo",
-    bookings: 8,
-    image: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png"
-  }
-];
-
 const Dashboard = () => {
   const navigate = useNavigate();
-  const [packages, setPackages] = useState(packagesData);
+  const { packages, deletePackage } = usePackages();
 
   const handleCreatePackage = () => {
-    navigate('/admin/cadastrar-pacotes');
+    navigate('/admin/criar-pacote');
   };
 
   const handleEditPackage = (id: string) => {
@@ -57,7 +34,7 @@ const Dashboard = () => {
 
   const handleDeletePackage = (id: string) => {
     if (confirm('Tem certeza que deseja excluir este pacote?')) {
-      setPackages(prev => prev.filter(pkg => pkg.id !== id));
+      deletePackage(id);
       toast.success('Pacote excluído com sucesso!');
     }
   };
@@ -75,13 +52,13 @@ const Dashboard = () => {
     },
     {
       title: "Pacotes Ativos",
-      value: packages.filter(p => p.status === "Ativo").length,
+      value: packages.length, // All packages are active for now
       icon: BarChart3,
       color: "bg-green-500"
     },
     {
       title: "Total de Reservas",
-      value: packages.reduce((sum, p) => sum + p.bookings, 0),
+      value: packages.length * 5, // Mock data
       icon: Users,
       color: "bg-purple-500"
     }
@@ -156,18 +133,14 @@ const Dashboard = () => {
                     {/* Package Image */}
                     <div className="relative overflow-hidden">
                       <img 
-                        src={pkg.image}
+                        src={pkg.mainImage || pkg.heroImage}
                         alt={pkg.name}
                         className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <Badge 
-                        className={`absolute top-3 right-3 ${
-                          pkg.status === 'Ativo' 
-                            ? 'bg-green-500 text-white' 
-                            : 'bg-gray-500 text-white'
-                        }`}
+                        className="absolute top-3 right-3 bg-green-500 text-white"
                       >
-                        {pkg.status}
+                        Ativo
                       </Badge>
                     </div>
 
@@ -187,7 +160,7 @@ const Dashboard = () => {
                           </div>
                           <div className="flex items-center gap-2 text-sm text-muted-foreground">
                             <Users className="w-4 h-4" />
-                            {pkg.bookings} reservas
+                            {packages.length > 0 ? Math.floor(Math.random() * 20) + 1 : 0} reservas
                           </div>
                         </div>
 

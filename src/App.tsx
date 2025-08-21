@@ -13,6 +13,7 @@ import ServicosAvulsos from "./pages/services/ServicosAvulsos";
 import ConsultoriaViagens from "./pages/services/ConsultoriaViagens";
 import PortugalEssence from "./pages/services/pacotes/PortugalEssence";
 import CadastrarPacotes from "./pages/admin/CadastrarPacotes";
+import CriarEditarPacote from "./pages/admin/CriarEditarPacote";
 import Dashboard from "./pages/admin/Dashboard";
 
 const queryClient = new QueryClient();
@@ -31,9 +32,11 @@ const App = () => (
           <Route path="/servicos/consultoria-europa" element={<ConsultoriaEuropa />} />
           <Route path="/servicos/avulsos" element={<ServicosAvulsos />} />
           <Route path="/servicos/consultoria-viagens" element={<ConsultoriaViagens />} />
-          <Route path="/servicos/pacotes/portugal-essence" element={<PortugalEssence />} />
+          <Route path="/servicos/pacotes/:id" element={<PortugalEssence />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/cadastrar-pacotes" element={<CadastrarPacotes />} />
+          <Route path="/admin/criar-pacote" element={<CriarEditarPacote />} />
+          <Route path="/admin/editar-pacote/:id" element={<CriarEditarPacote />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
+import { usePackages } from "@/hooks/usePackages";
 import { 
   MapPin, 
   Calendar, 
@@ -19,112 +20,132 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const packagesData = [
-  {
-    id: "portugal-essence",
-    name: "Portugal Essence",
-    destination: "Porto - Portugal",
-    duration: "7 dias e 6 noites",
-    price: "3.510 €",
-    priceNote: "Total para 02 Adultos em quarto duplo",
-    image: "/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png",
-    highlights: [
-      "City Tour privativo pelo Porto",
-      "Experiência vinícola no Museu WOW",
-      "Workshop de Pastel de Nata",
-      "Cruzeiro gourmet ao pôr do sol",
-      "Espetáculo de Fado tradicional",
-      "Tour pelo Vale do Douro"
-    ],
-    experienceGallery: [
-      {
-        id: 1,
-        title: "City Tour pelo Porto",
-        image: "/lovable-uploads/78890d5a-286d-4b4f-b8a4-a5d44461d3d4.png"
-      },
-      {
-        id: 2,
-        title: "Experiência Vinícola",
-        image: "/lovable-uploads/2da541d5-fe43-4e23-bf3e-d0a2793efe31.png"
-      },
-      {
-        id: 3,
-        title: "Workshop Gastronômico",
-        image: "/lovable-uploads/00cb83f8-4b51-4af0-9af8-9ccbcd3b0df3.png"
-      },
-      {
-        id: 4,
-        title: "Cruzeiro ao Pôr do Sol",
-        image: "/lovable-uploads/604537d9-c3eb-430c-9d01-820b1bec9336.png"
-      },
-      {
-        id: 5,
-        title: "Espetáculo de Fado",
-        image: "/lovable-uploads/5df4c253-f819-4e4f-a21c-a865b6ac3605.png"
-      },
-      {
-        id: 6,
-        title: "Vale do Douro",
-        image: "/lovable-uploads/878dda6e-16ac-446d-bb74-dec63248b020.png"
-      }
-    ],
-    description: "Uma jornada completa pelos encantos do Porto, combinando cultura, gastronomia e experiências únicas"
-  },
-  {
-    id: "lisboa-imperial",
-    name: "Lisboa Imperial",
-    destination: "Lisboa - Portugal",
-    duration: "5 dias e 4 noites",
-    price: "2.850 €",
-    priceNote: "Total para 02 Adultos em quarto duplo",
-    image: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png",
-    highlights: [
-      "Tour pelos bairros históricos",
-      "Visita ao Mosteiro dos Jerónimos",
-      "Experiência gastronômica em Belém",
-      "Passeio de elétrico tradicional",
-      "Espetáculo de Fado em Alfama",
-      "Excursão a Sintra e Cascais"
-    ],
-    experienceGallery: [
-      {
-        id: 1,
-        title: "Bairros Históricos",
-        image: "/lovable-uploads/50a145af-5d83-420a-814c-8f6f70ed394c.png"
-      },
-      {
-        id: 2,
-        title: "Mosteiro dos Jerónimos",
-        image: "/lovable-uploads/fda1f478-5e7a-4434-8926-5f0330501e3a.png"
-      },
-      {
-        id: 3,
-        title: "Gastronomia em Belém",
-        image: "/lovable-uploads/00cb83f8-4b51-4af0-9af8-9ccbcd3b0df3.png"
-      },
-      {
-        id: 4,
-        title: "Elétrico Tradicional",
-        image: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png"
-      },
-      {
-        id: 5,
-        title: "Fado em Alfama",
-        image: "/lovable-uploads/5df4c253-f819-4e4f-a21c-a865b6ac3605.png"
-      },
-      {
-        id: 6,
-        title: "Sintra e Cascais",
-        image: "/lovable-uploads/2da541d5-fe43-4e23-bf3e-d0a2793efe31.png"
-      }
-    ],
-    description: "Descubra a majestosa capital portuguesa com suas tradições milenares, arquitetura deslumbrante e gastronomia única"
-  }
-];
-
 const PacotesViagens = () => {
   const navigate = useNavigate();
+  const { packages } = usePackages();
   const [activeGalleryImages, setActiveGalleryImages] = useState<{[key: string]: number}>({});
+
+  // Fallback data if no packages are created yet
+  const fallbackPackages = [
+    {
+      id: "portugal-essence",
+      name: "Portugal Essence",
+      destination: "Porto - Portugal",
+      duration: "7 dias e 6 noites",
+      price: "3.510 €",
+      priceNote: "Total para 02 Adultos em quarto duplo",
+      heroImage: "/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png",
+      mainImage: "/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png",
+      highlights: [
+        "City Tour privativo pelo Porto",
+        "Experiência vinícola no Museu WOW",
+        "Workshop de Pastel de Nata",
+        "Cruzeiro gourmet ao pôr do sol",
+        "Espetáculo de Fado tradicional",
+        "Tour pelo Vale do Douro"
+      ],
+      experienceGallery: [
+        {
+          id: "1",
+          title: "City Tour pelo Porto",
+          description: "",
+          image: "/lovable-uploads/78890d5a-286d-4b4f-b8a4-a5d44461d3d4.png"
+        },
+        {
+          id: "2",
+          title: "Experiência Vinícola",
+          description: "",
+          image: "/lovable-uploads/2da541d5-fe43-4e23-bf3e-d0a2793efe31.png"
+        },
+        {
+          id: "3",
+          title: "Workshop Gastronômico",
+          description: "",
+          image: "/lovable-uploads/00cb83f8-4b51-4af0-9af8-9ccbcd3b0df3.png"
+        },
+        {
+          id: "4",
+          title: "Cruzeiro ao Pôr do Sol",
+          description: "",
+          image: "/lovable-uploads/604537d9-c3eb-430c-9d01-820b1bec9336.png"
+        },
+        {
+          id: "5",
+          title: "Espetáculo de Fado",
+          description: "",
+          image: "/lovable-uploads/5df4c253-f819-4e4f-a21c-a865b6ac3605.png"
+        },
+        {
+          id: "6",
+          title: "Vale do Douro",
+          description: "",
+          image: "/lovable-uploads/878dda6e-16ac-446d-bb74-dec63248b020.png"
+        }
+      ],
+      included: [],
+      description: "Uma jornada completa pelos encantos do Porto, combinando cultura, gastronomia e experiências únicas"
+    },
+    {
+      id: "lisboa-imperial",
+      name: "Lisboa Imperial",
+      destination: "Lisboa - Portugal",
+      duration: "5 dias e 4 noites",
+      price: "2.850 €",
+      priceNote: "Total para 02 Adultos em quarto duplo",
+      heroImage: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png",
+      mainImage: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png",
+      highlights: [
+        "Tour pelos bairros históricos",
+        "Visita ao Mosteiro dos Jerónimos",
+        "Experiência gastronômica em Belém",
+        "Passeio de elétrico tradicional",
+        "Espetáculo de Fado em Alfama",
+        "Excursão a Sintra e Cascais"
+      ],
+      experienceGallery: [
+        {
+          id: "1",
+          title: "Bairros Históricos",
+          description: "",
+          image: "/lovable-uploads/50a145af-5d83-420a-814c-8f6f70ed394c.png"
+        },
+        {
+          id: "2",
+          title: "Mosteiro dos Jerónimos",
+          description: "",
+          image: "/lovable-uploads/fda1f478-5e7a-4434-8926-5f0330501e3a.png"
+        },
+        {
+          id: "3",
+          title: "Gastronomia em Belém",
+          description: "",
+          image: "/lovable-uploads/00cb83f8-4b51-4af0-9af8-9ccbcd3b0df3.png"
+        },
+        {
+          id: "4",
+          title: "Elétrico Tradicional",
+          description: "",
+          image: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png"
+        },
+        {
+          id: "5",
+          title: "Fado em Alfama",
+          description: "",
+          image: "/lovable-uploads/5df4c253-f819-4e4f-a21c-a865b6ac3605.png"
+        },
+        {
+          id: "6",
+          title: "Sintra e Cascais",
+          description: "",
+          image: "/lovable-uploads/2da541d5-fe43-4e23-bf3e-d0a2793efe31.png"
+        }
+      ],
+      included: [],
+      description: "Descubra a majestosa capital portuguesa com suas tradições milenares, arquitetura deslumbrante e gastronomia única"
+    }
+  ];
+
+  const packagesData = packages.length > 0 ? packages : fallbackPackages;
 
   const handleViewPackage = (packageId: string) => {
     navigate(`/servicos/pacotes/${packageId}`);
@@ -270,7 +291,7 @@ const PacotesViagens = () => {
                   {/* Package Gallery - Always Right */}
                   <div className="relative overflow-hidden h-full">
                     <img 
-                      src={pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.image || pkg.image}
+                      src={pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.image || pkg.mainImage || pkg.heroImage}
                       alt={pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.title || pkg.name}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
