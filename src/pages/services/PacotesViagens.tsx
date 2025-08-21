@@ -129,72 +129,105 @@ const PacotesViagens = () => {
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-12 max-w-7xl mx-auto">
             {packagesData.map((pkg, index) => (
               <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-auto lg:h-96">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px]">
                   {/* Package Content - Always Left */}
-                  <div className={`p-8 lg:p-12 flex flex-col justify-between ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-1'}`}>
-                    <div>
-                      <h3 className="text-3xl font-bold text-secondary mb-4">{pkg.name}</h3>
-                      <p className="text-muted-foreground mb-6 leading-relaxed">
-                        {pkg.description}
-                      </p>
+                  <div className="p-8 lg:p-12 flex flex-col justify-between bg-white">
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">{pkg.name}</h3>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                          {pkg.description}
+                        </p>
+                      </div>
 
                       {/* Package Details */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                      <div className="grid grid-cols-1 gap-4">
                         <div className="flex items-center gap-3">
-                          <MapPin className="w-5 h-5 text-brand-blue" />
-                          <span className="text-muted-foreground">{pkg.destination}</span>
+                          <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
+                            <MapPin className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">Destino</p>
+                            <p className="font-semibold text-secondary">{pkg.destination}</p>
+                          </div>
                         </div>
                         <div className="flex items-center gap-3">
-                          <Calendar className="w-5 h-5 text-brand-blue" />
-                          <span className="text-muted-foreground">{pkg.duration}</span>
+                          <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
+                            <Calendar className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">Duração</p>
+                            <p className="font-semibold text-secondary">{pkg.duration}</p>
+                          </div>
                         </div>
                       </div>
 
                       {/* Highlights */}
-                      <div className="mb-8">
+                      <div>
                         <h4 className="font-semibold text-secondary mb-4">Principais experiências incluídas:</h4>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          {pkg.highlights.slice(0, 6).map((highlight, index) => (
-                            <div key={index} className="flex items-start gap-2">
-                              <Star className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
+                        <div className="grid grid-cols-1 gap-2">
+                          {pkg.highlights.slice(0, 4).map((highlight, highlightIndex) => (
+                            <div key={highlightIndex} className="flex items-start gap-2">
+                              <Star className="w-4 h-4 text-brand-blue mt-1 flex-shrink-0" />
                               <span className="text-sm text-muted-foreground">{highlight}</span>
                             </div>
                           ))}
+                          {pkg.highlights.length > 4 && (
+                            <p className="text-sm text-brand-blue">+ {pkg.highlights.length - 4} mais experiências...</p>
+                          )}
                         </div>
                       </div>
 
                       {/* Price */}
-                      <div className="mb-8">
-                        <div className="flex items-baseline gap-2 mb-2">
+                      <div className="bg-muted/30 rounded-lg p-4">
+                        <div className="flex items-baseline gap-2 mb-1">
                           <span className="text-3xl font-bold text-brand-blue">{pkg.price}</span>
                         </div>
                         <p className="text-sm text-muted-foreground">{pkg.priceNote}</p>
                       </div>
                     </div>
 
-                    {/* CTA Button */}
-                    <Button 
-                      size="lg" 
-                      className="w-full bg-brand-dark hover:bg-brand-dark/90 text-white shadow-elegant"
-                      onClick={() => handleViewPackage(pkg.id)}
-                    >
-                      Ver Mais Detalhes
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </Button>
+                    {/* CTA Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-3 mt-8">
+                      <Button 
+                        size="lg" 
+                        className="bg-brand-dark hover:bg-brand-dark/90 text-white shadow-elegant flex-1"
+                        onClick={() => handleViewPackage(pkg.id)}
+                      >
+                        Ver Mais Detalhes
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                      </Button>
+                      <Button 
+                        size="lg" 
+                        variant="outline"
+                        className="flex-1"
+                        onClick={handleWhatsApp}
+                      >
+                        <Phone className="w-5 h-5 mr-2" />
+                        Solicitar Orçamento
+                      </Button>
+                    </div>
                   </div>
 
                   {/* Package Image - Always Right */}
-                  <div className={`relative overflow-hidden ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-2'}`}>
+                  <div className="relative overflow-hidden">
                     <img 
                       src={pkg.image}
                       alt={pkg.name}
-                      className="w-full h-80 lg:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full min-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute top-4 left-4">
-                      <Badge className="bg-brand-dark text-white">Destaque</Badge>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    <div className="absolute top-6 left-6">
+                      <Badge className="bg-white/90 text-secondary backdrop-blur-sm">Pacote Exclusivo</Badge>
+                    </div>
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
+                        <p className="text-sm font-medium text-secondary">📍 {pkg.destination}</p>
+                        <p className="text-xs text-muted-foreground mt-1">⏱️ {pkg.duration}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
