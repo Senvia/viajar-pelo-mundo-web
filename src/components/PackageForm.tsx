@@ -5,11 +5,28 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { TravelPackage, CreatePackageData, PackageIncluded, PackageExperience } from '@/types/Package';
+import ImageUpload from './ImageUpload';
+import { CreatePackageData } from '@/hooks/usePackages';
 import { Plus, X, Upload, Trash2 } from 'lucide-react';
 
+interface TravelPackageFormData extends Omit<CreatePackageData, 'included' | 'experienceGallery'> {
+  included: {
+    id?: string;
+    name: string;
+    description?: string;
+    subtitle?: string;
+    images: string[];
+  }[];
+  experienceGallery: {
+    id?: string;
+    title: string;
+    description?: string;
+    image?: string;
+  }[];
+}
+
 interface PackageFormProps {
-  initialData?: TravelPackage;
+  initialData?: TravelPackageFormData;
   onSubmit: (data: CreatePackageData) => void;
   onCancel: () => void;
   isEditing?: boolean;
@@ -21,21 +38,21 @@ const PackageForm: React.FC<PackageFormProps> = ({
   onCancel, 
   isEditing = false 
 }) => {
-  const [formData, setFormData] = useState<CreatePackageData>({
+  const [formData, setFormData] = useState<TravelPackageFormData>({
     name: initialData?.name || '',
     description: initialData?.description || '',
     destination: initialData?.destination || '',
     duration: initialData?.duration || '',
     price: initialData?.price || '',
-    priceNote: initialData?.priceNote || '',
-    heroImage: initialData?.heroImage || '',
-    mainImage: initialData?.mainImage || '',
+    price_note: initialData?.price_note || '',
+    hero_image: initialData?.hero_image || '',
+    main_image: initialData?.main_image || '',
     highlights: initialData?.highlights || [''],
     included: initialData?.included || [],
     experienceGallery: initialData?.experienceGallery || [],
   });
 
-  const updateFormData = (field: keyof CreatePackageData, value: any) => {
+  const updateFormData = (field: keyof TravelPackageFormData, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
@@ -54,7 +71,7 @@ const PackageForm: React.FC<PackageFormProps> = ({
   };
 
   const addIncluded = () => {
-    const newIncluded: PackageIncluded = {
+    const newIncluded = {
       id: Date.now().toString(),
       name: '',
       description: '',
@@ -64,7 +81,7 @@ const PackageForm: React.FC<PackageFormProps> = ({
     updateFormData('included', [...formData.included, newIncluded]);
   };
 
-  const updateIncluded = (index: number, field: keyof PackageIncluded, value: any) => {
+  const updateIncluded = (index: number, field: string, value: any) => {
     const newIncluded = [...formData.included];
     newIncluded[index] = { ...newIncluded[index], [field]: value };
     updateFormData('included', newIncluded);
@@ -93,7 +110,7 @@ const PackageForm: React.FC<PackageFormProps> = ({
   };
 
   const addExperience = () => {
-    const newExperience: PackageExperience = {
+    const newExperience = {
       id: Date.now().toString(),
       title: '',
       description: '',
@@ -102,7 +119,7 @@ const PackageForm: React.FC<PackageFormProps> = ({
     updateFormData('experienceGallery', [...formData.experienceGallery, newExperience]);
   };
 
-  const updateExperience = (index: number, field: keyof PackageExperience, value: any) => {
+  const updateExperience = (index: number, field: string, value: any) => {
     const newExperiences = [...formData.experienceGallery];
     newExperiences[index] = { ...newExperiences[index], [field]: value };
     updateFormData('experienceGallery', newExperiences);
@@ -178,12 +195,12 @@ const PackageForm: React.FC<PackageFormProps> = ({
                 required
               />
             </div>
-            <div className="md:col-span-2">
+            <div>
               <Label htmlFor="priceNote">Nota do Preço</Label>
               <Input
                 id="priceNote"
-                value={formData.priceNote}
-                onChange={(e) => updateFormData('priceNote', e.target.value)}
+                value={formData.price_note}
+                onChange={(e) => updateFormData('price_note', e.target.value)}
                 placeholder="Ex: Total para 02 Adultos em quarto duplo"
               />
             </div>
@@ -205,26 +222,18 @@ const PackageForm: React.FC<PackageFormProps> = ({
         <Card className="p-6">
           <h2 className="text-xl font-semibold text-secondary mb-4">Imagens</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <Label htmlFor="heroImage">Imagem Hero (Página inicial)</Label>
-              <Input
-                id="heroImage"
-                value={formData.heroImage}
-                onChange={(e) => updateFormData('heroImage', e.target.value)}
-                placeholder="URL da imagem hero"
-                required
-              />
-            </div>
-            <div>
-              <Label htmlFor="mainImage">Imagem Principal do Pacote</Label>
-              <Input
-                id="mainImage"
-                value={formData.mainImage}
-                onChange={(e) => updateFormData('mainImage', e.target.value)}
-                placeholder="URL da imagem principal"
-                required
-              />
-            </div>
+            <ImageUpload
+              label="Imagem Hero (Página inicial)"
+              value={formData.hero_image || ''}
+              onChange={(url) => updateFormData('hero_image', url)}
+              placeholder="URL da imagem hero"
+            />
+            <ImageUpload
+              label="Imagem Principal do Pacote"
+              value={formData.main_image || ''}
+              onChange={(url) => updateFormData('main_image', url)}
+              placeholder="URL da imagem principal"
+            />
           </div>
         </Card>
 
@@ -323,21 +332,13 @@ const PackageForm: React.FC<PackageFormProps> = ({
                   </div>
                   <div className="space-y-2">
                     {item.images.map((image, imageIndex) => (
-                      <div key={imageIndex} className="flex gap-2">
-                        <Input
-                          value={image}
-                          onChange={(e) => updateIncludedImage(index, imageIndex, e.target.value)}
-                          placeholder="URL da imagem"
-                        />
-                        <Button
-                          type="button"
-                          variant="outline"
-                          size="sm"
-                          onClick={() => removeIncludedImage(index, imageIndex)}
-                        >
-                          <X className="w-4 h-4" />
-                        </Button>
-                      </div>
+                      <ImageUpload
+                        key={imageIndex}
+                        label={`Imagem ${imageIndex + 1}`}
+                        value={image}
+                        onChange={(url) => updateIncludedImage(index, imageIndex, url)}
+                        placeholder="URL da imagem"
+                      />
                     ))}
                   </div>
                 </div>
@@ -379,10 +380,10 @@ const PackageForm: React.FC<PackageFormProps> = ({
                     />
                   </div>
                   <div>
-                    <Label>Imagem</Label>
-                    <Input
-                      value={experience.image}
-                      onChange={(e) => updateExperience(index, 'image', e.target.value)}
+                    <ImageUpload
+                      label="Imagem da Experiência"
+                      value={experience.image || ''}
+                      onChange={(url) => updateExperience(index, 'image', url)}
                       placeholder="URL da imagem"
                     />
                   </div>

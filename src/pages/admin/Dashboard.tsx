@@ -133,7 +133,7 @@ const Dashboard = () => {
                     {/* Package Image */}
                     <div className="relative overflow-hidden">
                       <img 
-                        src={pkg.mainImage || pkg.heroImage}
+                        src={pkg.main_image || pkg.hero_image}
                         alt={pkg.name}
                         className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                       />

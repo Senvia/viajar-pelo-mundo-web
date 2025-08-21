@@ -22,130 +22,8 @@ import { useState } from "react";
 
 const PacotesViagens = () => {
   const navigate = useNavigate();
-  const { packages } = usePackages();
+  const { packages, loading } = usePackages();
   const [activeGalleryImages, setActiveGalleryImages] = useState<{[key: string]: number}>({});
-
-  // Fallback data if no packages are created yet
-  const fallbackPackages = [
-    {
-      id: "portugal-essence",
-      name: "Portugal Essence",
-      destination: "Porto - Portugal",
-      duration: "7 dias e 6 noites",
-      price: "3.510 €",
-      priceNote: "Total para 02 Adultos em quarto duplo",
-      heroImage: "/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png",
-      mainImage: "/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png",
-      highlights: [
-        "City Tour privativo pelo Porto",
-        "Experiência vinícola no Museu WOW",
-        "Workshop de Pastel de Nata",
-        "Cruzeiro gourmet ao pôr do sol",
-        "Espetáculo de Fado tradicional",
-        "Tour pelo Vale do Douro"
-      ],
-      experienceGallery: [
-        {
-          id: "1",
-          title: "City Tour pelo Porto",
-          description: "",
-          image: "/lovable-uploads/78890d5a-286d-4b4f-b8a4-a5d44461d3d4.png"
-        },
-        {
-          id: "2",
-          title: "Experiência Vinícola",
-          description: "",
-          image: "/lovable-uploads/2da541d5-fe43-4e23-bf3e-d0a2793efe31.png"
-        },
-        {
-          id: "3",
-          title: "Workshop Gastronômico",
-          description: "",
-          image: "/lovable-uploads/00cb83f8-4b51-4af0-9af8-9ccbcd3b0df3.png"
-        },
-        {
-          id: "4",
-          title: "Cruzeiro ao Pôr do Sol",
-          description: "",
-          image: "/lovable-uploads/604537d9-c3eb-430c-9d01-820b1bec9336.png"
-        },
-        {
-          id: "5",
-          title: "Espetáculo de Fado",
-          description: "",
-          image: "/lovable-uploads/5df4c253-f819-4e4f-a21c-a865b6ac3605.png"
-        },
-        {
-          id: "6",
-          title: "Vale do Douro",
-          description: "",
-          image: "/lovable-uploads/878dda6e-16ac-446d-bb74-dec63248b020.png"
-        }
-      ],
-      included: [],
-      description: "Uma jornada completa pelos encantos do Porto, combinando cultura, gastronomia e experiências únicas"
-    },
-    {
-      id: "lisboa-imperial",
-      name: "Lisboa Imperial",
-      destination: "Lisboa - Portugal",
-      duration: "5 dias e 4 noites",
-      price: "2.850 €",
-      priceNote: "Total para 02 Adultos em quarto duplo",
-      heroImage: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png",
-      mainImage: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png",
-      highlights: [
-        "Tour pelos bairros históricos",
-        "Visita ao Mosteiro dos Jerónimos",
-        "Experiência gastronômica em Belém",
-        "Passeio de elétrico tradicional",
-        "Espetáculo de Fado em Alfama",
-        "Excursão a Sintra e Cascais"
-      ],
-      experienceGallery: [
-        {
-          id: "1",
-          title: "Bairros Históricos",
-          description: "",
-          image: "/lovable-uploads/50a145af-5d83-420a-814c-8f6f70ed394c.png"
-        },
-        {
-          id: "2",
-          title: "Mosteiro dos Jerónimos",
-          description: "",
-          image: "/lovable-uploads/fda1f478-5e7a-4434-8926-5f0330501e3a.png"
-        },
-        {
-          id: "3",
-          title: "Gastronomia em Belém",
-          description: "",
-          image: "/lovable-uploads/00cb83f8-4b51-4af0-9af8-9ccbcd3b0df3.png"
-        },
-        {
-          id: "4",
-          title: "Elétrico Tradicional",
-          description: "",
-          image: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png"
-        },
-        {
-          id: "5",
-          title: "Fado em Alfama",
-          description: "",
-          image: "/lovable-uploads/5df4c253-f819-4e4f-a21c-a865b6ac3605.png"
-        },
-        {
-          id: "6",
-          title: "Sintra e Cascais",
-          description: "",
-          image: "/lovable-uploads/2da541d5-fe43-4e23-bf3e-d0a2793efe31.png"
-        }
-      ],
-      included: [],
-      description: "Descubra a majestosa capital portuguesa com suas tradições milenares, arquitetura deslumbrante e gastronomia única"
-    }
-  ];
-
-  const packagesData = packages.length > 0 ? packages : fallbackPackages;
 
   const handleViewPackage = (packageId: string) => {
     navigate(`/servicos/pacotes/${packageId}`);
@@ -218,125 +96,142 @@ const PacotesViagens = () => {
           </div>
 
           <div className="space-y-12 max-w-7xl mx-auto">
-            {packagesData.map((pkg, index) => (
-              <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full max-h-[800px]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px] lg:h-[800px]">
-                  {/* Package Content - Always Left */}
-                  <div className="p-8 lg:p-12 flex flex-col justify-between bg-white">
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">{pkg.name}</h3>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                          {pkg.description}
-                        </p>
-                      </div>
-
-                      {/* Package Details */}
-                      <div className="grid grid-cols-1 gap-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
-                            <MapPin className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <p className="text-sm text-muted-foreground">Destino</p>
-                            <p className="font-semibold text-secondary">{pkg.destination}</p>
-                          </div>
+            {loading ? (
+              <div className="text-center py-12">
+                <div className="text-lg">Carregando pacotes...</div>
+              </div>
+            ) : packages.length === 0 ? (
+              <div className="text-center py-12">
+                <h3 className="text-xl font-semibold text-secondary mb-4">
+                  Nenhum pacote disponível
+                </h3>
+                <p className="text-muted-foreground">
+                  Os pacotes de viagem serão exibidos aqui quando estiverem disponíveis.
+                </p>
+              </div>
+            ) : (
+              packages.map((pkg, index) => (
+                <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full max-h-[800px]">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px] lg:h-[800px]">
+                    {/* Package Content - Always Left */}
+                    <div className="p-8 lg:p-12 flex flex-col justify-between bg-white">
+                      <div className="space-y-6">
+                        <div>
+                          <h3 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">{pkg.name}</h3>
+                          <p className="text-lg text-muted-foreground leading-relaxed">
+                            {pkg.description}
+                          </p>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
-                            <Calendar className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <p className="text-sm text-muted-foreground">Duração</p>
-                            <p className="font-semibold text-secondary">{pkg.duration}</p>
-                          </div>
-                        </div>
-                      </div>
 
-                      {/* Highlights */}
-                      <div>
-                        <h4 className="font-semibold text-secondary mb-4">Principais experiências incluídas:</h4>
-                        <div className="grid grid-cols-1 gap-2">
-                          {pkg.highlights.map((highlight, highlightIndex) => (
-                            <div key={highlightIndex} className="flex items-start gap-2">
-                              <Star className="w-4 h-4 text-brand-blue mt-1 flex-shrink-0" />
-                              <span className="text-sm text-muted-foreground">{highlight}</span>
+                        {/* Package Details */}
+                        <div className="grid grid-cols-1 gap-4">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
+                              <MapPin className="w-5 h-5 text-white" />
                             </div>
-                          ))}
+                            <div>
+                              <p className="text-sm text-muted-foreground">Destino</p>
+                              <p className="font-semibold text-secondary">{pkg.destination}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
+                              <Calendar className="w-5 h-5 text-white" />
+                            </div>
+                            <div>
+                              <p className="text-sm text-muted-foreground">Duração</p>
+                              <p className="font-semibold text-secondary">{pkg.duration}</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Highlights */}
+                        <div>
+                          <h4 className="font-semibold text-secondary mb-4">Principais experiências incluídas:</h4>
+                          <div className="grid grid-cols-1 gap-2">
+                            {pkg.highlights?.map((highlight, highlightIndex) => (
+                              <div key={highlightIndex} className="flex items-start gap-2">
+                                <Star className="w-4 h-4 text-brand-blue mt-1 flex-shrink-0" />
+                                <span className="text-sm text-muted-foreground">{highlight}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Price */}
+                        <div className="bg-muted/30 rounded-lg p-4">
+                          <div className="flex items-baseline gap-2 mb-1">
+                            <span className="text-3xl font-bold text-brand-blue">{pkg.price}</span>
+                          </div>
+                          <p className="text-sm text-muted-foreground">{pkg.price_note}</p>
                         </div>
                       </div>
 
-                      {/* Price */}
-                      <div className="bg-muted/30 rounded-lg p-4">
-                        <div className="flex items-baseline gap-2 mb-1">
-                          <span className="text-3xl font-bold text-brand-blue">{pkg.price}</span>
-                        </div>
-                        <p className="text-sm text-muted-foreground">{pkg.priceNote}</p>
+                      {/* CTA Button */}
+                      <div className="mt-8">
+                        <Button 
+                          size="lg" 
+                          className="w-full bg-brand-dark hover:bg-brand-dark/90 text-white shadow-elegant"
+                          onClick={() => handleViewPackage(pkg.id)}
+                        >
+                          Ver Mais Detalhes
+                          <ArrowRight className="w-5 h-5 ml-2" />
+                        </Button>
                       </div>
                     </div>
 
-                    {/* CTA Button */}
-                    <div className="mt-8">
-                      <Button 
-                        size="lg" 
-                        className="w-full bg-brand-dark hover:bg-brand-dark/90 text-white shadow-elegant"
-                        onClick={() => handleViewPackage(pkg.id)}
-                      >
-                        Ver Mais Detalhes
-                        <ArrowRight className="w-5 h-5 ml-2" />
-                      </Button>
+                    {/* Package Gallery - Always Right */}
+                    <div className="relative overflow-hidden h-full">
+                      <img 
+                        src={pkg.package_experiences?.[activeGalleryImages[pkg.id] || 0]?.image || pkg.main_image || pkg.hero_image}
+                        alt={pkg.package_experiences?.[activeGalleryImages[pkg.id] || 0]?.title || pkg.name}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                      
+                      {/* Gallery Navigation Dots */}
+                      {pkg.package_experiences && pkg.package_experiences.length > 0 && (
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                          <div className="flex space-x-2">
+                            {pkg.package_experiences.map((_, imgIndex) => (
+                              <button
+                                key={imgIndex}
+                                onClick={() => setActiveGalleryImages(prev => ({
+                                  ...prev,
+                                  [pkg.id]: imgIndex
+                                }))}
+                                className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                                  (activeGalleryImages[pkg.id] || 0) === imgIndex 
+                                    ? 'bg-white scale-125' 
+                                    : 'bg-white/50 hover:bg-white/70'
+                                }`}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      
+                      <div className="absolute top-6 left-6">
+                        <Badge className="bg-white/90 text-secondary backdrop-blur-sm">Pacote Exclusivo</Badge>
+                      </div>
+                      
+                      {/* Experience Label */}
+                      <div className="absolute bottom-12 left-6 right-6">
+                        <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
+                          <p className="text-xs font-medium text-brand-blue">
+                            {pkg.package_experiences?.[activeGalleryImages[pkg.id] || 0]?.title || 'Experiência Única'}
+                          </p>
+                          <div className="flex items-center justify-between mt-1">
+                            <p className="text-xs text-muted-foreground">📍 {pkg.destination}</p>
+                            <p className="text-xs text-muted-foreground">⏱️ {pkg.duration}</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-
-                  {/* Package Gallery - Always Right */}
-                  <div className="relative overflow-hidden h-full">
-                    <img 
-                      src={pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.image || pkg.mainImage || pkg.heroImage}
-                      alt={pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.title || pkg.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                    
-                    {/* Gallery Navigation Dots */}
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                      <div className="flex space-x-2">
-                        {pkg.experienceGallery.map((_, imgIndex) => (
-                          <button
-                            key={imgIndex}
-                            onClick={() => setActiveGalleryImages(prev => ({
-                              ...prev,
-                              [pkg.id]: imgIndex
-                            }))}
-                            className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                              (activeGalleryImages[pkg.id] || 0) === imgIndex 
-                                ? 'bg-white scale-125' 
-                                : 'bg-white/50 hover:bg-white/70'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <div className="absolute top-6 left-6">
-                      <Badge className="bg-white/90 text-secondary backdrop-blur-sm">Pacote Exclusivo</Badge>
-                    </div>
-                    
-                    {/* Experience Label */}
-                    <div className="absolute bottom-12 left-6 right-6">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
-                        <p className="text-xs font-medium text-brand-blue">
-                          {pkg.experienceGallery[activeGalleryImages[pkg.id] || 0]?.title}
-                        </p>
-                        <div className="flex items-center justify-between mt-1">
-                          <p className="text-xs text-muted-foreground">📍 {pkg.destination}</p>
-                          <p className="text-xs text-muted-foreground">⏱️ {pkg.duration}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              ))
+            )}
           </div>
         </div>
       </section>

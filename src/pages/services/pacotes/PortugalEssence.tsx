@@ -145,7 +145,7 @@ const experiences = [
   }
 ];
 
-const PortugalEssence = () => {
+const PackageDetails = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleBooking = () => {
@@ -708,4 +708,4 @@ const PortugalEssence = () => {
   );
 };
 
-export default PortugalEssence;
+export default PackageDetails;
