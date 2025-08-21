@@ -59,7 +59,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="/servicos/consultoria-europa" className="hover:text-brand-blue transition-colors">
-                  Consultoria de Viagens pelo Mundo
+                  Planejamento de Viagem
                 </a>
               </li>
               <li>

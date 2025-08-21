@@ -5,7 +5,7 @@ import { Calendar, Plane, MapPin, Shield, Check } from "lucide-react";
 const services = [
   {
     icon: Calendar,
-    title: "Consultoria de Viagens pelo Mundo",
+    title: "Planejamento de Viagem",
     description: "Especialista em Europa. A consultoria de viagem da Viajar Pelo Mundo é um serviço completo e personalizado que ajuda você a planejar cada detalhe da sua viagem internacional com segurança, economia e conforto.",
     features: [
       "Planejamento inteligente: escolha do melhor período, roteiros otimizados e sugestões exclusivas",

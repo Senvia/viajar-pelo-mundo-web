@@ -95,7 +95,7 @@ const ServiceContent = () => (
       
       <ServiceHighlight
         icon={Euro}
-        title="Consultoria de Viagens pelo Mundo"
+        title="Planejamento de Viagem"
         description="Planeamento completo personalizado com material visual exclusivo. Especialista em Europa com processo dividido em 4 etapas."
         price="250€"
         cta="Começar Planeamento"

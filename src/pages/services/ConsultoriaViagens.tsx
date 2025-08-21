@@ -28,7 +28,7 @@ import {
 } from "lucide-react";
 
 const consultoriaData = {
-  name: "Consultoria de Viagens pelo Mundo",
+  name: "Planejamento de Viagem",
   specialty: "Especialista em Europa",
   price: "250€",
   duration: "Processo completo em 4 etapas",
@@ -122,7 +122,7 @@ const ConsultoriaViagens = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/351911734711?text=Olá! Gostaria de saber mais sobre a Consultoria de Viagens pelo Mundo.', '_blank');
+    window.open('https://wa.me/351911734711?text=Olá! Gostaria de saber mais sobre o Planejamento de Viagem.', '_blank');
   };
 
   const handleFormLink = () => {

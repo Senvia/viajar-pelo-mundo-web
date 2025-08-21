@@ -117,7 +117,7 @@ Mensagem: ${formData.message}`;
                         <SelectContent>
                           <SelectItem value="imigrantes">Consultoria para Imigrantes</SelectItem>
                           <SelectItem value="pacotes">Pacotes de Viagens</SelectItem>
-                          <SelectItem value="consultoria-europa">Consultoria de Viagens pelo Mundo</SelectItem>
+                          <SelectItem value="consultoria-europa">Planejamento de Viagem</SelectItem>
                           <SelectItem value="avulsos">Serviços Avulsos</SelectItem>
                         </SelectContent>
                       </Select>
