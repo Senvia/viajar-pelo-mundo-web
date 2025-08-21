@@ -45,7 +45,7 @@ All colors MUST be HSL.
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(203, 61%, 17%), hsl(197, 82%, 56%));
-    --gradient-icons: linear-gradient(135deg, hsl(197, 82%, 56%) 0%, hsl(186, 71%, 64%) 42%, hsl(162, 56%, 57%) 100%);
+    --gradient-icons: linear-gradient(135deg, hsl(162 56% 57%) 0%, hsl(166 56% 57%) 55%, hsl(186 71% 64%) 78%, hsl(197 82% 56%) 100%);
     --gradient-hero: linear-gradient(135deg, rgba(16, 49, 66, 0.8), rgba(50, 183, 234, 0.6));
     
     /* Shadows */
