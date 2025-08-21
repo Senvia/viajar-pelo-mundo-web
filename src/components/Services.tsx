@@ -4,40 +4,6 @@ import { Calendar, Plane, MapPin, Shield, Check } from "lucide-react";
 
 const services = [
   {
-    icon: Shield,
-    title: "Consultoria para Imigrantes",
-    description: "Suporte completo para quem quer emigrar para a Europa. Desde documentação até integração no novo país, estamos contigo em cada passo.",
-    features: [
-      "Assessoria para visto e documentação",
-      "Orientação sobre processo de imigração",
-      "Suporte na procura de habitação",
-      "Assistência na abertura de conta bancária",
-      "Integração cultural e social"
-    ],
-    price: "",
-    image: "/lovable-uploads/c2187682-7e3d-4df9-93f1-cbb52d3d3dec.png",
-    href: "/servicos/imigrantes"
-  },
-  {
-    icon: MapPin,
-    title: "Pacotes de Viagens",
-    description: "Portugal Essence - 7 dias e 6 noites no Porto. Pacote completo com experiências únicas e inesquecíveis na cidade mais charmosa de Portugal.",
-    features: [
-      "Traslado confortável em carro executivo até o hotel",
-      "City Tour Porto (Privativo) + Museu da experiência do Vinho – WOW",
-      "Workshop Pastel de Nata no Porto - 2h",
-      "Cruzeiro Gourmet ao Pôr do Sol (Partilhado) - 2h",
-      "Experiência Gastronómica com Prova de Vinhos - 3h",
-      "Espetáculo de Fado e Folclore com Jantar Tradicional - 2h30",
-      "Tour Compartilhado no Vale do Douro - 9h",
-      "Workshop Privativo de Pintura de Azulejos - 2h",
-      "Relaxar na piscina, na sauna e na sauna a vapor - 1h"
-    ],
-    price: "",
-    image: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png",
-    href: "/servicos/pacotes"
-  },
-  {
     icon: Calendar,
     title: "Consultoria de Viagens pelo Mundo",
     description: "Especialista em Europa. A consultoria de viagem da Viajar Pelo Mundo é um serviço completo e personalizado que ajuda você a planejar cada detalhe da sua viagem internacional com segurança, economia e conforto.",
@@ -67,6 +33,40 @@ const services = [
     price: "",
     image: "/lovable-uploads/a886c0ec-c4fb-4beb-ac44-aebb732c3676.png",
     href: "/servicos/avulsos"
+  },
+  {
+    icon: MapPin,
+    title: "Pacotes de Viagens",
+    description: "Portugal Essence - 7 dias e 6 noites no Porto. Pacote completo com experiências únicas e inesquecíveis na cidade mais charmosa de Portugal.",
+    features: [
+      "Traslado confortável em carro executivo até o hotel",
+      "City Tour Porto (Privativo) + Museu da experiência do Vinho – WOW",
+      "Workshop Pastel de Nata no Porto - 2h",
+      "Cruzeiro Gourmet ao Pôr do Sol (Partilhado) - 2h",
+      "Experiência Gastronómica com Prova de Vinhos - 3h",
+      "Espetáculo de Fado e Folclore com Jantar Tradicional - 2h30",
+      "Tour Compartilhado no Vale do Douro - 9h",
+      "Workshop Privativo de Pintura de Azulejos - 2h",
+      "Relaxar na piscina, na sauna e na sauna a vapor - 1h"
+    ],
+    price: "",
+    image: "/lovable-uploads/5b473dd1-d838-4e32-8cd6-8d66f99b8753.png",
+    href: "/servicos/pacotes"
+  },
+  {
+    icon: Shield,
+    title: "Consultoria para Imigrantes",
+    description: "Suporte completo para quem quer emigrar para a Europa. Desde documentação até integração no novo país, estamos contigo em cada passo.",
+    features: [
+      "Assessoria para visto e documentação",
+      "Orientação sobre processo de imigração",
+      "Suporte na procura de habitação",
+      "Assistência na abertura de conta bancária",
+      "Integração cultural e social"
+    ],
+    price: "",
+    image: "/lovable-uploads/c2187682-7e3d-4df9-93f1-cbb52d3d3dec.png",
+    href: "/servicos/imigrantes"
   }
 ];
 

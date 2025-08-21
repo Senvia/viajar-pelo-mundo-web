@@ -78,18 +78,6 @@ const Header = () => {
             <div className="absolute top-full left-0 mt-2 w-72 bg-white/95 backdrop-blur-xl rounded-xl shadow-elegant border border-border/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
               <div className="p-3">
                 <button 
-                  onClick={() => window.location.href = '/servicos/imigrantes'}
-                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
-                >
-                  Consultoria para Imigrantes
-                </button>
-                <button 
-                  onClick={() => window.location.href = '/servicos/pacotes'}
-                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
-                >
-                  Pacotes de Viagens
-                </button>
-                <button 
                   onClick={() => window.location.href = '/servicos/consultoria-viagens'}
                   className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
                 >
@@ -100,6 +88,18 @@ const Header = () => {
                   className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
                 >
                   Serviços Avulsos
+                </button>
+                <button 
+                  onClick={() => window.location.href = '/servicos/pacotes'}
+                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
+                >
+                  Pacotes de Viagens
+                </button>
+                <button 
+                  onClick={() => window.location.href = '/servicos/imigrantes'}
+                  className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
+                >
+                  Consultoria para Imigrantes
                 </button>
               </div>
             </div>
@@ -153,18 +153,6 @@ const Header = () => {
               <div className="text-secondary font-semibold">Serviços</div>
               <div className="pl-4 space-y-3">
                 <button 
-                  onClick={() => window.location.href = '/servicos/imigrantes'}
-                  className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
-                >
-                  Consultoria para Imigrantes
-                </button>
-                <button 
-                  onClick={() => window.location.href = '/servicos/pacotes'}
-                  className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
-                >
-                  Pacotes de Viagens
-                </button>
-                <button 
                   onClick={() => window.location.href = '/servicos/consultoria-viagens'}
                   className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
                 >
@@ -175,6 +163,18 @@ const Header = () => {
                   className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
                 >
                   Serviços Avulsos
+                </button>
+                <button 
+                  onClick={() => window.location.href = '/servicos/pacotes'}
+                  className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
+                >
+                  Pacotes de Viagens
+                </button>
+                <button 
+                  onClick={() => window.location.href = '/servicos/imigrantes'}
+                  className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
+                >
+                  Consultoria para Imigrantes
                 </button>
               </div>
             </div>
