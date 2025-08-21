@@ -14,7 +14,133 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      package_experiences: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          image: string | null
+          order_index: number | null
+          package_id: string | null
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          image?: string | null
+          order_index?: number | null
+          package_id?: string | null
+          title: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          image?: string | null
+          order_index?: number | null
+          package_id?: string | null
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "package_experiences_package_id_fkey"
+            columns: ["package_id"]
+            isOneToOne: false
+            referencedRelation: "packages"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      package_included: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          images: string[] | null
+          name: string
+          order_index: number | null
+          package_id: string | null
+          subtitle: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          images?: string[] | null
+          name: string
+          order_index?: number | null
+          package_id?: string | null
+          subtitle?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          images?: string[] | null
+          name?: string
+          order_index?: number | null
+          package_id?: string | null
+          subtitle?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "package_included_package_id_fkey"
+            columns: ["package_id"]
+            isOneToOne: false
+            referencedRelation: "packages"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      packages: {
+        Row: {
+          created_at: string
+          description: string
+          destination: string
+          duration: string
+          hero_image: string | null
+          highlights: string[] | null
+          id: string
+          main_image: string | null
+          name: string
+          price: string
+          price_note: string | null
+          slug: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          destination: string
+          duration: string
+          hero_image?: string | null
+          highlights?: string[] | null
+          id?: string
+          main_image?: string | null
+          name: string
+          price: string
+          price_note?: string | null
+          slug: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          destination?: string
+          duration?: string
+          hero_image?: string | null
+          highlights?: string[] | null
+          id?: string
+          main_image?: string | null
+          name?: string
+          price?: string
+          price_note?: string | null
+          slug?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
