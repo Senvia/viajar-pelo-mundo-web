@@ -142,48 +142,42 @@ const ConsultoriaViagens = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/lovable-uploads/0d6db174-1deb-46b7-8372-803af136d59f.png')`
-          }}
-        >
-          <div className="absolute inset-0 bg-black/50"></div>
+      <section className="relative pt-32 pb-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/0d6db174-1deb-46b7-8372-803af136d59f.png"
+            alt="Planejamento de Viagem"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
         </div>
         
-        <div className="relative z-10 container px-4 text-center text-white">
-          <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30 text-lg px-6 py-2">
-            {consultoriaData.specialty}
-          </Badge>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight px-4">
-            {consultoriaData.name}
-          </h1>
-          <p className="text-lg md:text-xl lg:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-white/90 px-4">
-            A consultoria de viagem da Viajar Pelo Mundo é um serviço completo e personalizado que ajuda você a planejar cada detalhe da sua viagem internacional com segurança, economia e conforto.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center px-4">
-            <Button 
-              size="lg" 
-              className="px-10 py-4 text-lg bg-white text-secondary hover:bg-white/90 shadow-2xl font-medium"
-              onClick={handleFormLink}
-            >
-              Solicitar Consultoria
-            </Button>
-            <Button 
-              size="lg"
-              className="px-10 py-4 text-lg border-2 border-white text-white bg-transparent hover:bg-white hover:text-secondary shadow-2xl transition-colors duration-300 font-medium"
-              onClick={handleWhatsApp}
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Falar Conosco
-            </Button>
-          </div>
-        </div>
-        
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+        <div className="relative container">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] pb-2">
+              {consultoriaData.name}
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
+              A consultoria de viagem da Viajar Pelo Mundo é um serviço completo e personalizado que ajuda você a planejar cada detalhe da sua viagem internacional com segurança, economia e conforto.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Button 
+                size="lg" 
+                className="px-8 py-4 text-lg bg-gradient-primary text-white hover:opacity-90 shadow-2xl"
+                onClick={handleFormLink}
+              >
+                Solicitar Consultoria
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="px-8 py-4 text-lg border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white backdrop-blur-sm"
+                onClick={handleWhatsApp}
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Falar Conosco
+              </Button>
+            </div>
           </div>
         </div>
       </section>

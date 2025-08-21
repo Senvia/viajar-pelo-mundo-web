@@ -71,24 +71,32 @@ const ServicosAvulsos = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-primary text-white">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
-              Serviços Pontuais
-            </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Serviços Avulsos
+      <section className="relative pt-32 pb-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/a886c0ec-c4fb-4beb-ac44-aebb732c3676.png"
+            alt="Serviços Avulsos"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+        </div>
+        
+        <div className="relative container">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] pb-2">
+              Serviços
+              <span className="block text-white">
+                Avulsos
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
               Ideal para quem precisa de uma ajuda pontual. Escolha exatamente 
               o que precisa sem compromisso com pacotes completos.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6">
               <Button 
                 size="lg" 
-                variant="secondary"
-                className="px-8 py-4 text-lg"
+                className="px-8 py-4 text-lg bg-gradient-primary text-white hover:opacity-90 shadow-2xl"
                 onClick={() => window.open('https://wa.me/351911734711', '_blank')}
               >
                 Solicitar Orçamento
@@ -96,7 +104,7 @@ const ServicosAvulsos = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="px-8 py-4 text-lg border-white text-black bg-white/90 hover:bg-white hover:text-secondary"
+                className="px-8 py-4 text-lg border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white backdrop-blur-sm"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Falar com Consultor
