@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 160 62% 55%;
+    --accent: 169 54% 55%;
     --accent-foreground: 203 100% 13%;
 
     --destructive: 0 84.2% 60.2%;
@@ -41,11 +41,11 @@ All colors MUST be HSL.
     /* Custom brand colors */
     --brand-blue: 197 82% 56%;
     --brand-dark: 203 61% 17%;
-    --brand-green: 171 47% 58%;
+    --brand-green: 169 54% 55%;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(203, 61%, 17%), hsl(197, 82%, 56%));
-    --gradient-icons: linear-gradient(135deg, hsl(200, 69%, 67%), hsl(171, 47%, 58%));
+    --gradient-icons: linear-gradient(135deg, hsl(169, 54%, 55%), hsl(197, 82%, 56%));
     --gradient-hero: linear-gradient(135deg, rgba(16, 49, 66, 0.8), rgba(50, 183, 234, 0.6));
     
     /* Shadows */
