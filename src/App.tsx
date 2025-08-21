@@ -11,7 +11,6 @@ import PacotesViagens from "./pages/services/PacotesViagens";
 import ConsultoriaEuropa from "./pages/services/ConsultoriaEuropa";
 import ServicosAvulsos from "./pages/services/ServicosAvulsos";
 import ConsultoriaViagens from "./pages/services/ConsultoriaViagens";
-import PortugalEssence from "./pages/services/pacotes/PortugalEssence";
 
 const queryClient = new QueryClient();
 
@@ -29,7 +28,6 @@ const App = () => (
           <Route path="/servicos/consultoria-europa" element={<ConsultoriaEuropa />} />
           <Route path="/servicos/avulsos" element={<ServicosAvulsos />} />
           <Route path="/servicos/consultoria-viagens" element={<ConsultoriaViagens />} />
-          <Route path="/servicos/pacotes/portugal-essence" element={<PortugalEssence />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
