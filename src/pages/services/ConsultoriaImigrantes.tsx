@@ -147,7 +147,7 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
       <Header />
       
       {/* Hero Section with Portugal Background */}
-      <section className="relative pt-20 pb-32 overflow-hidden">
+      <section className="relative pt-32 pb-32 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="/lovable-uploads/7b6e8e37-cdbe-4748-9935-4e376db134cf.png"
