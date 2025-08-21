@@ -275,10 +275,10 @@ const ConsultoriaViagens = () => {
               <Card key={index} className="p-6 border-2 hover:border-primary/20 transition-colors">
                 <CardContent className="p-0">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0 mt-1">
-                      <CheckCircle className="w-4 h-4 text-white" />
+                    <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="w-8 h-8 text-white" />
                     </div>
-                    <p className="text-muted-foreground leading-relaxed">{benefit}</p>
+                    <p className="text-xl text-muted-foreground leading-relaxed">{benefit}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -352,9 +352,11 @@ const ConsultoriaViagens = () => {
                 {includedServices.map((service, index) => (
                   <div key={index} className="space-y-2">
                     <div className="flex items-start gap-4">
-                      <CheckCircle className="w-6 h-6 text-brand-blue flex-shrink-0 mt-1" />
+                      <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="w-8 h-8 text-white" />
+                      </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-secondary">{service.title}</h4>
+                        <h4 className="text-xl font-semibold text-secondary">{service.title}</h4>
                         <p className="text-muted-foreground">{service.description}</p>
                       </div>
                     </div>
