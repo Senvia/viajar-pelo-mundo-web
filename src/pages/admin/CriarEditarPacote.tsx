@@ -25,14 +25,14 @@ interface TravelPackageFormData extends Omit<CreatePackageData, 'included' | 'ex
 const CriarEditarPacote = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const { createPackage, updatePackage, getPackageById } = usePackages();
+  const { createPackage, updatePackage, getPackageById, loading: packagesLoading } = usePackages();
   const [initialData, setInitialData] = useState<TravelPackageFormData | null>(null);
   const [loading, setLoading] = useState(!!id);
 
   const isEditing = !!id;
 
   useEffect(() => {
-    if (id) {
+    if (id && !packagesLoading) {
       const packageData = getPackageById(id);
       if (packageData) {
         // Transform Supabase data to form data format
@@ -61,13 +61,15 @@ const CriarEditarPacote = () => {
           })) || [],
         };
         setInitialData(formData);
+        setLoading(false);
       } else {
         toast.error('Pacote não encontrado');
         navigate('/admin/dashboard');
       }
+    } else if (!id) {
       setLoading(false);
     }
-  }, [id, getPackageById, navigate]);
+  }, [id, getPackageById, navigate, packagesLoading]);
 
   const handleSubmit = async (data: CreatePackageData) => {
     try {
