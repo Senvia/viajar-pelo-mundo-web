@@ -349,9 +349,6 @@ const ConsultoriaViagens = () => {
 
           {/* Other Materials Grid with Examples */}
           <div className="max-w-6xl mx-auto mb-20">
-            <h3 className="text-2xl font-bold text-secondary mb-8 text-center">
-              Outros Materiais Inclusos
-            </h3>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Left Column - Material Items */}
