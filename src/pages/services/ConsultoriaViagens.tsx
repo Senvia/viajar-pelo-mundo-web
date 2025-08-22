@@ -344,7 +344,85 @@ const ConsultoriaViagens = () => {
             </p>
           </div>
 
+          {/* Featured Map Section */}
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-brand-blue text-white px-4 py-2 text-base">
+                ⭐ Nosso Principal Diferencial
+              </Badge>
+              <h3 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
+                Mapa Personalizado Exclusivo
+              </h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Cada cliente recebe um mapa interativo único com pontos turísticos, restaurantes 
+                e atividades selecionados especialmente para o seu perfil de viagem.
+              </p>
+            </div>
+            
+            <div className="max-w-6xl mx-auto">
+              <Card className="overflow-hidden border-0 shadow-2xl">
+                <div className="relative">
+                  <div className="aspect-video bg-gradient-to-br from-brand-blue/10 to-brand-green/10 flex items-center justify-center">
+                    <iframe
+                      src="https://www.google.com/maps/d/embed?mid=1zLOUvdHVdu_E_VjaSEbvOfx1YDuFZlo&ehbc=2E312F"
+                      width="100%"
+                      height="100%"
+                      className="absolute inset-0 rounded-t-lg"
+                      loading="lazy"
+                      title="Mapa Personalizado - Exemplo"
+                    ></iframe>
+                  </div>
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-5 h-5 text-brand-blue" />
+                      <span className="font-semibold text-brand-dark">Mapa Exemplo</span>
+                    </div>
+                  </div>
+                  <div className="absolute bottom-4 right-4">
+                    <Button 
+                      size="sm"
+                      className="bg-white/90 text-brand-dark hover:bg-white backdrop-blur-sm shadow-lg"
+                      onClick={() => window.open('https://www.google.com/maps/d/u/1/viewer?mid=1zLOUvdHVdu_E_VjaSEbvOfx1YDuFZlo&ll=0%2C0&z=11', '_blank')}
+                    >
+                      <Eye className="w-4 h-4 mr-2" />
+                      Ver Mapa Completo
+                    </Button>
+                  </div>
+                </div>
+                <CardContent className="p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-icons flex items-center justify-center">
+                        <MapPin className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="font-semibold text-secondary mb-2">Pontos Turísticos</h4>
+                      <p className="text-sm text-muted-foreground">Atrações selecionadas para seu perfil</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-icons flex items-center justify-center">
+                        <Sparkles className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="font-semibold text-secondary mb-2">Restaurantes</h4>
+                      <p className="text-sm text-muted-foreground">Experiências gastronômicas únicas</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-icons flex items-center justify-center">
+                        <Heart className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="font-semibold text-secondary mb-2">Atividades</h4>
+                      <p className="text-sm text-muted-foreground">Experiências personalizadas</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Other Materials Grid */}
           <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-secondary mb-8 text-center">
+              Outros Materiais Inclusos
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {materialIncludes.map((item, index) => (
                 <Card key={index} className="p-6 border-0 shadow-card hover:shadow-xl transition-shadow">
