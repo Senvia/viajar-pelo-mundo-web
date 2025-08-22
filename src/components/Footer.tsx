@@ -1,9 +1,6 @@
 import { Plane, Instagram, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
-  const startYear = 2023;
-  const currentYear = new Date().getFullYear();
-  const yearText = startYear === currentYear ? `${startYear}` : `${startYear}–${currentYear}`;
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container py-12">
@@ -129,7 +126,7 @@ const Footer = () => {
         <div className="border-t border-secondary-foreground/20 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-secondary-foreground/60">
-              © {yearText} Viajar Pelo Mundo. Todos os direitos reservados.
+              © 2023 Viajar Pelo Mundo. Todos os direitos reservados.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="hover:text-brand-blue transition-colors">
