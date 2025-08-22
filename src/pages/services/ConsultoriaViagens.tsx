@@ -151,7 +151,7 @@ const ConsultoriaViagens = () => {
       <section className="relative pt-32 pb-32 overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="/lovable-uploads/0d6db174-1deb-46b7-8372-803af136d59f.png"
+            src="/lovable-uploads/8290f90b-0d37-45c9-8e3d-03767ab41c55.png"
             alt="Planejamento de Viagem"
             className="w-full h-full object-cover"
           />
