@@ -347,22 +347,79 @@ const ConsultoriaViagens = () => {
             </p>
           </div>
 
-          {/* Other Materials Grid */}
-          <div className="max-w-4xl mx-auto mb-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {materialIncludes.map((item, index) => (
-                <Card key={index} className="p-6 border-0 shadow-card hover:shadow-xl transition-shadow">
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
-                      <Sparkles className="w-8 h-8 text-white" />
+          {/* Other Materials Grid with Examples */}
+          <div className="max-w-6xl mx-auto mb-20">
+            <h3 className="text-2xl font-bold text-secondary mb-8 text-center">
+              Outros Materiais Inclusos
+            </h3>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Left Column - Material Items */}
+              <div className="space-y-4">
+                {materialIncludes.map((item, index) => (
+                  <Card key={index} className="p-4 border-0 shadow-card hover:shadow-xl transition-shadow">
+                    <div className="flex items-start gap-3">
+                      <div className="w-12 h-12 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
+                        <Sparkles className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-base font-semibold text-secondary mb-1">{item}</h4>
+                        <p className="text-muted-foreground text-xs">Informações organizadas para sua comodidade</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-secondary mb-2">{item}</h4>
-                      <p className="text-muted-foreground text-sm">Informações detalhadas e organizadas para sua comodidade</p>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Middle Column - Guide Example 1 */}
+              <div className="space-y-4">
+                <Card className="overflow-hidden border-0 shadow-xl">
+                  <div className="relative">
+                    <img 
+                      src="/lovable-uploads/1737d0e2-b2d9-4c03-909b-166064c8edc8.png"
+                      alt="Exemplo de Guia - Pontos Turísticos"
+                      className="w-full h-auto object-contain"
+                    />
+                    <div className="absolute top-2 left-2 bg-black/70 backdrop-blur-sm rounded px-2 py-1">
+                      <span className="text-white text-xs font-medium">Pontos Turísticos</span>
                     </div>
                   </div>
+                  <CardContent className="p-4">
+                    <h4 className="text-sm font-bold text-secondary mb-1">Guia de Atrações</h4>
+                    <p className="text-xs text-muted-foreground">
+                      Informações detalhadas sobre pontos turísticos e horários.
+                    </p>
+                  </CardContent>
                 </Card>
-              ))}
+              </div>
+
+              {/* Right Column - Guide Example 2 */}
+              <div className="space-y-4">
+                <Card className="overflow-hidden border-0 shadow-xl">
+                  <div className="relative">
+                    <img 
+                      src="/lovable-uploads/6bbc7e8b-c2ac-4038-a2ae-3916b7715155.png"
+                      alt="Exemplo de Guia - Experiências"
+                      className="w-full h-auto object-contain"
+                    />
+                    <div className="absolute top-2 left-2 bg-black/70 backdrop-blur-sm rounded px-2 py-1">
+                      <span className="text-white text-xs font-medium">Experiências</span>
+                    </div>
+                  </div>
+                  <CardContent className="p-4">
+                    <h4 className="text-sm font-bold text-secondary mb-1">Atividades Especiais</h4>
+                    <p className="text-xs text-muted-foreground">
+                      Experiências exclusivas com instruções completas.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+            
+            <div className="text-center mt-6">
+              <p className="text-xs text-muted-foreground italic">
+                * Exemplos reais de materiais criados para nossos clientes
+              </p>
             </div>
           </div>
 
@@ -437,81 +494,6 @@ const ConsultoriaViagens = () => {
             </div>
           </div>
 
-          {/* Other Materials Grid with Examples */}
-          <div className="max-w-6xl mx-auto">
-            <h3 className="text-2xl font-bold text-secondary mb-8 text-center">
-              Outros Materiais Inclusos
-            </h3>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Left Column - Material Items */}
-              <div className="space-y-4">
-                {materialIncludes.map((item, index) => (
-                  <Card key={index} className="p-4 border-0 shadow-card hover:shadow-xl transition-shadow">
-                    <div className="flex items-start gap-3">
-                      <div className="w-12 h-12 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
-                        <Sparkles className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="text-base font-semibold text-secondary mb-1">{item}</h4>
-                        <p className="text-muted-foreground text-xs">Informações organizadas para sua comodidade</p>
-                      </div>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-
-              {/* Middle Column - Guide Example 1 */}
-              <div className="space-y-4">
-                <Card className="overflow-hidden border-0 shadow-xl">
-                  <div className="relative">
-                    <img 
-                      src="/lovable-uploads/1737d0e2-b2d9-4c03-909b-166064c8edc8.png"
-                      alt="Exemplo de Guia - Pontos Turísticos"
-                      className="w-full h-auto object-contain"
-                    />
-                    <div className="absolute top-2 left-2 bg-black/70 backdrop-blur-sm rounded px-2 py-1">
-                      <span className="text-white text-xs font-medium">Pontos Turísticos</span>
-                    </div>
-                  </div>
-                  <CardContent className="p-4">
-                    <h4 className="text-sm font-bold text-secondary mb-1">Guia de Atrações</h4>
-                    <p className="text-xs text-muted-foreground">
-                      Informações detalhadas sobre pontos turísticos e horários.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Right Column - Guide Example 2 */}
-              <div className="space-y-4">
-                <Card className="overflow-hidden border-0 shadow-xl">
-                  <div className="relative">
-                    <img 
-                      src="/lovable-uploads/6bbc7e8b-c2ac-4038-a2ae-3916b7715155.png"
-                      alt="Exemplo de Guia - Experiências"
-                      className="w-full h-auto object-contain"
-                    />
-                    <div className="absolute top-2 left-2 bg-black/70 backdrop-blur-sm rounded px-2 py-1">
-                      <span className="text-white text-xs font-medium">Experiências</span>
-                    </div>
-                  </div>
-                  <CardContent className="p-4">
-                    <h4 className="text-sm font-bold text-secondary mb-1">Atividades Especiais</h4>
-                    <p className="text-xs text-muted-foreground">
-                      Experiências exclusivas com instruções completas.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-            
-            <div className="text-center mt-6">
-              <p className="text-xs text-muted-foreground italic">
-                * Exemplos reais de materiais criados para nossos clientes
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
