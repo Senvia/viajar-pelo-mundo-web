@@ -240,7 +240,7 @@ const ConsultoriaViagens = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Benefits Section with Images */}
       <section className="py-20">
         <div className="container">
           <div className="text-center mb-16">
@@ -252,19 +252,141 @@ const ConsultoriaViagens = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {consultoriaData.benefits.map((benefit, index) => (
-              <Card key={index} className="p-6 border-2 hover:border-primary/20 transition-colors">
-                <CardContent className="p-0">
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-8 h-8 text-white" />
-                    </div>
-                    <p className="text-xl text-muted-foreground leading-relaxed">{benefit}</p>
+          <div className="space-y-20">
+            {/* Planejamento Inteligente */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
+                    <MapPin className="w-8 h-8 text-white" />
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                  <h3 className="text-2xl font-bold text-secondary">Planejamento Inteligente</h3>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Escolha do melhor período, roteiros otimizados e sugestões exclusivas personalizadas para seu perfil de viagem.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Análise de melhores datas</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Roteiros otimizados</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="order-first lg:order-last">
+                <div 
+                  className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in"
+                  style={{ backgroundImage: `url('/lovable-uploads/d473c4c5-98ec-4c93-ac26-d2dc26c06c80.png')` }}
+                >
+                </div>
+              </div>
+            </div>
+
+            {/* Curadoria Completa */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div 
+                  className="relative rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in"
+                  style={{ backgroundImage: `url('/lovable-uploads/b98e1a54-f373-4e98-a573-a595c1c7a136.png')` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
+                    <Settings className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-secondary">Curadoria Completa</h3>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Passagens aéreas, hospedagens, transfers, passeios, seguros, restaurantes e muito mais, tudo cuidadosamente selecionado.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Passagens e hospedagens</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Passeios e restaurantes</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Atendimento Humanizado */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
+                    <MessageCircle className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-secondary">Atendimento Humanizado</h3>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Ouvimos suas preferências e criamos uma proposta que se encaixa perfeitamente no seu perfil e expectativas.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Consulta personalizada</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Proposta sob medida</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="order-first lg:order-last">
+                <div className="grid grid-cols-2 gap-4">
+                  <div 
+                    className="rounded-xl overflow-hidden shadow-xl h-40 bg-cover bg-center animate-fade-in"
+                    style={{ backgroundImage: `url('/lovable-uploads/c23fafcc-27fe-4e3a-b4aa-8061a9acfa1a.png')` }}
+                  ></div>
+                  <div 
+                    className="rounded-xl overflow-hidden shadow-xl h-40 bg-cover bg-center animate-fade-in"
+                    style={{ backgroundImage: `url('/lovable-uploads/78890d5a-286d-4b4f-b8a4-a5d44461d3d4.png')` }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Suporte Completo */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div 
+                  className="relative rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center animate-fade-in"
+                  style={{ backgroundImage: `url('/lovable-uploads/25dd2392-9644-42fa-88e9-bbdd6b07c1c3.png')` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
+                    <Shield className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-secondary">Suporte & Economia</h3>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Suporte antes, durante e depois da viagem, com economia de tempo e dinheiro através de recomendações confiáveis.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Suporte 24/7 durante a viagem</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-brand-blue" />
+                    <span className="text-muted-foreground">Material visual exclusivo (PDF/digital)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
