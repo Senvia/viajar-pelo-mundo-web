@@ -349,8 +349,8 @@ const ConsultoriaViagens = () => {
               {materialIncludes.map((item, index) => (
                 <Card key={index} className="p-6 border-0 shadow-card hover:shadow-xl transition-shadow">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
-                      <Sparkles className="w-6 h-6 text-white" />
+                    <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
+                      <Sparkles className="w-8 h-8 text-white" />
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-secondary mb-2">{item}</h4>
