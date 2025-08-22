@@ -298,43 +298,26 @@ const ConsultoriaViagens = () => {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
-              O Que Está Incluído
+              Serviços Inclusos
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Nosso planejamento é completo e personalizado, pensado para garantir praticidade, segurança e experiências únicas
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-bold text-secondary mb-8">Serviços Inclusos</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {includedServices.map((service, index) => (
-                  <Card key={index} className="overflow-hidden border-0 shadow-card group">
-                    <div 
-                      className="h-40 bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
-                      style={{ backgroundImage: `url('${service.image}')` }}
-                    />
-                    <CardContent className="p-5">
-                      <h4 className="text-xl font-semibold text-secondary mb-2">{service.title}</h4>
-                      <p className="text-muted-foreground">{service.description}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold text-secondary mb-8">Material Visual Exclusivo</h3>
-              <div className="space-y-4">
-                {materialIncludes.map((item, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <Sparkles className="w-6 h-6 text-brand-blue flex-shrink-0 mt-1" />
-                    <span className="text-lg text-muted-foreground">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {includedServices.map((service, index) => (
+              <Card key={index} className="overflow-hidden border-0 shadow-card group">
+                <div 
+                  className="h-48 bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                  style={{ backgroundImage: `url('${service.image}')` }}
+                />
+                <CardContent className="p-6">
+                  <h4 className="text-xl font-semibold text-secondary mb-3">{service.title}</h4>
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           <div className="text-center mt-12">
@@ -345,6 +328,38 @@ const ConsultoriaViagens = () => {
             >
               Solicitar Planejamento Agora
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Material Visual Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+              Material Visual Exclusivo e Personalizado
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Receba um guia digital completo com todas as informações da sua viagem
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {materialIncludes.map((item, index) => (
+                <Card key={index} className="p-6 border-0 shadow-card hover:shadow-xl transition-shadow">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
+                      <Sparkles className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-secondary mb-2">{item}</h4>
+                      <p className="text-muted-foreground text-sm">Informações detalhadas e organizadas para sua comodidade</p>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
