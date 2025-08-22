@@ -347,9 +347,6 @@ const ConsultoriaViagens = () => {
           {/* Featured Map Section */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <Badge className="mb-4 bg-brand-blue text-white px-4 py-2 text-base">
-                ⭐ Nosso Principal Diferencial
-              </Badge>
               <h3 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
                 Mapa Personalizado Exclusivo
               </h3>
