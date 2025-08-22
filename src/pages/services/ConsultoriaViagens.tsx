@@ -65,7 +65,7 @@ const processSteps = [
     icon: FileText,
     title: "Entrega do material visual completo",
     description: "Criamos um guia digital exclusivo com o passo a passo da sua viagem, contendo todas as informações organizadas de forma clara, prática e elegante.",
-    image: "/lovable-uploads/30d84693-6080-4631-8243-f1d0abb88cbe.png"
+    image: "/lovable-uploads/6f636353-ae8b-497e-b7cd-3c5bd6a2928f.png"
   }
 ];
 
@@ -93,7 +93,7 @@ const includedServices = [
   {
     title: "Material visual exclusivo da viagem",
     description: "Entregamos um guia digital organizado com roteiro completo e informações detalhadas.",
-    image: "/lovable-uploads/30d84693-6080-4631-8243-f1d0abb88cbe.png"
+    image: "/lovable-uploads/6f636353-ae8b-497e-b7cd-3c5bd6a2928f.png"
   },
   {
     title: "Suporte antes e durante a viagem",
