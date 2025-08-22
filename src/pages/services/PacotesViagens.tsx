@@ -38,7 +38,7 @@ const PacotesViagens = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-32 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="/lovable-uploads/0d6db174-1deb-46b7-8372-803af136d59f.png"
@@ -56,9 +56,9 @@ const PacotesViagens = () => {
                 Viagens
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
-              Descubra Portugal através de experiências autênticas e inesquecíveis, 
-              cuidadosamente curadas para você
+            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl">
+              Descubra Portugal através de experiências autênticas 
+              e inesquecíveis, cuidadosamente curadas para você.
             </p>
           </div>
         </div>

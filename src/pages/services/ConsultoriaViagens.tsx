@@ -142,7 +142,7 @@ const ConsultoriaViagens = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-32 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="/lovable-uploads/0d6db174-1deb-46b7-8372-803af136d59f.png"
@@ -157,8 +157,9 @@ const ConsultoriaViagens = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] pb-2">
               {consultoriaData.name}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
-              O planejamento de viagem personalizado da Viajar Pelo Mundo é um serviço completo que ajuda você a organizar cada detalhe da sua viagem internacional com segurança, economia e conforto.
+            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl">
+              Planejamento personalizado para sua viagem internacional 
+              com segurança, economia e conforto.
             </p>
           </div>
         </div>
