@@ -211,22 +211,6 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
             ))}
           </ul>
           
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg"
-              className="bg-brand-dark hover:bg-brand-dark/90 shadow-elegant px-8 text-white"
-              onClick={() => window.location.href = service.href}
-            >
-              Saiba Mais
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
-            >
-              Contactar Agora
-            </Button>
-          </div>
         </div>
       </div>
       
