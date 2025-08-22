@@ -147,7 +147,7 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
       <Header />
       
       {/* Hero Section with Portugal Background */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-32 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="/lovable-uploads/7b6e8e37-cdbe-4748-9935-4e376db134cf.png"
@@ -165,9 +165,9 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
                 Imigrantes em Portugal
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
               Suporte completo para quem quer emigrar para Portugal. 
-              Desde documentação até integração no novo país.
+              Desde documentação até integração no novo país, estamos contigo em cada passo da tua jornada.
             </p>
           </div>
         </div>

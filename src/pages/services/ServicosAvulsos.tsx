@@ -71,7 +71,7 @@ const ServicosAvulsos = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-32 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="/lovable-uploads/a886c0ec-c4fb-4beb-ac44-aebb732c3676.png"
@@ -89,9 +89,9 @@ const ServicosAvulsos = () => {
                 Avulsos
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl">
-              Ideal para quem precisa de uma ajuda pontual. Escolha 
-              exatamente o que precisa sem compromisso com pacotes completos.
+            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
+              Ideal para quem precisa de uma ajuda pontual. Escolha exatamente 
+              o que precisa sem compromisso com pacotes completos.
             </p>
           </div>
         </div>
