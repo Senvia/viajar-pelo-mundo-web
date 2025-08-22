@@ -93,23 +93,6 @@ const ServicosAvulsos = () => {
               Ideal para quem precisa de uma ajuda pontual. Escolha exatamente 
               o que precisa sem compromisso com pacotes completos.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6">
-                <Button 
-                  size="lg" 
-                  className="px-8 py-4 text-lg bg-brand-dark text-white hover:bg-brand-dark/90 shadow-2xl"
-                  onClick={() => window.open('https://wa.me/351911734711', '_blank')}
-                >
-                  Solicitar Orçamento
-                </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="px-8 py-4 text-lg border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white backdrop-blur-sm"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Falar com Consultor
-              </Button>
-            </div>
           </div>
         </div>
       </section>

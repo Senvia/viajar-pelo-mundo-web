@@ -169,25 +169,6 @@ Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre 
               Suporte completo para quem quer emigrar para Portugal. 
               Desde documentação até integração no novo país, estamos contigo em cada passo da tua jornada.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6">
-              <Button 
-                size="lg" 
-                className="px-8 py-4 text-lg bg-primary text-white hover:bg-primary/90 shadow-2xl"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Começar Agora
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="px-8 py-4 text-lg border-2 border-primary bg-white text-primary hover:bg-primary hover:text-white backdrop-blur-sm"
-                onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
-              >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                WhatsApp Direto
-              </Button>
-            </div>
           </div>
         </div>
       </section>

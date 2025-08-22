@@ -160,24 +160,6 @@ const ConsultoriaViagens = () => {
             <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
               O planejamento de viagem personalizado da Viajar Pelo Mundo é um serviço completo que ajuda você a organizar cada detalhe da sua viagem internacional com segurança, economia e conforto.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6">
-              <Button 
-                size="lg" 
-                className="px-8 py-4 text-lg bg-brand-dark text-white hover:bg-brand-dark/90 shadow-2xl"
-                onClick={handleFormLink}
-              >
-                Solicitar Planejamento
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="px-8 py-4 text-lg border-2 border-secondary bg-white text-secondary hover:bg-secondary hover:text-white backdrop-blur-sm"
-                onClick={handleWhatsApp}
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Falar Conosco
-              </Button>
-            </div>
           </div>
         </div>
       </section>
