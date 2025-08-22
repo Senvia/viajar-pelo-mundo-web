@@ -66,7 +66,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      <Header variant="light" />
       
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-brand-dark/5 via-secondary/5 to-brand-blue/5">

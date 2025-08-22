@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Plane } from "lucide-react";
 
-const Header = () => {
+interface HeaderProps {
+  variant?: 'default' | 'light';
+}
+
+const Header = ({ variant = 'default' }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -14,6 +18,9 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Force scrolled state for light variant
+  const shouldShowLightStyle = variant === 'light' || isScrolled;
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -22,7 +29,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
+      shouldShowLightStyle 
         ? 'bg-white/90 backdrop-blur-xl shadow-elegant border-b border-border/50' 
         : 'bg-transparent'
     }`}>
@@ -38,12 +45,12 @@ const Header = () => {
           </div>
           <div>
             <h2 className={`text-xl font-bold transition-colors ${
-              isScrolled ? 'text-secondary' : 'text-white'
+              shouldShowLightStyle ? 'text-secondary' : 'text-white'
             }`}>
               Viajar Pelo Mundo
             </h2>
             <p className={`text-xs transition-colors ${
-              isScrolled ? 'text-muted-foreground' : 'text-white/80'
+              shouldShowLightStyle ? 'text-muted-foreground' : 'text-white/80'
             }`}>
               Especialistas em Viagens
             </p>
@@ -55,7 +62,7 @@ const Header = () => {
           <button 
             onClick={() => window.location.href = '/sobre-nos'}
             className={`font-medium transition-all duration-300 hover:scale-105 ${
-              isScrolled 
+              shouldShowLightStyle 
                 ? 'text-muted-foreground hover:text-primary' 
                 : 'text-white/90 hover:text-white'
             }`}
@@ -65,7 +72,7 @@ const Header = () => {
           
           <div className="relative group">
             <button className={`font-medium transition-all duration-300 hover:scale-105 flex items-center gap-1 ${
-              isScrolled 
+              shouldShowLightStyle 
                 ? 'text-muted-foreground hover:text-primary' 
                 : 'text-white/90 hover:text-white'
             }`}>
@@ -108,7 +115,7 @@ const Header = () => {
           <button 
             onClick={() => scrollToSection('contact')}
             className={`font-medium transition-all duration-300 hover:scale-105 ${
-              isScrolled 
+              shouldShowLightStyle 
                 ? 'text-muted-foreground hover:text-primary' 
                 : 'text-white/90 hover:text-white'
             }`}
@@ -128,7 +135,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           className={`lg:hidden p-2 rounded-lg transition-colors ${
-            isScrolled 
+            shouldShowLightStyle 
               ? 'text-secondary hover:bg-muted' 
               : 'text-white hover:bg-white/10'
           }`}
