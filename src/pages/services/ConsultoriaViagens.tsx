@@ -436,6 +436,71 @@ const ConsultoriaViagens = () => {
               </Card>
             </div>
           </div>
+
+          {/* Guide Examples Section */}
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
+                Exemplos do Nosso Guia Personalizado
+              </h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Veja como criamos guias detalhados com informações completas sobre cada destino, 
+                horários, instruções e dicas exclusivas para sua viagem.
+              </p>
+            </div>
+            
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Guide Example 1 */}
+                <Card className="overflow-hidden border-0 shadow-2xl group">
+                  <div className="relative">
+                    <img 
+                      src="/lovable-uploads/1737d0e2-b2d9-4c03-909b-166064c8edc8.png"
+                      alt="Exemplo de Guia Personalizado - Pontos Turísticos Londres"
+                      className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                    />
+                    <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm rounded-lg px-3 py-2">
+                      <span className="text-white text-sm font-medium">Pontos Turísticos</span>
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <h4 className="text-xl font-bold text-secondary mb-3">Guia de Atrações</h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Informações detalhadas sobre pontos turísticos, horários de funcionamento, 
+                      dicas de visitação e instruções de como chegar a cada local.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Guide Example 2 */}
+                <Card className="overflow-hidden border-0 shadow-2xl group">
+                  <div className="relative">
+                    <img 
+                      src="/lovable-uploads/6bbc7e8b-c2ac-4038-a2ae-3916b7715155.png"
+                      alt="Exemplo de Guia Personalizado - Experiências e Atividades Londres"
+                      className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                    />
+                    <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm rounded-lg px-3 py-2">
+                      <span className="text-white text-sm font-medium">Experiências Únicas</span>
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <h4 className="text-xl font-bold text-secondary mb-3">Atividades Especiais</h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Experiências exclusivas com instruções completas, pontos de encontro, 
+                      horários e todas as informações necessárias para aproveitar ao máximo.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <div className="text-center mt-8">
+                <p className="text-sm text-muted-foreground italic">
+                  * Exemplos reais de guias criados para nossos clientes
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
