@@ -72,27 +72,33 @@ const processSteps = [
 const includedServices = [
   {
     title: "Reunião de alinhamento",
-    description: "Entendemos seu perfil, objetivos, orçamento e expectativas para criar uma viagem sob medida."
+    description: "Entendemos seu perfil, objetivos, orçamento e expectativas para criar uma viagem sob medida.",
+    image: "/lovable-uploads/ef7988f2-f6cf-4a8b-bfcb-570ee025bb04.png"
   },
   {
     title: "Pesquisa e seleção personalizada de serviços",
-    description: "Cuidamos de cada detalhe: destinos, roteiros, hospedagens, voos, transfers, seguro, chip de internet, passeios e experiências."
+    description: "Cuidamos de cada detalhe: destinos, roteiros, hospedagens, voos, transfers, seguro, chip de internet, passeios e experiências.",
+    image: "/lovable-uploads/b98e1a54-f373-4e98-a573-a595c1c7a136.png"
   },
   {
     title: "Acompanhamento em tempo real",
-    description: "Acompanhamento durante o processo de decisão, com esclarecimento de dúvidas e ajustes no plano conforme necessário."
+    description: "Acompanhamento durante o processo de decisão, com esclarecimento de dúvidas e ajustes no plano conforme necessário.",
+    image: "/lovable-uploads/5df4c253-f819-4e4f-a21c-a865b6ac3605.png"
   },
   {
     title: "Reservas e confirmações",
-    description: "Intermediamos as reservas e orientamos sobre as melhores opções, sempre com foco em segurança, conforto e economia."
+    description: "Intermediamos as reservas e orientamos sobre as melhores opções, sempre com foco em segurança, conforto e economia.",
+    image: "/lovable-uploads/275f0664-9977-493e-8cba-fccf8addb1a3.png"
   },
   {
     title: "Material visual exclusivo da viagem",
-    description: "Entregamos um guia digital organizado com roteiro completo e informações detalhadas."
+    description: "Entregamos um guia digital organizado com roteiro completo e informações detalhadas.",
+    image: "/lovable-uploads/30d84693-6080-4631-8243-f1d0abb88cbe.png"
   },
   {
     title: "Suporte antes e durante a viagem",
-    description: "Estaremos disponíveis para apoiar você com qualquer dúvida ou necessidade relacionada ao plano contratado."
+    description: "Estaremos disponíveis para apoiar você com qualquer dúvida ou necessidade relacionada ao plano contratado.",
+    image: "/lovable-uploads/167e296a-843b-41b6-b556-42ac23882921.png"
   }
 ];
 
@@ -452,19 +458,18 @@ const ConsultoriaViagens = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-bold text-secondary mb-8">Serviços Inclusos</h3>
-              <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {includedServices.map((service, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex items-start gap-4">
-                      <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="w-8 h-8 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-semibold text-secondary">{service.title}</h4>
-                        <p className="text-muted-foreground">{service.description}</p>
-                      </div>
-                    </div>
-                  </div>
+                  <Card key={index} className="overflow-hidden border-0 shadow-card group">
+                    <div 
+                      className="h-40 bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                      style={{ backgroundImage: `url('${service.image}')` }}
+                    />
+                    <CardContent className="p-5">
+                      <h4 className="text-xl font-semibold text-secondary mb-2">{service.title}</h4>
+                      <p className="text-muted-foreground">{service.description}</p>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>
