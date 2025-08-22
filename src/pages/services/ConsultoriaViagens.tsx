@@ -281,7 +281,7 @@ const ConsultoriaViagens = () => {
                     className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover animate-fade-in hover:scale-105 transition-transform duration-300"
                     style={{ 
                       backgroundImage: `url('${step.image}')`,
-                      backgroundPosition: index === 3 ? 'center top' : 'center'
+                      backgroundPosition: index === 3 ? 'center center' : 'center'
                     }}
                   >
                     
@@ -309,8 +309,11 @@ const ConsultoriaViagens = () => {
             {includedServices.map((service, index) => (
               <Card key={index} className="overflow-hidden border-0 shadow-card group">
                 <div 
-                  className="h-48 bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
-                  style={{ backgroundImage: `url('${service.image}')` }}
+                  className="h-48 bg-cover transition-transform duration-300 group-hover:scale-105"
+                  style={{ 
+                    backgroundImage: `url('${service.image}')`,
+                    backgroundPosition: index === 4 ? 'center center' : 'center'
+                  }}
                 />
                 <CardContent className="p-6">
                   <h4 className="text-xl font-semibold text-secondary mb-3">{service.title}</h4>
