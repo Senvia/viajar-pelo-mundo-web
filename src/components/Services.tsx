@@ -134,7 +134,7 @@ const Services = () => {
               size="lg" 
               variant="secondary"
               className="bg-white text-primary hover:bg-white/90"
-              onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
+              onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
             >
               Solicitar Orçamento
             </Button>

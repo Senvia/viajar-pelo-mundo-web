@@ -50,7 +50,7 @@ const NewHero = () => {
             <Button 
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 text-lg shadow-elegant transition-all duration-300 hover:scale-105"
-              onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
+              onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
             >
               Marcar Consultoria
               <ArrowRight className="w-5 h-5 ml-2" />

@@ -33,7 +33,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 text-lg shadow-elegant"
-              onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
+              onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
             >
               Agendar Consultoria Gratuita
             </Button>

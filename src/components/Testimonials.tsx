@@ -65,7 +65,7 @@ const Testimonials = () => {
             Pronto para criar sua própria história de viagem?
           </p>
           <a 
-            href="https://wa.me/message/YNHNAUM2BAAHD1" 
+            href="https://agencia.iddas.com.br/so/k8cqdbwp" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-brand-dark text-white rounded-lg hover:bg-brand-dark/90 transition-opacity shadow-elegant"

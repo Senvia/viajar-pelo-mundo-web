@@ -94,7 +94,7 @@ const TravelInteractiveBentoGallery = () => {
               <Button 
                 size="lg" 
                 className="bg-brand-dark hover:bg-brand-dark/90 shadow-elegant px-8 py-4 text-lg font-semibold group text-white"
-                onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
+                onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
               >
                 Planejar Minha Viagem
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />

@@ -36,7 +36,7 @@ const services = [
     image: "/lovable-uploads/604537d9-c3eb-430c-9d01-820b1bec9336.png",
     price: "Orçamento personalizado",
     cta: "Solicitar Orçamento",
-    ctaAction: () => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank'),
+    ctaAction: () => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank'),
     highlight: false
   },
   {
@@ -57,7 +57,7 @@ const services = [
     image: "/lovable-uploads/50a145af-5d83-420a-814c-8f6f70ed394c.png",
     price: "Consulte valores",
     cta: "Falar com Especialista",
-    ctaAction: () => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank'),
+    ctaAction: () => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank'),
     highlight: true
   },
   {
@@ -239,7 +239,7 @@ const PremiumServices = () => {
               <Button 
                 size="lg" 
                 className="bg-brand-dark hover:bg-brand-dark/90 shadow-elegant px-8 py-4 text-lg font-semibold group text-white"
-                onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
+                onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
               >
                 <Phone className="mr-2 w-5 h-5" />
                 Falar no WhatsApp

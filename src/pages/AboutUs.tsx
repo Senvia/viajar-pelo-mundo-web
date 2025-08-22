@@ -64,7 +64,7 @@ const AboutUs = () => {
                   size="lg" 
                   variant="outline" 
                   className="border-white text-white bg-white/10 hover:bg-white/20 px-8 py-4 text-lg"
-                  onClick={() => window.open(`https://wa.me/351911734711?text=${encodeURIComponent('Olá! Gostaria de conhecer mais sobre os serviços da Viajar Pelo Mundo.')}`, '_blank')}
+                  onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
                 >
                   Falar Conosco
                 </Button>
@@ -225,7 +225,7 @@ const AboutUs = () => {
                 <Button 
                   size="lg" 
                   className="bg-brand-dark hover:bg-brand-dark/90 text-white"
-                  onClick={() => window.open(`https://wa.me/351911734711?text=${encodeURIComponent('Olá! Gostaria de conhecer mais sobre os serviços da Viajar Pelo Mundo.')}`, '_blank')}
+                  onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
                 >
                   Fale Conosco
                 </Button>
@@ -252,7 +252,7 @@ const AboutUs = () => {
               <Button 
                 size="lg" 
                 className="bg-brand-dark hover:bg-brand-dark/90 text-white"
-                onClick={() => window.open(`https://wa.me/351911734711?text=${encodeURIComponent('Olá! Gostaria de conhecer mais sobre o Portugal Essence - turismo de luxo.')}`, '_blank')}
+                onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
               >
                 Conheça o Portugal Essence
               </Button>

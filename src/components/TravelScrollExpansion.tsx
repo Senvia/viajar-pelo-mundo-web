@@ -72,7 +72,7 @@ const ServiceContent = () => (
         description="Passagens, hospedagem, transfer, seguro e tudo que precisa pontualmente."
         price="Orçamento personalizado"
         cta="Solicitar Orçamento"
-        onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
+        onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
       />
       
       <ServiceHighlight
@@ -81,7 +81,7 @@ const ServiceContent = () => (
         description="NIF, NISS, vistos e toda documentação para morar em Portugal."
         price="Consulte valores"
         cta="Falar com Especialista"
-        onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
+        onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
       />
       
       <ServiceHighlight

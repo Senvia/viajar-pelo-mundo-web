@@ -127,7 +127,7 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
         {/* CTA Button */}
         <Button 
           className="hidden lg:inline-flex bg-brand-dark hover:bg-brand-dark/90 shadow-elegant font-semibold px-6 py-3 transition-all duration-300 hover:scale-105 text-white"
-          onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
+          onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
         >
           Marcar Consultoria
         </Button>
@@ -195,7 +195,7 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
             
             <Button 
               className="w-full bg-brand-dark hover:bg-brand-dark/90 shadow-elegant font-semibold text-white"
-              onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
+              onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
             >
               Marcar Consultoria
             </Button>

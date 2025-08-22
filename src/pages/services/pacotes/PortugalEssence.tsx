@@ -153,7 +153,7 @@ const PackageDetails = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/351911734711?text=Olá! Gostaria de saber mais sobre o pacote Portugal Essence.', '_blank');
+    window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank');
   };
 
   const openImageModal = (imageSrc: string) => {

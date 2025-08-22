@@ -128,7 +128,7 @@ const ConsultoriaViagens = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/351911734711?text=Olá! Gostaria de saber mais sobre o Planejamento de Viagem.', '_blank');
+    window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank');
   };
 
   const handleFormLink = () => {

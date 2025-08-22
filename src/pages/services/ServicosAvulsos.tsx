@@ -130,7 +130,7 @@ const ServicosAvulsos = () => {
                   </ul>
                   <Button 
                     className="w-full bg-brand-dark hover:bg-brand-dark/90 mt-auto text-white"
-                    onClick={() => window.open(`https://wa.me/351911734711?text=${encodeURIComponent(service.whatsappMessage)}`, '_blank')}
+                    onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
                   >
                     Solicitar
                   </Button>
@@ -213,7 +213,7 @@ const ServicosAvulsos = () => {
                   </p>
                   <Button 
                     className="w-full bg-green-600 hover:bg-green-700 text-white"
-                    onClick={() => window.open('https://wa.me/351911734711', '_blank')}
+                    onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
                   >
                     WhatsApp: +351 911 734 711
                   </Button>
@@ -262,7 +262,7 @@ const ServicosAvulsos = () => {
                 <Button 
                   size="lg" 
                   className="bg-brand-dark hover:bg-brand-dark/90 px-8 text-white"
-                  onClick={() => window.open('https://wa.me/351911734711', '_blank')}
+                  onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
                 >
                   Solicitar Orçamento Grátis
                 </Button>

@@ -126,20 +126,7 @@ const ConsultoriaImigrantes = () => {
   };
 
   const handleWhatsAppContact = () => {
-    const message = `Olá! Tenho interesse na Consultoria para Imigrantes em Portugal.
-
-*Meus dados:*
-Nome: ${formData.name || 'A preencher'}
-Email: ${formData.email || 'A preencher'}
-Telefone: ${formData.phone || 'A preencher'}
-Situação atual: ${formData.currentStatus || 'A preencher'}
-Documentos necessários: ${formData.documents || 'A preencher'}
-Cronograma desejado: ${formData.timeline || 'A preencher'}
-
-Mensagem adicional: ${formData.message || 'Gostaria de mais informações sobre os serviços.'}`;
-
-    const whatsappUrl = `https://wa.me/message/YNHNAUM2BAAHD1?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank');
   };
 
   return (

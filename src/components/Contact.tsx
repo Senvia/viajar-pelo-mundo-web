@@ -1,55 +1,10 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Instagram } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: ""
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // WhatsApp message format
-    const message = `Olá! Gostaria de solicitar informações sobre:
-    
-Nome: ${formData.name}
-Email: ${formData.email}
-Telefone: ${formData.phone}
-Serviço: ${formData.service}
-Mensagem: ${formData.message}`;
-    
-    const whatsappUrl = `https://wa.me/351911734711?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-    
-    toast({
-      title: "Redirecionando para WhatsApp",
-      description: "Você será redirecionado para continuar a conversa no WhatsApp.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: ""
-    });
-  };
-
-  const handleChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+  const handleContactClick = () => {
+    window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank');
   };
 
   return (
@@ -65,84 +20,23 @@ Mensagem: ${formData.message}`;
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Form */}
+          {/* Contact Button */}
           <div className="lg:col-span-2">
             <Card className="shadow-card">
               <CardHeader>
                 <CardTitle className="text-2xl text-secondary">Solicitar Orçamento</CardTitle>
               </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Nome Completo*</Label>
-                      <Input
-                        id="name"
-                        value={formData.name}
-                        onChange={(e) => handleChange('name', e.target.value)}
-                        required
-                        placeholder="Seu nome completo"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email*</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => handleChange('email', e.target.value)}
-                        required
-                        placeholder="seu@email.com"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">WhatsApp/Telefone*</Label>
-                      <Input
-                        id="phone"
-                        value={formData.phone}
-                        onChange={(e) => handleChange('phone', e.target.value)}
-                        required
-                        placeholder="+351 xxx xxx xxx"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="service">Tipo de Serviço*</Label>
-                      <Select onValueChange={(value) => handleChange('service', value)} required>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Selecione um serviço" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="imigrantes">Consultoria para Imigrantes</SelectItem>
-                          <SelectItem value="pacotes">Pacotes de Viagens</SelectItem>
-                          <SelectItem value="consultoria-europa">Planejamento de Viagem</SelectItem>
-                          <SelectItem value="avulsos">Serviços Avulsos</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Conte-nos sobre sua viagem dos sonhos</Label>
-                    <Textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) => handleChange('message', e.target.value)}
-                      placeholder="Destinos, datas, número de pessoas, interesses especiais, etc."
-                      rows={4}
-                    />
-                  </div>
-                  
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-brand-dark hover:bg-brand-dark/90 shadow-elegant text-white"
-                    size="lg"
-                  >
-                    Enviar Solicitação via WhatsApp
-                  </Button>
-                </form>
+              <CardContent className="text-center py-12">
+                <p className="text-lg text-muted-foreground mb-8">
+                  Clique no botão abaixo para solicitar seu orçamento personalizado
+                </p>
+                <Button 
+                  onClick={handleContactClick}
+                  className="w-full max-w-md bg-brand-dark hover:bg-brand-dark/90 shadow-elegant text-white"
+                  size="lg"
+                >
+                  Solicitar Orçamento
+                </Button>
               </CardContent>
             </Card>
           </div>
@@ -241,7 +135,7 @@ Mensagem: ${formData.message}`;
                 <Button 
                   variant="secondary" 
                   className="w-full"
-                  onClick={() => window.open(`https://wa.me/351911734711?text=${encodeURIComponent('Olá! Gostaria de agendar uma primeira consulta gratuita para planejar minha viagem.')}`, '_blank')}
+                  onClick={handleContactClick}
                 >
                   Agendar Agora
                 </Button>

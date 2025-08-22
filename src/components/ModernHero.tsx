@@ -93,7 +93,7 @@ const ModernHero = () => {
             <Button 
               size="lg" 
               className="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 text-lg shadow-elegant font-semibold group"
-              onClick={() => window.open('https://wa.me/message/YNHNAUM2BAAHD1', '_blank')}
+              onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
             >
               Consultoria Gratuita
               <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
