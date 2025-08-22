@@ -1,7 +1,7 @@
 import { Plane, Instagram, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
-  const startYear = 2022;
+  const startYear = 2023;
   const currentYear = new Date().getFullYear();
   const yearText = startYear === currentYear ? `${startYear}` : `${startYear}–${currentYear}`;
   return (

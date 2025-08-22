@@ -37,7 +37,7 @@ const AboutUs = () => {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <Heart className="h-5 w-5" />
-                    <span className="font-semibold">Fundada em 2022</span>
+                    <span className="font-semibold">Fundada em 2023</span>
                   </div>
                   <p className="text-sm text-white/80">Em Portugal com propósito</p>
                 </div>
@@ -149,7 +149,7 @@ const AboutUs = () => {
                   Vanessa se especializou como <strong>travel designer</strong>, e juntos, decidiram investir em formações e parcerias com fornecedores confiáveis, construindo uma estrutura de atendimento personalizada e especializada.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  Oficialmente, a <strong>Viajar Pelo Mundo foi fundada em 2022</strong>, em Portugal, com o objetivo de atender famílias que desejam realizar o sonho de viajar para a Europa com planejamento completo e curadoria de experiências.
+                  Oficialmente, a <strong>Viajar Pelo Mundo foi fundada em 2023</strong>, em Portugal, com o objetivo de atender famílias que desejam realizar o sonho de viajar para a Europa com planejamento completo e curadoria de experiências.
                 </p>
                 <div className="bg-brand-blue/10 p-6 rounded-xl">
                   <p className="text-lg leading-relaxed font-medium text-brand-blue">
