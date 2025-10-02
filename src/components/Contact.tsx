@@ -19,129 +19,110 @@ const Contact = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Button */}
-          <div className="lg:col-span-2">
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="text-2xl text-secondary">Solicitar Orçamento</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center py-12">
-                <p className="text-lg text-muted-foreground mb-8">
-                  Clique no botão abaixo para solicitar seu orçamento personalizado
-                </p>
-                <Button 
-                  onClick={handleContactClick}
-                  className="w-full max-w-md bg-brand-dark hover:bg-brand-dark/90 shadow-elegant text-white"
-                  size="lg"
-                >
-                  Solicitar Orçamento
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Contact Info */}
-          <div className="space-y-6">
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="text-xl text-secondary">Informações de Contato</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
-                    <Phone className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-secondary">WhatsApp</p>
+          <Card className="shadow-card">
+            <CardHeader>
+              <CardTitle className="text-2xl text-secondary">Informações de Contato</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
+                  <Phone className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-medium text-secondary">WhatsApp</p>
+                  <a 
+                    href="https://wa.me/351911734711" 
+                    className="text-muted-foreground hover:text-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +351 911 734 711
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
+                  <Mail className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-medium text-secondary">Email</p>
+                  <a 
+                    href="mailto:viajarparaeuropaoficial@gmail.com" 
+                    className="text-muted-foreground hover:text-primary"
+                  >
+                    viajarparaeuropaoficial@gmail.com
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
+                  <MapPin className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-medium text-secondary">Localização</p>
+                  <a 
+                    href="https://g.co/kgs/WCoEWnF" 
+                    className="text-muted-foreground hover:text-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Portugal
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
+                  <Instagram className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-medium text-secondary">Instagram</p>
+                  <div className="space-y-1">
                     <a 
-                      href="https://wa.me/351911734711" 
-                      className="text-muted-foreground hover:text-primary"
+                      href="https://www.instagram.com/viajarparaeuropa/" 
+                      className="block text-muted-foreground hover:text-primary text-sm"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      +351 911 734 711
+                      @viajarparaeuropa
                     </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
-                    <Mail className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-secondary">Email</p>
                     <a 
-                      href="mailto:viajarparaeuropaoficial@gmail.com" 
-                      className="text-muted-foreground hover:text-primary"
-                    >
-                      viajarparaeuropaoficial@gmail.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-secondary">Localização</p>
-                    <a 
-                      href="https://g.co/kgs/WCoEWnF" 
-                      className="text-muted-foreground hover:text-primary"
+                      href="https://www.instagram.com/travelagency_viajarpelomundo/" 
+                      className="block text-muted-foreground hover:text-primary text-sm"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Portugal
+                      @travelagency_viajarpelomundo
                     </a>
                   </div>
                 </div>
-                
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
-                    <Instagram className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-secondary">Instagram</p>
-                    <div className="space-y-1">
-                      <a 
-                        href="https://www.instagram.com/viajarparaeuropa/" 
-                        className="block text-muted-foreground hover:text-primary text-sm"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        @viajarparaeuropa
-                      </a>
-                      <a 
-                        href="https://www.instagram.com/travelagency_viajarpelomundo/" 
-                        className="block text-muted-foreground hover:text-primary text-sm"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        @travelagency_viajarpelomundo
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="shadow-card bg-brand-dark text-white">
-              <CardContent className="p-6 text-center">
-                <h3 className="font-bold text-lg mb-2">Primeira Consulta</h3>
-                <p className="text-white/90 mb-4">
-                  Agende uma conversa sem compromisso para planejarmos sua viagem dos sonhos
-                </p>
-                <Button 
-                  variant="secondary" 
-                  className="w-full"
-                  onClick={handleContactClick}
-                >
-                  Agendar Agora
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </CardContent>
+          </Card>
+          
+          {/* Primeira Consulta */}
+          <Card className="shadow-card bg-brand-dark text-white flex flex-col">
+            <CardHeader>
+              <CardTitle className="text-2xl text-white">Primeira Consulta</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-1 flex flex-col justify-center">
+              <p className="text-white/90 text-lg mb-8">
+                Agende uma conversa sem compromisso para planejarmos sua viagem dos sonhos
+              </p>
+              <Button 
+                variant="secondary" 
+                size="lg"
+                className="w-full"
+                onClick={handleContactClick}
+              >
+                Agendar Agora
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
