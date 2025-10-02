@@ -24,7 +24,7 @@ const AboutUs = () => {
                 <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
                   Nossa Jornada
                 </Badge>
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                <h1 className="text-5xl md:text-7xl font-bold leading-tight">
                   Sobre Nós
                 </h1>
                 <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
@@ -72,14 +72,13 @@ const AboutUs = () => {
             </div>
             
             <div className="relative">
-              <div 
-                className="rounded-3xl overflow-hidden shadow-2xl h-96 bg-cover bg-center hover:scale-105 transition-transform duration-500"
-                style={{ backgroundImage: "url('/lovable-uploads/ad9b424d-c4d1-4387-90df-0789a8a9e0c2.png')" }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                <div className="absolute bottom-6 left-6 text-white">
-                  <p className="font-semibold text-lg">Vanessa & Max Santos</p>
-                  <p className="text-white/90">Fundadores da Viajar Pelo Mundo</p>
+              <div className="rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500">
+                <div className="aspect-[4/3] bg-cover bg-center relative" style={{ backgroundImage: "url('/lovable-uploads/ad9b424d-c4d1-4387-90df-0789a8a9e0c2.png')" }}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <p className="font-semibold text-lg">Vanessa & Max Santos</p>
+                    <p className="text-white/90">Fundadores da Viajar Pelo Mundo</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -92,10 +91,10 @@ const AboutUs = () => {
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 Nossa História
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-muted-foreground leading-relaxed">
                 Uma jornada que começou com um sonho e se transformou em realidade
               </p>
             </div>
@@ -114,13 +113,15 @@ const AboutUs = () => {
               </div>
               
               <div className="space-y-4">
-                <div 
-                  className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover bg-center"
-                  style={{ backgroundImage: "url('/lovable-uploads/ad9b424d-c4d1-4387-90df-0789a8a9e0c2.png')" }}
-                >
-                  <div className="h-full bg-gradient-to-t from-black/30 to-transparent flex items-end">
-                    <div className="p-6 text-white">
-                      <p className="font-semibold">Vanessa & Max no Porto, Portugal</p>
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <div 
+                    className="aspect-[4/3] bg-cover bg-center relative"
+                    style={{ backgroundImage: "url('/lovable-uploads/ad9b424d-c4d1-4387-90df-0789a8a9e0c2.png')" }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end">
+                      <div className="p-6 text-white">
+                        <p className="font-semibold">Vanessa & Max no Porto, Portugal</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -129,16 +130,18 @@ const AboutUs = () => {
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
-                <div 
-                  className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover"
-                  style={{ 
-                    backgroundImage: "url('/lovable-uploads/b24f0e12-9456-4407-aa14-f00fb5483042.png')",
-                    backgroundPosition: 'center 30%'
-                  }}
-                >
-                  <div className="h-full bg-gradient-to-t from-black/30 to-transparent flex items-end">
-                    <div className="p-6 text-white">
-                      <p className="font-semibold">Explorando destinos europeus</p>
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <div 
+                    className="aspect-[4/3] bg-cover relative"
+                    style={{ 
+                      backgroundImage: "url('/lovable-uploads/b24f0e12-9456-4407-aa14-f00fb5483042.png')",
+                      backgroundPosition: 'center 30%'
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end">
+                      <div className="p-6 text-white">
+                        <p className="font-semibold">Explorando destinos europeus</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -167,10 +170,10 @@ const AboutUs = () => {
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 Missão, Visão e Valores
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-muted-foreground leading-relaxed">
                 Os pilares que guiam nossa jornada
               </p>
             </div>
@@ -181,7 +184,7 @@ const AboutUs = () => {
                   <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-brand-blue/20 flex items-center justify-center">
                     <Heart className="h-8 w-8 text-brand-blue" />
                   </div>
-                  <h3 className="text-xl font-bold text-secondary mb-4">Propósito</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Propósito</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Conectar nosso conhecimento e experiência no setor turístico com acesso aos melhores serviços do mercado, entregando aos nossos clientes um atendimento de excelência, focado em qualidade e personalização.
                   </p>
@@ -193,7 +196,7 @@ const AboutUs = () => {
                   <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-brand-green/20 flex items-center justify-center">
                     <Eye className="h-8 w-8 text-brand-green" />
                   </div>
-                  <h3 className="text-xl font-bold text-secondary mb-4">Visão</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Visão</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Tornar-nos referência em curadoria de viagens no mercado europeu, sendo reconhecidos pela excelência no atendimento e pelo profundo conhecimento dos destinos que oferecemos.
                   </p>
@@ -205,7 +208,7 @@ const AboutUs = () => {
                   <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-brand-blue/20 flex items-center justify-center">
                     <Target className="h-8 w-8 text-brand-blue" />
                   </div>
-                  <h3 className="text-xl font-bold text-secondary mb-4">Valores</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Valores</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Trabalhamos com base em princípios cristãos e valores sólidos como confiança, honestidade, excelência e qualidade. Acreditamos que servir com integridade é a melhor forma de honrar nossos clientes.
                   </p>
@@ -217,7 +220,7 @@ const AboutUs = () => {
               <Card className="p-8 bg-gradient-to-br from-brand-blue/10 to-brand-green/10 border-brand-blue/20 max-w-4xl mx-auto">
                 <div className="flex items-center justify-center gap-4 mb-6">
                   <Users className="h-12 w-12 text-brand-blue" />
-                  <h3 className="text-2xl font-bold text-secondary">Nossa Missão</h3>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-foreground">Nossa Missão</h3>
                 </div>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   Proporcionar tranquilidade, segurança e experiências marcantes para quem deseja conhecer Portugal e outros destinos europeus. A Viajar Pelo Mundo mantém como pilares a confiança, honestidade e excelência, servindo famílias, casais e viajantes individuais que desejam viver a Europa de forma segura, prática e encantadora.
@@ -242,7 +245,7 @@ const AboutUs = () => {
             <Badge variant="secondary" className="mb-4 bg-brand-green/20 text-brand-green border-brand-green/30">
               Projeto Especial
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Portugal Essence
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
