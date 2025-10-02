@@ -263,7 +263,7 @@ const AboutUs = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
               >
                 Solicitar Proposta
               </Button>
