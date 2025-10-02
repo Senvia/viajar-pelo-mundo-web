@@ -255,7 +255,7 @@ const ConsultoriaViagens = () => {
               Processo em 4 Etapas
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Nosso planejamento personalizado abrange todas as etapas da sua viagem, com atenção total aos detalhes e foco em transformar seus desejos em uma experiência inesquecível.
+              Vamos planejar a sua viagem nos mínimos detalhes! Se você deseja viajar com tranquilidade e do seu jeito, pode contar conosco para oferecer uma consultoria de viagem totalmente personalizada. Nosso trabalho vai muito além de entregar um roteiro: criamos um planejamento completo, alinhado ao seu orçamento, às suas datas e às suas expectativas, para que você aproveite o melhor de cada destino e viva a experiência que sempre imaginou.
             </p>
           </div>
 
