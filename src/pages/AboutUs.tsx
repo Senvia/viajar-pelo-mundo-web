@@ -96,72 +96,70 @@ const AboutUs = () => {
       {/* Nossa História */}
       <section id="nossa-historia" className="py-20">
         <div className="container">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Nossa História
-              </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Uma jornada que começou com um sonho e se transformou em realidade
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Nossa História
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Uma jornada que começou com um sonho e se transformou em realidade
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+            <div className="space-y-6">
+              <p className="text-lg leading-relaxed">
+                A <strong>Viajar Pelo Mundo</strong> nasceu de forma orgânica, a partir da vivência pessoal do casal <strong>Vanessa Silva e Max Santos</strong>, que decidiram mudar-se para Portugal em busca de novos caminhos.
+              </p>
+              <p className="text-lg leading-relaxed">
+                Ao ajudarem amigos e familiares a planejarem suas viagens e mudanças para a Europa, perceberam o quanto o conhecimento, a atenção aos detalhes e o suporte humanizado faziam diferença na experiência dos viajantes.
+              </p>
+              <p className="text-lg leading-relaxed">
+                O que começou como um favor, rapidamente se transformou em uma paixão — e, mais tarde, em uma empresa sólida, que une propósito, profissionalismo e excelência.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
-              <div className="space-y-6">
-                <p className="text-lg leading-relaxed">
-                  A <strong>Viajar Pelo Mundo</strong> nasceu de forma orgânica, a partir da vivência pessoal do casal <strong>Vanessa Silva e Max Santos</strong>, que decidiram mudar-se para Portugal em busca de novos caminhos.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  Ao ajudarem amigos e familiares a planejarem suas viagens e mudanças para a Europa, perceberam o quanto o conhecimento, a atenção aos detalhes e o suporte humanizado faziam diferença na experiência dos viajantes.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  O que começou como um favor, rapidamente se transformou em uma paixão — e, mais tarde, em uma empresa sólida, que une propósito, profissionalismo e excelência.
-                </p>
-              </div>
-              
-              <div>
-                <Card className="overflow-hidden border-0 shadow-card">
-                  <CardContent className="p-0">
-                    <div className="aspect-[4/3] overflow-hidden relative">
-                      <img 
-                        src="/lovable-uploads/ad9b424d-c4d1-4387-90df-0789a8a9e0c2.png"
-                        alt="Vanessa & Max no Porto, Portugal"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+            <div>
+              <Card className="overflow-hidden border-0 shadow-card">
+                <CardContent className="p-0">
+                  <div className="aspect-[4/3] overflow-hidden relative">
+                    <img 
+                      src="/lovable-uploads/ad9b424d-c4d1-4387-90df-0789a8a9e0c2.png"
+                      alt="Vanessa & Max no Porto, Portugal"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <Card className="overflow-hidden border-0 shadow-card">
+                <CardContent className="p-0">
+                  <div className="aspect-[4/3] overflow-hidden relative">
+                    <img 
+                      src="/lovable-uploads/b24f0e12-9456-4407-aa14-f00fb5483042.png"
+                      alt="Explorando destinos europeus"
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: 'center 30%' }}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div className="order-2 lg:order-1">
-                <Card className="overflow-hidden border-0 shadow-card">
-                  <CardContent className="p-0">
-                    <div className="aspect-[4/3] overflow-hidden relative">
-                      <img 
-                        src="/lovable-uploads/b24f0e12-9456-4407-aa14-f00fb5483042.png"
-                        alt="Explorando destinos europeus"
-                        className="w-full h-full object-cover"
-                        style={{ objectPosition: 'center 30%' }}
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-              
-              <div className="space-y-6 order-1 lg:order-2">
-                <p className="text-lg leading-relaxed">
-                  Vanessa se especializou como <strong>travel designer</strong>, e juntos, decidiram investir em formações e parcerias com fornecedores confiáveis, construindo uma estrutura de atendimento personalizada e especializada.
+            <div className="space-y-6 order-1 lg:order-2">
+              <p className="text-lg leading-relaxed">
+                Vanessa se especializou como <strong>travel designer</strong>, e juntos, decidiram investir em formações e parcerias com fornecedores confiáveis, construindo uma estrutura de atendimento personalizada e especializada.
+              </p>
+              <p className="text-lg leading-relaxed">
+                Oficialmente, a <strong>Viajar Pelo Mundo foi fundada em 2022</strong>, em Portugal, com o objetivo de atender famílias que desejam realizar o sonho de viajar para a Europa com planejamento completo e curadoria de experiências.
+              </p>
+              <div className="bg-brand-blue/10 p-6 rounded-xl">
+                <p className="text-lg leading-relaxed font-medium text-brand-blue">
+                  Mais recentemente, a empresa expandiu seu portfólio com o projeto <strong>Portugal Essence</strong>, voltado ao turismo de luxo e experiências sofisticadas.
                 </p>
-                <p className="text-lg leading-relaxed">
-                  Oficialmente, a <strong>Viajar Pelo Mundo foi fundada em 2022</strong>, em Portugal, com o objetivo de atender famílias que desejam realizar o sonho de viajar para a Europa com planejamento completo e curadoria de experiências.
-                </p>
-                <div className="bg-brand-blue/10 p-6 rounded-xl">
-                  <p className="text-lg leading-relaxed font-medium text-brand-blue">
-                    Mais recentemente, a empresa expandiu seu portfólio com o projeto <strong>Portugal Essence</strong>, voltado ao turismo de luxo e experiências sofisticadas.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
