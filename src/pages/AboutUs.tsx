@@ -114,7 +114,7 @@ const AboutUs = () => {
                 Ao ajudarem amigos e familiares a planejarem suas viagens e mudanças para a Europa, perceberam o quanto o conhecimento, a atenção aos detalhes e o suporte humanizado faziam diferença na experiência dos viajantes.
               </p>
               <p className="text-lg leading-relaxed">
-                O que começou como um favor, rapidamente se transformou em uma paixão — e, mais tarde, em uma empresa sólida, que une propósito, profissionalismo e excelência.
+                O que começou como um favor, rapidamente se transformou em uma paixão e, mais tarde, em uma empresa sólida, que une propósito, profissionalismo e excelência.
               </p>
             </div>
             
