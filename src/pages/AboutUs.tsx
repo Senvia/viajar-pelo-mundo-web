@@ -229,7 +229,7 @@ const AboutUs = () => {
                 <Button 
                   size="lg" 
                   className="bg-brand-dark hover:bg-brand-dark/90 text-white"
-                  onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
+                  onClick={() => window.open('https://wa.me/351911734711', '_blank')}
                 >
                   Fale Conosco
                 </Button>
