@@ -114,9 +114,8 @@ const Contact = () => {
                 Agende uma conversa sem compromisso para planejarmos sua viagem dos sonhos
               </p>
               <Button 
-                variant="secondary" 
                 size="lg"
-                className="w-full"
+                className="w-full bg-gradient-icons shadow-elegant font-semibold hover:opacity-90 text-white"
                 onClick={handleContactClick}
               >
                 Agendar Agora
