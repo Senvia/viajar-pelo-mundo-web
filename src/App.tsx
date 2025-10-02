@@ -12,6 +12,7 @@ import ConsultoriaEuropa from "./pages/services/ConsultoriaEuropa";
 import ServicosAvulsos from "./pages/services/ServicosAvulsos";
 import ConsultoriaViagens from "./pages/services/ConsultoriaViagens";
 import PortugalEssence from "./pages/services/pacotes/PortugalEssence";
+import PacotesViagensEstatico from "./pages/services/PacotesViagensEstatico";
 import CadastrarPacotes from "./pages/admin/CadastrarPacotes";
 import CriarEditarPacote from "./pages/admin/CriarEditarPacote";
 import Dashboard from "./pages/admin/Dashboard";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/sobre-nos" element={<AboutUs />} />
           <Route path="/servicos/imigrantes" element={<ConsultoriaImigrantes />} />
           <Route path="/servicos/pacotes" element={<PacotesViagens />} />
+          <Route path="/servicos/pacotes-estatico" element={<PacotesViagensEstatico />} />
           <Route path="/servicos/consultoria-europa" element={<ConsultoriaEuropa />} />
           <Route path="/servicos/avulsos" element={<ServicosAvulsos />} />
           <Route path="/servicos/consultoria-viagens" element={<ConsultoriaViagens />} />
