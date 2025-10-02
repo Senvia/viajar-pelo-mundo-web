@@ -252,7 +252,7 @@ const ConsultoriaViagens = () => {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
-              Processo em 4 Etapas
+              Planejando em 4 etapas
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Vamos planejar a sua viagem nos mínimos detalhes! Se você deseja viajar com tranquilidade e do seu jeito, pode contar conosco para oferecer uma consultoria de viagem totalmente personalizada. Nosso trabalho vai muito além de entregar um roteiro: criamos um planejamento completo, alinhado ao seu orçamento, às suas datas e às suas expectativas, para que você aproveite o melhor de cada destino e viva a experiência que sempre imaginou.
