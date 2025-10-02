@@ -106,7 +106,7 @@ const AboutUs = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed">
                   A <strong>Viajar Pelo Mundo</strong> nasceu de forma orgânica, a partir da vivência pessoal do casal <strong>Vanessa Silva e Max Santos</strong>, que decidiram mudar-se para Portugal em busca de novos caminhos.
@@ -119,7 +119,7 @@ const AboutUs = () => {
                 </p>
               </div>
               
-              <div className="space-y-4">
+              <div>
                 <Card className="overflow-hidden border-0 shadow-card">
                   <CardContent className="p-0">
                     <div className="aspect-[4/3] overflow-hidden relative">
@@ -134,7 +134,7 @@ const AboutUs = () => {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div className="order-2 lg:order-1">
                 <Card className="overflow-hidden border-0 shadow-card">
                   <CardContent className="p-0">
