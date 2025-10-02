@@ -72,15 +72,22 @@ const AboutUs = () => {
             </div>
             
             <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500">
-                <div className="aspect-[4/3] bg-cover bg-center relative" style={{ backgroundImage: "url('/lovable-uploads/ad9b424d-c4d1-4387-90df-0789a8a9e0c2.png')" }}>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 text-white">
-                    <p className="font-semibold text-lg">Vanessa & Max Santos</p>
-                    <p className="text-white/90">Fundadores da Viajar Pelo Mundo</p>
+              <Card className="overflow-hidden border-0 shadow-card hover:scale-105 transition-transform duration-500">
+                <CardContent className="p-0">
+                  <div className="aspect-[4/3] overflow-hidden relative">
+                    <img 
+                      src="/lovable-uploads/ad9b424d-c4d1-4387-90df-0789a8a9e0c2.png"
+                      alt="Vanessa & Max Santos - Fundadores da Viajar Pelo Mundo"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-6 left-6 text-white">
+                      <p className="font-semibold text-lg">Vanessa & Max Santos</p>
+                      <p className="text-white/90">Fundadores da Viajar Pelo Mundo</p>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
@@ -113,38 +120,34 @@ const AboutUs = () => {
               </div>
               
               <div className="space-y-4">
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <div 
-                    className="aspect-[4/3] bg-cover bg-center relative"
-                    style={{ backgroundImage: "url('/lovable-uploads/ad9b424d-c4d1-4387-90df-0789a8a9e0c2.png')" }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end">
-                      <div className="p-6 text-white">
-                        <p className="font-semibold">Vanessa & Max no Porto, Portugal</p>
-                      </div>
+                <Card className="overflow-hidden border-0 shadow-card">
+                  <CardContent className="p-0">
+                    <div className="aspect-[4/3] overflow-hidden relative">
+                      <img 
+                        src="/lovable-uploads/ad9b424d-c4d1-4387-90df-0789a8a9e0c2.png"
+                        alt="Vanessa & Max no Porto, Portugal"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <div 
-                    className="aspect-[4/3] bg-cover relative"
-                    style={{ 
-                      backgroundImage: "url('/lovable-uploads/b24f0e12-9456-4407-aa14-f00fb5483042.png')",
-                      backgroundPosition: 'center 30%'
-                    }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end">
-                      <div className="p-6 text-white">
-                        <p className="font-semibold">Explorando destinos europeus</p>
-                      </div>
+                <Card className="overflow-hidden border-0 shadow-card">
+                  <CardContent className="p-0">
+                    <div className="aspect-[4/3] overflow-hidden relative">
+                      <img 
+                        src="/lovable-uploads/b24f0e12-9456-4407-aa14-f00fb5483042.png"
+                        alt="Explorando destinos europeus"
+                        className="w-full h-full object-cover"
+                        style={{ objectPosition: 'center 30%' }}
+                      />
                     </div>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
               </div>
               
               <div className="space-y-6 order-1 lg:order-2">
