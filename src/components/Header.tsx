@@ -126,7 +126,7 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
 
         {/* CTA Button */}
         <Button 
-          className="hidden lg:inline-flex bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-elegant font-semibold px-6 py-3 transition-all duration-300 hover:scale-105 text-white"
+          className="hidden lg:inline-flex bg-gradient-icons shadow-elegant font-semibold px-6 py-3 transition-all duration-300 hover:scale-105 hover:opacity-90 text-white"
           onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
         >
           Marcar Consultoria
@@ -194,7 +194,7 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
             </button>
             
             <Button 
-              className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-elegant font-semibold text-white"
+              className="w-full bg-gradient-icons shadow-elegant font-semibold hover:opacity-90 text-white"
               onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
             >
               Marcar Consultoria
