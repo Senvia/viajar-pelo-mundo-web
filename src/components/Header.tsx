@@ -77,6 +77,16 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           <button 
+            onClick={() => window.location.href = '/blog'}
+            className={`text-base font-medium transition-all duration-300 hover:scale-110 ${
+              shouldShowLightStyle 
+                ? 'text-secondary hover:text-primary' 
+                : 'text-white hover:text-primary'
+            }`}
+          >
+            Blog
+          </button>
+          <button 
             onClick={() => window.location.href = '/sobre-nos'}
             className={`font-medium transition-all duration-300 hover:scale-105 ${
               shouldShowLightStyle 

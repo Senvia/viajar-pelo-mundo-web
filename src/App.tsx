@@ -20,6 +20,14 @@ import CadastrarPacotes from "./pages/admin/CadastrarPacotes";
 import CriarEditarPacote from "./pages/admin/CriarEditarPacote";
 import Dashboard from "./pages/admin/Dashboard";
 import Login from "./pages/admin/Login";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import BlogCategory from "./pages/BlogCategory";
+import BlogPosts from "./pages/admin/blog/BlogPosts";
+import BlogPostForm from "./pages/admin/blog/BlogPostForm";
+import BlogCategories from "./pages/admin/blog/BlogCategories";
+import BlogAds from "./pages/admin/blog/BlogAds";
+import BlogNewsletter from "./pages/admin/blog/BlogNewsletter";
 
 const queryClient = new QueryClient();
 
@@ -40,11 +48,20 @@ const App = () => (
             <Route path="/servicos/avulsos" element={<ServicosAvulsos />} />
             <Route path="/servicos/consultoria-viagens" element={<ConsultoriaViagens />} />
             <Route path="/servicos/pacotes/:id" element={<PackageDetail />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/blog/categoria/:slug" element={<BlogCategory />} />
             <Route path="/admin/login" element={<Login />} />
             <Route path="/admin/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
             <Route path="/admin/cadastrar-pacotes" element={<ProtectedRoute><CadastrarPacotes /></ProtectedRoute>} />
             <Route path="/admin/criar-pacote" element={<ProtectedRoute><CriarEditarPacote /></ProtectedRoute>} />
             <Route path="/admin/editar-pacote/:id" element={<ProtectedRoute><CriarEditarPacote /></ProtectedRoute>} />
+            <Route path="/admin/blog/posts" element={<ProtectedRoute><BlogPosts /></ProtectedRoute>} />
+            <Route path="/admin/blog/post/novo" element={<ProtectedRoute><BlogPostForm /></ProtectedRoute>} />
+            <Route path="/admin/blog/post/editar/:id" element={<ProtectedRoute><BlogPostForm /></ProtectedRoute>} />
+            <Route path="/admin/blog/categorias" element={<ProtectedRoute><BlogCategories /></ProtectedRoute>} />
+            <Route path="/admin/blog/anuncios" element={<ProtectedRoute><BlogAds /></ProtectedRoute>} />
+            <Route path="/admin/blog/newsletter" element={<ProtectedRoute><BlogNewsletter /></ProtectedRoute>} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
