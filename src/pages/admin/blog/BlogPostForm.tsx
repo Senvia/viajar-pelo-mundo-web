@@ -159,7 +159,7 @@ const BlogPostForm = () => {
     <div className="min-h-screen flex flex-col">
       <Header variant="light" />
 
-      <main className="flex-grow pt-24 pb-12">
+      <main className="flex-grow pt-32 pb-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <Button
             variant="ghost"
