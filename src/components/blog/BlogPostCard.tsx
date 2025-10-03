@@ -14,44 +14,47 @@ export const BlogPostCard = ({ post }: BlogPostCardProps) => {
   return (
     <Link to={`/blog/${post.slug}`}>
       <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full">
-        <div className="aspect-video relative overflow-hidden">
-          <img
-            src={post.featured_image}
-            alt={post.title}
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-        <CardContent className="p-6">
-          {post.blog_categories && (
-            <Badge 
-              className="mb-3"
-              style={{ backgroundColor: post.blog_categories.color }}
-            >
-              {post.blog_categories.name}
-            </Badge>
-          )}
+        <div className="flex gap-4 p-4">
+          <div className="w-48 h-32 relative overflow-hidden rounded-lg flex-shrink-0">
+            <img
+              src={post.featured_image}
+              alt={post.title}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
           
-          <h3 className="text-xl font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors">
-            {post.title}
-          </h3>
-          
-          <p className="text-muted-foreground mb-4 line-clamp-3">
-            {post.excerpt}
-          </p>
-          
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-1">
-              <Calendar className="h-4 w-4" />
-              <span>
-                {format(new Date(post.published_at || post.created_at), "dd MMM yyyy", { locale: ptBR })}
-              </span>
-            </div>
-            <div className="flex items-center gap-1">
-              <User className="h-4 w-4" />
-              <span>{post.author_name}</span>
+          <div className="flex-1 flex flex-col">
+            {post.blog_categories && (
+              <Badge 
+                className="mb-2 w-fit"
+                style={{ backgroundColor: post.blog_categories.color }}
+              >
+                {post.blog_categories.name}
+              </Badge>
+            )}
+            
+            <h3 className="text-lg font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors">
+              {post.title}
+            </h3>
+            
+            <p className="text-muted-foreground mb-3 line-clamp-2 text-sm flex-1">
+              {post.excerpt}
+            </p>
+            
+            <div className="flex items-center gap-4 text-xs text-muted-foreground mt-auto">
+              <div className="flex items-center gap-1">
+                <Calendar className="h-3 w-3" />
+                <span>
+                  {format(new Date(post.published_at || post.created_at), "dd MMM yyyy", { locale: ptBR })}
+                </span>
+              </div>
+              <div className="flex items-center gap-1">
+                <User className="h-3 w-3" />
+                <span>{post.author_name}</span>
+              </div>
             </div>
           </div>
-        </CardContent>
+        </div>
       </Card>
     </Link>
   );
