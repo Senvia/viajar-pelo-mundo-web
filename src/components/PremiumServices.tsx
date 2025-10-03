@@ -20,7 +20,7 @@ import {
 const services = [
   {
     icon: Plane,
-    title: "Serviços Avulsos",
+    title: "Serviços",
     subtitle: "Ideal para quem precisa de ajuda pontual",
     description: "Serviços individuais para completar sua viagem com qualidade e os melhores preços do mercado.",
     features: [

@@ -29,7 +29,7 @@ const services = [
   },
   {
     icon: Plane,
-    title: "Serviços Avulsos",
+    title: "Serviços",
     description: "Serviços individuais para necessidades específicas. Transfer, seguro viagem, reservas de hotéis e muito mais.",
     features: [
       "Passagens aéreas",

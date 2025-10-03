@@ -64,7 +64,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="/servicos/avulsos" className="hover:text-brand-blue transition-colors">
-                  Serviços Avulsos
+                  Serviços
                 </a>
               </li>
             </ul>

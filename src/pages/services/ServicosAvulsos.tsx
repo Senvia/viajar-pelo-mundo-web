@@ -75,7 +75,7 @@ const ServicosAvulsos = () => {
         <div className="absolute inset-0">
           <img 
             src="/lovable-uploads/a886c0ec-c4fb-4beb-ac44-aebb732c3676.png"
-            alt="Serviços Avulsos"
+            alt="Serviços"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
@@ -85,9 +85,6 @@ const ServicosAvulsos = () => {
           <div className="max-w-4xl">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] pb-2">
               Serviços
-              <span className="block text-white">
-                Avulsos
-              </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
               Ideal para quem precisa de uma ajuda pontual. Escolha exatamente 

@@ -103,7 +103,7 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
                   onClick={() => window.location.href = '/servicos/avulsos'}
                   className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 text-sm font-medium transition-colors hover:text-primary"
                 >
-                  Serviços Avulsos
+                  Serviços
                 </button>
                 <button 
                   onClick={() => window.location.href = '/servicos/pacotes'}
@@ -178,7 +178,7 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
                   onClick={() => window.location.href = '/servicos/avulsos'}
                   className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
                 >
-                  Serviços Avulsos
+                  Serviços
                 </button>
                 <button 
                   onClick={() => window.location.href = '/servicos/pacotes'}

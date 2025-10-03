@@ -5,7 +5,7 @@ const ModernHero = () => {
   const services = [
     {
       icon: Plane,
-      title: "Serviços Avulsos",
+      title: "Serviços",
       description: "Passagens, hospedagem, transfer e mais",
       color: "from-blue-500 to-blue-600"
     },

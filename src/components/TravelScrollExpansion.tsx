@@ -68,7 +68,7 @@ const ServiceContent = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <ServiceHighlight
         icon={MapPin}
-        title="Serviços Avulsos"
+        title="Serviços"
         description="Passagens, hospedagem, transfer, seguro e tudo que precisa pontualmente."
         price="Orçamento personalizado"
         cta="Solicitar Orçamento"
