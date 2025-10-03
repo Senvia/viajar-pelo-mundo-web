@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Plane } from "lucide-react";
+import { Menu, X, User, LogOut, LayoutDashboard } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface HeaderProps {
   variant?: 'default' | 'light';
@@ -9,6 +16,7 @@ interface HeaderProps {
 const Header = ({ variant = 'default' }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { user, isAdmin, signOut } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -133,13 +141,43 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
           </button>
         </nav>
 
-        {/* CTA Button */}
-        <Button 
-          className="hidden lg:inline-flex bg-gradient-icons shadow-elegant font-semibold px-6 py-3 transition-all duration-300 hover:scale-105 hover:opacity-90 text-white"
-          onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
-        >
-          Marcar Consultoria
-        </Button>
+        {/* CTA Button & Admin Menu */}
+        <div className="hidden lg:flex items-center gap-4">
+          <Button 
+            className="bg-gradient-icons shadow-elegant font-semibold px-6 py-3 transition-all duration-300 hover:scale-105 hover:opacity-90 text-white"
+            onClick={() => window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank')}
+          >
+            Marcar Consultoria
+          </Button>
+
+          {user && isAdmin && (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className={`rounded-full transition-colors ${
+                    shouldShowLightStyle 
+                      ? 'hover:bg-muted' 
+                      : 'hover:bg-white/10'
+                  }`}
+                >
+                  <User className={`h-5 w-5 ${shouldShowLightStyle ? 'text-secondary' : 'text-white'}`} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem onClick={() => window.location.href = '/admin/dashboard'}>
+                  <LayoutDashboard className="mr-2 h-4 w-4" />
+                  Dashboard
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={signOut}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  Sair
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
+        </div>
 
         {/* Mobile Menu Button */}
         <button
