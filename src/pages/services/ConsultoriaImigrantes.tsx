@@ -216,8 +216,7 @@ const ConsultoriaImigrantes = () => {
   };
 
   const handleWhatsAppContact = () => {
-    const message = encodeURIComponent('Olá! Gostaria de saber mais sobre a consultoria para imigrantes em Portugal.');
-    window.open(`https://wa.me/351911734711?text=${message}`, '_blank');
+    window.open('https://wa.me/351911734711', '_blank');
   };
 
   return (
