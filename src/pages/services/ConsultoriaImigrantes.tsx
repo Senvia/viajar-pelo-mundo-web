@@ -216,7 +216,8 @@ const ConsultoriaImigrantes = () => {
   };
 
   const handleWhatsAppContact = () => {
-    window.open('https://agencia.iddas.com.br/so/k8cqdbwp', '_blank');
+    const message = encodeURIComponent('Olá! Gostaria de saber mais sobre a consultoria para imigrantes em Portugal.');
+    window.open(`https://wa.me/351911734711?text=${message}`, '_blank');
   };
 
   return (
