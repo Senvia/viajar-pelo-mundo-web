@@ -167,124 +167,123 @@ const PacotesViagensEstatico = () => {
             </p>
           </div>
 
-          <div className="space-y-12 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {staticPackages.map((pkg) => (
-              <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 w-full max-h-[800px]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px] lg:h-[800px]">
-                  {/* Package Content - Always Left */}
-                  <div className="p-8 lg:p-12 flex flex-col justify-between bg-white">
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">{pkg.name}</h3>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                          {pkg.description}
-                        </p>
+              <Card key={pkg.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300 flex flex-col">
+                {/* Package Gallery - Top */}
+                <div className="relative overflow-hidden h-80">
+                  <img 
+                    src={pkg.package_experiences?.[activeGalleryImages[pkg.id] || 0]?.image || pkg.main_image}
+                    alt={pkg.package_experiences?.[activeGalleryImages[pkg.id] || 0]?.title || pkg.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-white/90 text-secondary backdrop-blur-sm">Pacote Exclusivo</Badge>
+                  </div>
+                  
+                  {/* Experience Label */}
+                  <div className="absolute bottom-12 left-4 right-4">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
+                      <p className="text-xs font-medium text-brand-blue">
+                        {pkg.package_experiences?.[activeGalleryImages[pkg.id] || 0]?.title || 'Experiência Única'}
+                      </p>
+                      <div className="flex items-center justify-between mt-1">
+                        <p className="text-xs text-muted-foreground">📍 {pkg.destination}</p>
+                        <p className="text-xs text-muted-foreground">⏱️ {pkg.duration}</p>
                       </div>
+                    </div>
+                  </div>
+                  
+                  {/* Gallery Navigation Dots */}
+                  {pkg.package_experiences && pkg.package_experiences.length > 0 && (
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                      <div className="flex space-x-2">
+                        {pkg.package_experiences.map((_, imgIndex) => (
+                          <button
+                            key={imgIndex}
+                            onClick={() => setActiveGalleryImages(prev => ({
+                              ...prev,
+                              [pkg.id]: imgIndex
+                            }))}
+                            className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                              (activeGalleryImages[pkg.id] || 0) === imgIndex 
+                                ? 'bg-white scale-125' 
+                                : 'bg-white/50 hover:bg-white/70'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
 
-                      {/* Package Details */}
-                      <div className="grid grid-cols-1 gap-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
-                            <MapPin className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <p className="text-sm text-muted-foreground">Destino</p>
-                            <p className="font-semibold text-secondary">{pkg.destination}</p>
-                          </div>
+                {/* Package Content - Bottom */}
+                <div className="p-6 flex flex-col flex-grow bg-white">
+                  <div className="flex-grow space-y-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-secondary mb-3">{pkg.name}</h3>
+                      <p className="text-base text-muted-foreground leading-relaxed line-clamp-3">
+                        {pkg.description}
+                      </p>
+                    </div>
+
+                    {/* Package Details */}
+                    <div className="grid grid-cols-1 gap-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
+                          <MapPin className="w-4 h-4 text-white" />
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
-                            <Calendar className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <p className="text-sm text-muted-foreground">Duração</p>
-                            <p className="font-semibold text-secondary">{pkg.duration}</p>
-                          </div>
+                        <div className="min-w-0">
+                          <p className="text-xs text-muted-foreground">Destino</p>
+                          <p className="font-semibold text-secondary text-sm">{pkg.destination}</p>
                         </div>
                       </div>
-
-                      {/* Highlights */}
-                      <div>
-                        <h4 className="font-semibold text-secondary mb-4">Principais experiências incluídas:</h4>
-                        <div className="grid grid-cols-1 gap-2">
-                          {pkg.highlights?.map((highlight, highlightIndex) => (
-                            <div key={highlightIndex} className="flex items-start gap-2">
-                              <Star className="w-4 h-4 text-brand-blue mt-1 flex-shrink-0" />
-                              <span className="text-sm text-muted-foreground">{highlight}</span>
-                            </div>
-                          ))}
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
+                          <Calendar className="w-4 h-4 text-white" />
                         </div>
-                      </div>
-
-                      {/* Price */}
-                      <div className="bg-muted/30 rounded-lg p-4">
-                        <div className="flex items-baseline gap-2 mb-1">
-                          <span className="text-3xl font-bold text-brand-blue">{pkg.price}</span>
+                        <div className="min-w-0">
+                          <p className="text-xs text-muted-foreground">Duração</p>
+                          <p className="font-semibold text-secondary text-sm">{pkg.duration}</p>
                         </div>
-                        <p className="text-sm text-muted-foreground">{pkg.price_note}</p>
                       </div>
                     </div>
 
-                    {/* CTA Button */}
-                    <div className="mt-8">
-                      <Button 
-                        size="lg" 
-                        className="w-full bg-brand-dark hover:bg-brand-dark/90 text-white shadow-elegant"
-                        onClick={handleWhatsApp}
-                      >
-                        Solicitar Orçamento
-                        <ArrowRight className="w-5 h-5 ml-2" />
-                      </Button>
+                    {/* Highlights */}
+                    <div>
+                      <h4 className="font-semibold text-secondary mb-2 text-sm">Experiências incluídas:</h4>
+                      <div className="space-y-1">
+                        {pkg.highlights?.slice(0, 5).map((highlight, highlightIndex) => (
+                          <div key={highlightIndex} className="flex items-start gap-2">
+                            <Star className="w-3 h-3 text-brand-blue mt-0.5 flex-shrink-0" />
+                            <span className="text-xs text-muted-foreground line-clamp-1">{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Price */}
+                    <div className="bg-muted/30 rounded-lg p-3">
+                      <div className="flex items-baseline gap-2 mb-1">
+                        <span className="text-2xl font-bold text-brand-blue">{pkg.price}</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">{pkg.price_note}</p>
                     </div>
                   </div>
 
-                  {/* Package Gallery - Always Right */}
-                  <div className="relative overflow-hidden h-full">
-                    <img 
-                      src={pkg.package_experiences?.[activeGalleryImages[pkg.id] || 0]?.image || pkg.main_image}
-                      alt={pkg.package_experiences?.[activeGalleryImages[pkg.id] || 0]?.title || pkg.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                    
-                    {/* Gallery Navigation Dots */}
-                    {pkg.package_experiences && pkg.package_experiences.length > 0 && (
-                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                        <div className="flex space-x-2">
-                          {pkg.package_experiences.map((_, imgIndex) => (
-                            <button
-                              key={imgIndex}
-                              onClick={() => setActiveGalleryImages(prev => ({
-                                ...prev,
-                                [pkg.id]: imgIndex
-                              }))}
-                              className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                                (activeGalleryImages[pkg.id] || 0) === imgIndex 
-                                  ? 'bg-white scale-125' 
-                                  : 'bg-white/50 hover:bg-white/70'
-                              }`}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    
-                    <div className="absolute top-6 left-6">
-                      <Badge className="bg-white/90 text-secondary backdrop-blur-sm">Pacote Exclusivo</Badge>
-                    </div>
-                    
-                    {/* Experience Label */}
-                    <div className="absolute bottom-12 left-6 right-6">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
-                        <p className="text-xs font-medium text-brand-blue">
-                          {pkg.package_experiences?.[activeGalleryImages[pkg.id] || 0]?.title || 'Experiência Única'}
-                        </p>
-                        <div className="flex items-center justify-between mt-1">
-                          <p className="text-xs text-muted-foreground">📍 {pkg.destination}</p>
-                          <p className="text-xs text-muted-foreground">⏱️ {pkg.duration}</p>
-                        </div>
-                      </div>
-                    </div>
+                  {/* CTA Button */}
+                  <div className="mt-4">
+                    <Button 
+                      size="lg" 
+                      className="w-full bg-brand-dark hover:bg-brand-dark/90 text-white shadow-elegant"
+                      onClick={handleWhatsApp}
+                    >
+                      Solicitar Orçamento
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
                   </div>
                 </div>
               </Card>
