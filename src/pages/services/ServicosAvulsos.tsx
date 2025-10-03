@@ -224,7 +224,18 @@ const ServicosAvulsos = () => {
                   <Button 
                     variant="outline" 
                     className="w-full"
-                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => {
+                      const element = document.getElementById('contact');
+                      if (element) {
+                        const headerHeight = 120;
+                        const elementPosition = element.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: 'smooth'
+                        });
+                      }
+                    }}
                   >
                     Ir para Formulário
                   </Button>
@@ -267,7 +278,18 @@ const ServicosAvulsos = () => {
                   size="lg" 
                   variant="outline"
                   className="px-8"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => {
+                    const element = document.getElementById('contact');
+                    if (element) {
+                      const headerHeight = 120;
+                      const elementPosition = element.getBoundingClientRect().top;
+                      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                      });
+                    }
+                  }}
                 >
                   Falar com Consultor
                 </Button>
