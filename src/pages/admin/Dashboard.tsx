@@ -55,12 +55,6 @@ const Dashboard = () => {
       value: packages.length, // All packages are active for now
       icon: BarChart3,
       color: "bg-green-500"
-    },
-    {
-      title: "Total de Reservas",
-      value: packages.length * 5, // Mock data
-      icon: Users,
-      color: "bg-purple-500"
     }
   ];
 
@@ -82,7 +76,7 @@ const Dashboard = () => {
             </div>
 
             {/* Stats Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               {stats.map((stat, index) => (
                 <Card key={index} className="text-center hover:shadow-elegant transition-all duration-300">
                   <CardContent className="p-6">
