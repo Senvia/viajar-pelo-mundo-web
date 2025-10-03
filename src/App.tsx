@@ -14,6 +14,7 @@ import ConsultoriaEuropa from "./pages/services/ConsultoriaEuropa";
 import ServicosAvulsos from "./pages/services/ServicosAvulsos";
 import ConsultoriaViagens from "./pages/services/ConsultoriaViagens";
 import PortugalEssence from "./pages/services/pacotes/PortugalEssence";
+import PackageDetail from "./pages/services/pacotes/PackageDetail";
 import PacotesViagensEstatico from "./pages/services/PacotesViagensEstatico";
 import CadastrarPacotes from "./pages/admin/CadastrarPacotes";
 import CriarEditarPacote from "./pages/admin/CriarEditarPacote";
@@ -38,7 +39,7 @@ const App = () => (
             <Route path="/servicos/consultoria-europa" element={<ConsultoriaEuropa />} />
             <Route path="/servicos/avulsos" element={<ServicosAvulsos />} />
             <Route path="/servicos/consultoria-viagens" element={<ConsultoriaViagens />} />
-            <Route path="/servicos/pacotes/:id" element={<PortugalEssence />} />
+            <Route path="/servicos/pacotes/:id" element={<PackageDetail />} />
             <Route path="/admin/login" element={<Login />} />
             <Route path="/admin/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
             <Route path="/admin/cadastrar-pacotes" element={<ProtectedRoute><CadastrarPacotes /></ProtectedRoute>} />
