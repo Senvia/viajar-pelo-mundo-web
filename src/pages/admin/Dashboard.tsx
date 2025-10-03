@@ -5,6 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { usePackages } from "@/hooks/usePackages";
+import { useBlogPosts, useMostReadPosts } from "@/hooks/useBlogPosts";
+import { useNewsletterSubscribers } from "@/hooks/useNewsletter";
+import { useBlogCategories } from "@/hooks/useBlogCategories";
 import { 
   Plus, 
   Edit, 
@@ -15,7 +18,11 @@ import {
   BarChart3,
   MapPin,
   Calendar,
-  ArrowRight
+  ArrowRight,
+  FileText,
+  FolderOpen,
+  Mail,
+  TrendingUp
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -23,6 +30,17 @@ import { toast } from "sonner";
 const Dashboard = () => {
   const navigate = useNavigate();
   const { packages, deletePackage } = usePackages();
+  
+  // Blog data
+  const { data: allBlogPosts } = useBlogPosts(1, 1000, undefined, false);
+  const { data: subscribers } = useNewsletterSubscribers();
+  const { data: categories } = useBlogCategories();
+  const { data: mostReadPosts } = useMostReadPosts(3);
+  
+  const publishedPosts = allBlogPosts?.posts.filter(post => post.published) || [];
+  const totalViews = allBlogPosts?.posts.reduce((acc, post) => acc + (post.views_count || 0), 0) || 0;
+  const activeSubscribers = subscribers?.filter(sub => sub.active).length || 0;
+  const recentSubscribers = subscribers?.slice(0, 5) || [];
 
   const handleCreatePackage = () => {
     navigate('/admin/criar-pacote');
@@ -100,6 +118,200 @@ const Dashboard = () => {
                 <Plus className="w-5 h-5 mr-2" />
                 Criar Novo Pacote
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Management Section */}
+      <section className="py-20 bg-gradient-to-br from-secondary/5 to-primary/5">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-secondary mb-8">Gerenciar Blog</h2>
+            
+            {/* Blog Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <Card className="hover:shadow-elegant transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">Posts Publicados</p>
+                      <p className="text-3xl font-bold text-secondary">{publishedPosts.length}</p>
+                    </div>
+                    <div className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center">
+                      <FileText className="w-7 h-7 text-white" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="hover:shadow-elegant transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">Total de Visualizações</p>
+                      <p className="text-3xl font-bold text-secondary">{totalViews}</p>
+                    </div>
+                    <div className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center">
+                      <TrendingUp className="w-7 h-7 text-white" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="hover:shadow-elegant transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">Inscritos Ativos</p>
+                      <p className="text-3xl font-bold text-secondary">{activeSubscribers}</p>
+                    </div>
+                    <div className="w-14 h-14 bg-purple-500 rounded-full flex items-center justify-center">
+                      <Mail className="w-7 h-7 text-white" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            
+            {/* Blog Management Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card 
+                className="cursor-pointer hover:shadow-elegant transition-all duration-300 hover:scale-105"
+                onClick={() => navigate('/admin/blog/posts')}
+              >
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FileText className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-secondary mb-2">Posts</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Gerenciar artigos do blog
+                  </p>
+                  <Button variant="outline" className="w-full">
+                    Acessar
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card 
+                className="cursor-pointer hover:shadow-elegant transition-all duration-300 hover:scale-105"
+                onClick={() => navigate('/admin/blog/categorias')}
+              >
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FolderOpen className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-secondary mb-2">Categorias</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Organizar categorias
+                  </p>
+                  <Button variant="outline" className="w-full">
+                    Acessar
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card 
+                className="cursor-pointer hover:shadow-elegant transition-all duration-300 hover:scale-105"
+                onClick={() => navigate('/admin/blog/anuncios')}
+              >
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <BarChart3 className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-secondary mb-2">Anúncios</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Gerenciar publicidade
+                  </p>
+                  <Button variant="outline" className="w-full">
+                    Acessar
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card 
+                className="cursor-pointer hover:shadow-elegant transition-all duration-300 hover:scale-105"
+                onClick={() => navigate('/admin/blog/newsletter')}
+              >
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-secondary mb-2">Newsletter</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Gerenciar inscritos
+                  </p>
+                  <Button variant="outline" className="w-full">
+                    Acessar
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+            
+            {/* Additional Info */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+              {/* Most Read Posts */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5" />
+                    Posts Mais Lidos
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {mostReadPosts && mostReadPosts.length > 0 ? (
+                    <div className="space-y-4">
+                      {mostReadPosts.map((post, index) => (
+                        <div key={post.id} className="flex items-center gap-3 pb-4 border-b last:border-0">
+                          <span className="text-2xl font-bold text-muted-foreground">{index + 1}</span>
+                          <div className="flex-1 min-w-0">
+                            <p className="font-medium text-secondary truncate">{post.title}</p>
+                            <p className="text-sm text-muted-foreground">{post.views_count} visualizações</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">Nenhum post publicado ainda</p>
+                  )}
+                </CardContent>
+              </Card>
+              
+              {/* Recent Subscribers */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Mail className="w-5 h-5" />
+                    Últimos Inscritos
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {recentSubscribers.length > 0 ? (
+                    <div className="space-y-3">
+                      {recentSubscribers.map((subscriber) => (
+                        <div key={subscriber.id} className="flex items-center justify-between pb-3 border-b last:border-0">
+                          <div className="flex-1 min-w-0">
+                            <p className="font-medium text-secondary truncate">{subscriber.email}</p>
+                            <p className="text-xs text-muted-foreground">
+                              {new Date(subscriber.subscribed_at).toLocaleDateString('pt-BR')}
+                            </p>
+                          </div>
+                          <Badge variant={subscriber.active ? "default" : "secondary"}>
+                            {subscriber.active ? "Ativo" : "Inativo"}
+                          </Badge>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">Nenhum inscrito ainda</p>
+                  )}
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>

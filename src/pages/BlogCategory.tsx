@@ -41,7 +41,7 @@ const BlogCategory = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header variant="light" />
       
       <main className="flex-grow">
         {/* Hero Section */}
