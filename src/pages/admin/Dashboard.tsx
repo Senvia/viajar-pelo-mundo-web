@@ -16,9 +16,16 @@ export default function Dashboard() {
   const { data: blogData } = useBlogPosts(1, 1000, undefined, false);
   const { data: subscribers } = useNewsletterSubscribers();
 
-  const publishedPosts = blogData?.posts?.filter(post => post.published) || [];
-  const totalViews = blogData?.posts?.reduce((sum, post) => sum + (post.views_count || 0), 0) || 0;
+  const allPosts = blogData?.posts || [];
+  const publishedPosts = allPosts.filter(post => post.published);
+  const draftPosts = allPosts.filter(post => !post.published);
+  const totalViews = allPosts.reduce((sum, post) => sum + (post.views_count || 0), 0);
   const activeSubscribers = subscribers?.filter(sub => sub.active) || [];
+  
+  // Most read posts
+  const mostReadPosts = [...allPosts]
+    .sort((a, b) => (b.views_count || 0) - (a.views_count || 0))
+    .slice(0, 3);
 
   // Get last 5 activities (simplified version)
   const recentActivities = [
@@ -53,10 +60,49 @@ export default function Dashboard() {
         {/* Main Stats */}
         <DashboardStats
           totalPackages={packages.length}
-          totalPosts={publishedPosts.length}
+          publishedPosts={publishedPosts.length}
+          draftPosts={draftPosts.length}
           totalViews={totalViews}
           totalSubscribers={activeSubscribers.length}
         />
+
+        {/* Most Read Posts */}
+        {mostReadPosts.length > 0 && (
+          <Card>
+            <CardHeader>
+              <CardTitle>Posts Mais Lidos</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                {mostReadPosts.map((post, index) => (
+                  <div
+                    key={post.id}
+                    className="flex items-center justify-between p-3 rounded-lg bg-muted/50"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="font-bold text-lg text-muted-foreground">
+                        #{index + 1}
+                      </div>
+                      <div>
+                        <p className="font-medium">{post.title}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {post.views_count || 0} visualizações
+                        </p>
+                      </div>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => navigate(`/admin/blog/post/editar/${post.id}`)}
+                    >
+                      Ver
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Quick Actions */}
         <Card>

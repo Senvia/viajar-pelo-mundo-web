@@ -68,6 +68,23 @@ export const useBlogPost = (slug: string) => {
   });
 };
 
+export const useBlogPostById = (id: string) => {
+  return useQuery({
+    queryKey: ["blog-post-by-id", id],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("blog_posts")
+        .select("*, blog_categories(*)")
+        .eq("id", id)
+        .maybeSingle();
+
+      if (error) throw error;
+      return data as BlogPost | null;
+    },
+    enabled: !!id,
+  });
+};
+
 export const useMostReadPosts = (limit = 5) => {
   return useQuery({
     queryKey: ["most-read-posts", limit],
@@ -156,6 +173,35 @@ export const useDeleteBlogPost = () => {
     },
     onError: () => {
       toast({ title: "Erro ao excluir post", variant: "destructive" });
+    },
+  });
+};
+
+export const usePublishBlogPost = () => {
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (id: string) => {
+      const { data, error } = await supabase
+        .from("blog_posts")
+        .update({ 
+          published: true,
+          published_at: new Date().toISOString()
+        })
+        .eq("id", id)
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["blog-posts"] });
+      toast({ title: "Post publicado com sucesso!" });
+    },
+    onError: () => {
+      toast({ title: "Erro ao publicar post", variant: "destructive" });
     },
   });
 };

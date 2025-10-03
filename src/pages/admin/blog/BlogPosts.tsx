@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useBlogPosts, useDeleteBlogPost } from "@/hooks/useBlogPosts";
+import { useBlogPosts, useDeleteBlogPost, usePublishBlogPost } from "@/hooks/useBlogPosts";
 import { Button } from "@/components/ui/button";
 import { AdminLayout } from "@/components/admin/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -23,7 +23,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { Plus, Pencil, Trash2, ExternalLink } from "lucide-react";
+import { Plus, Pencil, Trash2, ExternalLink, CheckCircle } from "lucide-react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
@@ -31,6 +31,7 @@ const BlogPosts = () => {
   const navigate = useNavigate();
   const { data } = useBlogPosts(1, 100, undefined, false);
   const deleteMutation = useDeleteBlogPost();
+  const publishMutation = usePublishBlogPost();
   const [deleteId, setDeleteId] = useState<string | null>(null);
 
   const handleDelete = () => {
@@ -38,6 +39,10 @@ const BlogPosts = () => {
       deleteMutation.mutate(deleteId);
       setDeleteId(null);
     }
+  };
+
+  const handlePublish = (id: string) => {
+    publishMutation.mutate(id);
   };
 
   return (
@@ -99,6 +104,16 @@ const BlogPosts = () => {
                       </TableCell>
                       <TableCell className="text-right">
                         <div className="flex justify-end gap-2">
+                          {!post.published && (
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              onClick={() => handlePublish(post.id)}
+                              title="Publicar agora"
+                            >
+                              <CheckCircle className="h-4 w-4 text-green-600" />
+                            </Button>
+                          )}
                           {post.published && (
                             <Button
                               variant="ghost"

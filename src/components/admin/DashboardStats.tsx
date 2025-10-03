@@ -28,19 +28,21 @@ function StatCard({ title, value, icon, color }: StatCardProps) {
 
 interface DashboardStatsProps {
   totalPackages: number;
-  totalPosts: number;
+  publishedPosts: number;
+  draftPosts: number;
   totalViews: number;
   totalSubscribers: number;
 }
 
 export function DashboardStats({
   totalPackages,
-  totalPosts,
+  publishedPosts,
+  draftPosts,
   totalViews,
   totalSubscribers,
 }: DashboardStatsProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
       <StatCard
         title="Pacotes"
         value={totalPackages}
@@ -48,10 +50,16 @@ export function DashboardStats({
         color="bg-blue-500"
       />
       <StatCard
-        title="Posts"
-        value={totalPosts}
+        title="Posts Publicados"
+        value={publishedPosts}
         icon={<FileText className="h-6 w-6 text-white" />}
         color="bg-green-500"
+      />
+      <StatCard
+        title="Rascunhos"
+        value={draftPosts}
+        icon={<FileText className="h-6 w-6 text-white" />}
+        color="bg-yellow-500"
       />
       <StatCard
         title="Visualizações"
