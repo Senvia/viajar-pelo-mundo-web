@@ -62,19 +62,43 @@ const BlogAds = () => {
     }
   }, [middleAd, setValueMiddle]);
 
+  // Função para normalizar URL
+  const normalizeUrl = (url: string): string => {
+    const trimmedUrl = url.trim();
+    if (!trimmedUrl) return trimmedUrl;
+    
+    // Se já tem protocolo, retorna como está
+    if (trimmedUrl.startsWith('http://') || trimmedUrl.startsWith('https://')) {
+      return trimmedUrl;
+    }
+    
+    // Adiciona https:// automaticamente
+    return `https://${trimmedUrl}`;
+  };
+
   const onSubmitTop = (data: any) => {
+    const normalizedData = {
+      ...data,
+      link: normalizeUrl(data.link)
+    };
+    
     if (topAd) {
-      updateMutation.mutate({ id: topAd.id, ...data });
+      updateMutation.mutate({ id: topAd.id, ...normalizedData });
     } else {
-      createMutation.mutate({ ...data, position: 'top' } as any);
+      createMutation.mutate({ ...normalizedData, position: 'top' } as any);
     }
   };
 
   const onSubmitMiddle = (data: any) => {
+    const normalizedData = {
+      ...data,
+      link: normalizeUrl(data.link)
+    };
+    
     if (middleAd) {
-      updateMutation.mutate({ id: middleAd.id, ...data });
+      updateMutation.mutate({ id: middleAd.id, ...normalizedData });
     } else {
-      createMutation.mutate({ ...data, position: 'middle' } as any);
+      createMutation.mutate({ ...normalizedData, position: 'middle' } as any);
     }
   };
 
@@ -132,10 +156,13 @@ const BlogAds = () => {
                   <Input
                     id="top-link"
                     {...registerTop("link")}
-                    placeholder="https://exemplo.com"
-                    type="url"
+                    placeholder="exemplo.com ou https://exemplo.com"
+                    type="text"
                     required
                   />
+                  <p className="text-xs text-muted-foreground mt-1">
+                    O sistema adiciona automaticamente https:// se necessário
+                  </p>
                 </div>
 
                 <div className="flex items-center space-x-2">
@@ -200,10 +227,13 @@ const BlogAds = () => {
                   <Input
                     id="middle-link"
                     {...registerMiddle("link")}
-                    placeholder="https://exemplo.com"
-                    type="url"
+                    placeholder="exemplo.com ou https://exemplo.com"
+                    type="text"
                     required
                   />
+                  <p className="text-xs text-muted-foreground mt-1">
+                    O sistema adiciona automaticamente https:// se necessário
+                  </p>
                 </div>
 
                 <div className="flex items-center space-x-2">
