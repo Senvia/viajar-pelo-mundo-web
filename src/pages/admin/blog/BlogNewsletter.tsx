@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { AdminLayout } from "@/components/admin/AdminLayout";
 import { useNewsletterSubscribers, useToggleNewsletterSubscriber } from "@/hooks/useNewsletter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -62,66 +61,64 @@ const BlogNewsletter = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
+    <AdminLayout>
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-3xl font-bold">Newsletter</h2>
+          <p className="text-muted-foreground mt-1">
+            Gerencie os inscritos na newsletter
+          </p>
+        </div>
 
-      <main className="flex-grow py-12">
-        <div className="container mx-auto px-4">
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold mb-2">Newsletter</h1>
-            <p className="text-muted-foreground">
-              Gerencie os inscritos na newsletter
-            </p>
-          </div>
-
-          {/* Estatísticas */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <Card>
-              <CardContent className="p-6">
-                <div className="text-center">
-                  <p className="text-sm text-muted-foreground mb-2">
-                    Total de Inscritos Ativos
-                  </p>
-                  <p className="text-4xl font-bold">{activeCount}</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <div className="text-center">
-                  <p className="text-sm text-muted-foreground mb-2">
-                    Novos (Últimos 30 dias)
-                  </p>
-                  <p className="text-4xl font-bold text-primary">{last30Days}</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Lista de Inscritos */}
+        {/* Estatísticas */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card>
-            <CardHeader>
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <CardTitle>Inscritos ({filteredSubscribers?.length || 0})</CardTitle>
-                <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
-                  <div className="relative flex-1 sm:w-64">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      placeholder="Buscar por email ou nome..."
-                      value={search}
-                      onChange={(e) => setSearch(e.target.value)}
-                      className="pl-9"
-                    />
-                  </div>
-                  <Button onClick={exportToCSV} variant="outline">
-                    <Download className="mr-2 h-4 w-4" />
-                    Exportar CSV
-                  </Button>
-                </div>
+            <CardContent className="p-6">
+              <div className="text-center">
+                <p className="text-sm text-muted-foreground mb-2">
+                  Total de Inscritos Ativos
+                </p>
+                <p className="text-4xl font-bold">{activeCount}</p>
               </div>
-            </CardHeader>
-            <CardContent>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <div className="text-center">
+                <p className="text-sm text-muted-foreground mb-2">
+                  Novos (Últimos 30 dias)
+                </p>
+                <p className="text-4xl font-bold text-primary">{last30Days}</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Lista de Inscritos */}
+        <Card>
+          <CardHeader>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+              <CardTitle>Inscritos ({filteredSubscribers?.length || 0})</CardTitle>
+              <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+                <div className="relative flex-1 sm:w-64">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder="Buscar por email ou nome..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="pl-9"
+                  />
+                </div>
+                <Button onClick={exportToCSV} variant="outline">
+                  <Download className="mr-2 h-4 w-4" />
+                  Exportar CSV
+                </Button>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent>
+            {filteredSubscribers && filteredSubscribers.length > 0 ? (
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -133,7 +130,7 @@ const BlogNewsletter = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {filteredSubscribers?.map((subscriber) => (
+                  {filteredSubscribers.map((subscriber) => (
                     <TableRow key={subscriber.id}>
                       <TableCell className="font-medium">{subscriber.email}</TableCell>
                       <TableCell>{subscriber.name || "-"}</TableCell>
@@ -165,21 +162,17 @@ const BlogNewsletter = () => {
                   ))}
                 </TableBody>
               </Table>
-
-              {!filteredSubscribers?.length && (
-                <div className="text-center py-12">
-                  <p className="text-muted-foreground">
-                    {search ? "Nenhum inscrito encontrado" : "Nenhum inscrito ainda"}
-                  </p>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        </div>
-      </main>
-
-      <Footer />
-    </div>
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">
+                  {search ? "Nenhum inscrito encontrado" : "Nenhum inscrito ainda"}
+                </p>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      </div>
+    </AdminLayout>
   );
 };
 

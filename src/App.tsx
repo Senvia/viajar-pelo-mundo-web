@@ -19,6 +19,7 @@ import PacotesViagensEstatico from "./pages/services/PacotesViagensEstatico";
 import CadastrarPacotes from "./pages/admin/CadastrarPacotes";
 import CriarEditarPacote from "./pages/admin/CriarEditarPacote";
 import Dashboard from "./pages/admin/Dashboard";
+import PackagesList from "./pages/admin/PackagesList";
 import Login from "./pages/admin/Login";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import PackageForm from '@/components/PackageForm';
 import { usePackages, CreatePackageData, TravelPackage } from '@/hooks/usePackages';
+import { AdminLayout } from "@/components/admin/AdminLayout";
 import { toast } from 'sonner';
 
 interface TravelPackageFormData extends Omit<CreatePackageData, 'included' | 'experienceGallery'> {
@@ -93,16 +92,17 @@ const CriarEditarPacote = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-lg">Carregando...</div>
-      </div>
+      <AdminLayout>
+        <div className="flex items-center justify-center py-12">
+          <div className="text-lg">Carregando...</div>
+        </div>
+      </AdminLayout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <div className="pt-24 pb-12">
+    <AdminLayout>
+      <div className="max-w-4xl mx-auto">
         <PackageForm
           initialData={initialData}
           onSubmit={handleSubmit}
@@ -110,8 +110,7 @@ const CriarEditarPacote = () => {
           isEditing={isEditing}
         />
       </div>
-      <Footer />
-    </div>
+    </AdminLayout>
   );
 };
 

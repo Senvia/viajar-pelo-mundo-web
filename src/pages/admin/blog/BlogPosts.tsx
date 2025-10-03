@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { useBlogPosts, useDeleteBlogPost } from "@/hooks/useBlogPosts";
 import { Button } from "@/components/ui/button";
+import { AdminLayout } from "@/components/admin/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -24,7 +23,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { Eye, Pencil, Trash2, Plus, ExternalLink } from "lucide-react";
+import { Plus, Pencil, Trash2, ExternalLink } from "lucide-react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
@@ -42,29 +41,27 @@ const BlogPosts = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      
-      <main className="flex-grow py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center mb-8">
-            <div>
-              <h1 className="text-4xl font-bold mb-2">Gerenciar Posts</h1>
-              <p className="text-muted-foreground">
-                Crie, edite e gerencie os posts do blog
-              </p>
-            </div>
-            <Button onClick={() => navigate("/admin/blog/post/novo")}>
-              <Plus className="mr-2 h-4 w-4" />
-              Criar Novo Post
-            </Button>
+    <AdminLayout>
+      <div className="space-y-6">
+        <div className="flex justify-between items-center">
+          <div>
+            <h2 className="text-3xl font-bold">Gerenciar Posts</h2>
+            <p className="text-muted-foreground mt-1">
+              Crie, edite e gerencie os posts do blog
+            </p>
           </div>
+          <Button onClick={() => navigate("/admin/blog/post/novo")}>
+            <Plus className="mr-2 h-4 w-4" />
+            Criar Novo Post
+          </Button>
+        </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Todos os Posts ({data?.posts.length || 0})</CardTitle>
-            </CardHeader>
-            <CardContent>
+        <Card>
+          <CardHeader>
+            <CardTitle>Todos os Posts ({data?.posts.length || 0})</CardTitle>
+          </CardHeader>
+          <CardContent>
+            {data?.posts.length ? (
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -78,7 +75,7 @@ const BlogPosts = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {data?.posts.map((post) => (
+                  {data.posts.map((post) => (
                     <TableRow key={post.id}>
                       <TableCell className="font-medium max-w-xs truncate">
                         {post.title}
@@ -131,39 +128,35 @@ const BlogPosts = () => {
                   ))}
                 </TableBody>
               </Table>
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground mb-4">
+                  Nenhum post encontrado. Crie o primeiro!
+                </p>
+                <Button onClick={() => navigate("/admin/blog/post/novo")}>
+                  Criar Primeiro Post
+                </Button>
+              </div>
+            )}
+          </CardContent>
+        </Card>
 
-              {!data?.posts.length && (
-                <div className="text-center py-12">
-                  <p className="text-muted-foreground mb-4">
-                    Nenhum post encontrado. Crie o primeiro!
-                  </p>
-                  <Button onClick={() => navigate("/admin/blog/post/novo")}>
-                    Criar Primeiro Post
-                  </Button>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        </div>
-      </main>
-
-      <Footer />
-
-      <AlertDialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Confirmar exclusão</AlertDialogTitle>
-            <AlertDialogDescription>
-              Tem certeza que deseja excluir este post? Esta ação não pode ser desfeita.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancelar</AlertDialogCancel>
-            <AlertDialogAction onClick={handleDelete}>Excluir</AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
-    </div>
+        <AlertDialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Confirmar exclusão</AlertDialogTitle>
+              <AlertDialogDescription>
+                Tem certeza que deseja excluir este post? Esta ação não pode ser desfeita.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancelar</AlertDialogCancel>
+              <AlertDialogAction onClick={handleDelete}>Excluir</AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+      </div>
+    </AdminLayout>
   );
 };
 
