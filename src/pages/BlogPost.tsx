@@ -51,18 +51,47 @@ const BlogPost = () => {
     <div className="min-h-screen flex flex-col">
       <Header variant="light" />
       
-      <main className="flex-grow">
+      <main className="flex-grow pt-20">
         {/* Hero Image */}
-        <div className="w-full h-96 relative overflow-hidden">
+        <div className="w-full h-[500px] relative overflow-hidden">
           <img
             src={post.featured_image}
             alt={post.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          
+          {/* Title Overlay */}
+          <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <div className="container mx-auto">
+              <div className="max-w-4xl">
+                {post.blog_categories && (
+                  <Badge 
+                    className="mb-4"
+                    style={{ backgroundColor: post.blog_categories.color }}
+                  >
+                    {post.blog_categories.name}
+                  </Badge>
+                )}
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
+                <div className="flex items-center gap-4 text-white/90">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    <span>
+                      {format(new Date(post.published_at || post.created_at), "dd 'de' MMMM 'de' yyyy", { locale: ptBR })}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <User className="h-4 w-4" />
+                    <span>{post.author_name}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <article className="container mx-auto px-4 -mt-20 relative z-10">
+        <article className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8">
             {/* Main Content */}
             <div className="bg-background rounded-lg shadow-lg p-8">
@@ -84,36 +113,12 @@ const BlogPost = () => {
                 )}
               </div>
 
-              {/* Category Badge */}
-              {post.blog_categories && (
-                <Badge 
-                  className="mb-4"
-                  style={{ backgroundColor: post.blog_categories.color }}
-                >
-                  {post.blog_categories.name}
-                </Badge>
-              )}
-
-              {/* Title */}
-              <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-
-              {/* Meta Info */}
-              <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-6 pb-6 border-b">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4" />
-                  <span>
-                    {format(new Date(post.published_at || post.created_at), "dd 'de' MMMM 'de' yyyy", { locale: ptBR })}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <User className="h-4 w-4" />
-                  <span>{post.author_name}</span>
-                </div>
+              {/* Share Button */}
+              <div className="flex justify-end mb-6 pb-6 border-b">
                 <Button
-                  variant="ghost"
+                  variant="outline"
                   size="sm"
                   onClick={sharePost}
-                  className="ml-auto"
                 >
                   <Share2 className="h-4 w-4 mr-2" />
                   Compartilhar
