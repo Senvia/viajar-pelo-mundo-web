@@ -138,6 +138,9 @@ const Footer = () => {
               <a href="#" className="hover:text-brand-blue transition-colors">
                 Política de Cancelamento
               </a>
+              <a href="/admin/login" className="hover:text-brand-blue transition-colors opacity-50">
+                Admin
+              </a>
             </div>
           </div>
         </div>
