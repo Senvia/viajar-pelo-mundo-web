@@ -23,9 +23,13 @@ import {
   Briefcase,
   Users,
   ArrowRight,
-  Star
+  Star,
+  Loader2
 } from "lucide-react";
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
+import { z } from "zod";
 
 const services = [
   {
@@ -107,6 +111,16 @@ const benefits = [
   "Acompanhamento durante todo o processo"
 ];
 
+const formSchema = z.object({
+  name: z.string().trim().min(2, "Nome deve ter pelo menos 2 caracteres"),
+  email: z.string().trim().email("Email inválido"),
+  phone: z.string().trim().min(1, "Telefone é obrigatório"),
+  currentStatus: z.string().min(1, "Selecione a sua situação atual"),
+  documents: z.string().min(1, "Selecione os documentos de interesse"),
+  timeline: z.string().min(1, "Selecione o timeline desejado"),
+  message: z.string().optional()
+});
+
 const ConsultoriaImigrantes = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -117,12 +131,88 @@ const ConsultoriaImigrantes = () => {
     timeline: "",
     message: ""
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    // Clear error when user starts typing
+    if (errors[e.target.name]) {
+      setErrors({ ...errors, [e.target.name]: "" });
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrors({});
+    
+    try {
+      // Validate form data
+      const validatedData = formSchema.parse(formData);
+      
+      setIsSubmitting(true);
+      
+      // Call edge function
+      const { data, error } = await supabase.functions.invoke('send-immigration-inquiry', {
+        body: {
+          name: validatedData.name,
+          email: validatedData.email,
+          phone: validatedData.phone,
+          status: validatedData.currentStatus,
+          documents: validatedData.documents,
+          timeline: validatedData.timeline,
+          message: validatedData.message || ""
+        }
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "✅ Consulta enviada com sucesso!",
+        description: "Receberás um email de confirmação em breve. Entraremos em contacto nas próximas 24-48 horas.",
+      });
+
+      // Clear form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        currentStatus: "",
+        documents: "",
+        timeline: "",
+        message: ""
+      });
+
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        // Validation errors
+        const newErrors: Record<string, string> = {};
+        error.errors.forEach((err) => {
+          if (err.path[0]) {
+            newErrors[err.path[0].toString()] = err.message;
+          }
+        });
+        setErrors(newErrors);
+        toast({
+          title: "Erro no formulário",
+          description: "Por favor, preencha todos os campos obrigatórios.",
+          variant: "destructive"
+        });
+      } else {
+        console.error("Error submitting form:", error);
+        toast({
+          title: "Erro ao enviar consulta",
+          description: "Ocorreu um erro. Por favor, tenta novamente ou contacta-nos diretamente.",
+          variant: "destructive"
+        });
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleWhatsAppContact = () => {
@@ -342,7 +432,7 @@ const ConsultoriaImigrantes = () => {
                   <CardTitle className="text-3xl mb-4">Formulário de Contacto</CardTitle>
                 </CardHeader>
                 <CardContent className="px-0">
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <Label htmlFor="name" className="text-lg">Nome Completo *</Label>
@@ -352,9 +442,10 @@ const ConsultoriaImigrantes = () => {
                           value={formData.name}
                           onChange={handleInputChange}
                           placeholder="Teu nome completo" 
-                          className="mt-2 h-12"
-                          required 
+                          className={`mt-2 h-12 ${errors.name ? 'border-red-500' : ''}`}
+                          disabled={isSubmitting}
                         />
+                        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                       </div>
                       <div>
                         <Label htmlFor="email" className="text-lg">Email *</Label>
@@ -365,32 +456,36 @@ const ConsultoriaImigrantes = () => {
                           value={formData.email}
                           onChange={handleInputChange}
                           placeholder="teu@email.com" 
-                          className="mt-2 h-12"
-                          required 
+                          className={`mt-2 h-12 ${errors.email ? 'border-red-500' : ''}`}
+                          disabled={isSubmitting}
                         />
+                        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                       </div>
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="phone" className="text-lg">Telefone/WhatsApp</Label>
+                        <Label htmlFor="phone" className="text-lg">Telefone/WhatsApp *</Label>
                         <Input 
                           id="phone" 
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
                           placeholder="+351 9xx xxx xxx" 
-                          className="mt-2 h-12"
+                          className={`mt-2 h-12 ${errors.phone ? 'border-red-500' : ''}`}
+                          disabled={isSubmitting}
                         />
+                        {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                       </div>
                       <div>
-                        <Label htmlFor="currentStatus" className="text-lg">Situação Atual</Label>
+                        <Label htmlFor="currentStatus" className="text-lg">Situação Atual *</Label>
                         <select 
                           id="currentStatus"
                           name="currentStatus"
                           value={formData.currentStatus}
                           onChange={handleInputChange}
-                          className="w-full h-12 px-3 py-2 border border-input bg-background rounded-md mt-2"
+                          className={`w-full h-12 px-3 py-2 border border-input bg-background rounded-md mt-2 ${errors.currentStatus ? 'border-red-500' : ''}`}
+                          disabled={isSubmitting}
                         >
                           <option value="">Seleciona...</option>
                           <option value="no-brasil">Ainda no Brasil</option>
@@ -398,28 +493,52 @@ const ConsultoriaImigrantes = () => {
                           <option value="processo-visto">Em processo de visto</option>
                           <option value="outros">Outros</option>
                         </select>
+                        {errors.currentStatus && <p className="text-red-500 text-sm mt-1">{errors.currentStatus}</p>}
                       </div>
                     </div>
 
-                    <div>
-                      <Label htmlFor="documents" className="text-lg">Documentos de Interesse</Label>
-                      <select 
-                        id="documents"
-                        name="documents"
-                        value={formData.documents}
-                        onChange={handleInputChange}
-                        className="w-full h-12 px-3 py-2 border border-input bg-background rounded-md mt-2"
-                      >
-                        <option value="">Seleciona...</option>
-                        <option value="nif-niss">NIF e NISS</option>
-                        <option value="utente-sns">Utente SNS</option>
-                        <option value="morada-fiscal">Morada Fiscal</option>
-                        <option value="visto-trabalho">Visto de Trabalho</option>
-                        <option value="criacao-empresa">Criação de Empresa</option>
-                        <option value="validacao-estudos">Validação de Estudos</option>
-                        <option value="todos">Todos os documentos</option>
-                        <option value="outros">Outros</option>
-                      </select>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <Label htmlFor="documents" className="text-lg">Documentos de Interesse *</Label>
+                        <select 
+                          id="documents"
+                          name="documents"
+                          value={formData.documents}
+                          onChange={handleInputChange}
+                          className={`w-full h-12 px-3 py-2 border border-input bg-background rounded-md mt-2 ${errors.documents ? 'border-red-500' : ''}`}
+                          disabled={isSubmitting}
+                        >
+                          <option value="">Seleciona...</option>
+                          <option value="nif-niss">NIF e NISS</option>
+                          <option value="utente-sns">Utente SNS</option>
+                          <option value="morada-fiscal">Morada Fiscal</option>
+                          <option value="visto-trabalho">Visto de Trabalho</option>
+                          <option value="criacao-empresa">Criação de Empresa</option>
+                          <option value="validacao-estudos">Validação de Estudos</option>
+                          <option value="todos">Todos os documentos</option>
+                          <option value="outros">Outros</option>
+                        </select>
+                        {errors.documents && <p className="text-red-500 text-sm mt-1">{errors.documents}</p>}
+                      </div>
+                      <div>
+                        <Label htmlFor="timeline" className="text-lg">Timeline Desejado *</Label>
+                        <select 
+                          id="timeline"
+                          name="timeline"
+                          value={formData.timeline}
+                          onChange={handleInputChange}
+                          className={`w-full h-12 px-3 py-2 border border-input bg-background rounded-md mt-2 ${errors.timeline ? 'border-red-500' : ''}`}
+                          disabled={isSubmitting}
+                        >
+                          <option value="">Seleciona...</option>
+                          <option value="urgente">Urgente (1-2 semanas)</option>
+                          <option value="1-mes">Próximo mês</option>
+                          <option value="1-3-meses">1-3 meses</option>
+                          <option value="3-6-meses">3-6 meses</option>
+                          <option value="flexivel">Flexível</option>
+                        </select>
+                        {errors.timeline && <p className="text-red-500 text-sm mt-1">{errors.timeline}</p>}
+                      </div>
                     </div>
 
                     <div>
@@ -432,18 +551,42 @@ const ConsultoriaImigrantes = () => {
                         placeholder="Conta-nos mais sobre a tua situação e objetivos..."
                         rows={4}
                         className="mt-2"
+                        disabled={isSubmitting}
                       />
                     </div>
 
-                    <Button 
-                      type="button"
-                      size="lg" 
-                      className="w-full h-14 text-lg bg-brand-dark hover:bg-brand-dark/90 shadow-xl text-white"
-                      onClick={handleWhatsAppContact}
-                    >
-                      <MessageCircle className="mr-3 h-6 w-6" />
-                      Enviar via WhatsApp
-                    </Button>
+                    <div className="space-y-3">
+                      <Button 
+                        type="submit"
+                        size="lg" 
+                        className="w-full h-14 text-lg bg-brand-dark hover:bg-brand-dark/90 shadow-xl text-white"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="mr-3 h-6 w-6 animate-spin" />
+                            A enviar...
+                          </>
+                        ) : (
+                          <>
+                            <Mail className="mr-3 h-6 w-6" />
+                            Enviar Consulta
+                          </>
+                        )}
+                      </Button>
+                      
+                      <Button 
+                        type="button"
+                        size="lg" 
+                        variant="outline"
+                        className="w-full h-12 text-base"
+                        onClick={handleWhatsAppContact}
+                        disabled={isSubmitting}
+                      >
+                        <MessageCircle className="mr-2 h-5 w-5" />
+                        Ou fale conosco no WhatsApp
+                      </Button>
+                    </div>
                   </form>
                 </CardContent>
               </Card>
