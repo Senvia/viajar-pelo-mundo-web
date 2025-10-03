@@ -29,9 +29,6 @@ export const BlogSidebar = () => {
             className="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow"
             style={{ width: '300px', height: '250px', objectFit: 'cover' }}
           />
-          <p className="text-xs text-muted-foreground text-center mt-1">
-            Anúncio - 300x250px
-          </p>
         </a>
       )}
 
@@ -49,9 +46,6 @@ export const BlogSidebar = () => {
             className="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow"
             style={{ width: '300px', height: '250px', objectFit: 'cover' }}
           />
-          <p className="text-xs text-muted-foreground text-center mt-1">
-            Anúncio - 300x250px
-          </p>
         </a>
       )}
 
