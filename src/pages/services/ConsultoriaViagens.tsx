@@ -313,7 +313,7 @@ const ConsultoriaViagens = () => {
           <div className="text-center mt-12">
             <Button 
               size="lg" 
-              className="px-10 py-4 text-lg bg-brand-dark hover:bg-brand-dark/90 shadow-elegant text-white"
+              className="px-10 py-4 text-lg bg-gradient-icons shadow-elegant text-white transition-all duration-300 hover:scale-105 hover:opacity-90"
               onClick={handleFormLink}
             >
               Solicitar Planejamento Agora
