@@ -53,7 +53,9 @@ const App = () => (
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/blog/categoria/:slug" element={<BlogCategory />} />
             <Route path="/admin/login" element={<Login />} />
+            <Route path="/admin" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
             <Route path="/admin/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+            <Route path="/admin/pacotes" element={<ProtectedRoute><PackagesList /></ProtectedRoute>} />
             <Route path="/admin/cadastrar-pacotes" element={<ProtectedRoute><CadastrarPacotes /></ProtectedRoute>} />
             <Route path="/admin/criar-pacote" element={<ProtectedRoute><CriarEditarPacote /></ProtectedRoute>} />
             <Route path="/admin/editar-pacote/:id" element={<ProtectedRoute><CriarEditarPacote /></ProtectedRoute>} />
