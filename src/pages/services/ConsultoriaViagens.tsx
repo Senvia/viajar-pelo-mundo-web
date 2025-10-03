@@ -259,35 +259,22 @@ const ConsultoriaViagens = () => {
             </p>
           </div>
 
-          <div className="space-y-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {processSteps.map((step, index) => (
-              <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center">
-                      <step.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl font-bold text-secondary">{index + 1}</span>
-                      <h3 className="text-2xl font-bold text-secondary">{step.title}</h3>
-                    </div>
+              <Card key={index} className="p-6 space-y-4 hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
+                    <step.icon className="w-8 h-8 text-white" />
                   </div>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-                <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                  <div 
-                    className="rounded-2xl overflow-hidden shadow-2xl h-80 bg-cover animate-fade-in hover:scale-105 transition-transform duration-300"
-                    style={{ 
-                      backgroundImage: `url('${step.image}')`,
-                      backgroundPosition: index === 3 ? 'center center' : 'center'
-                    }}
-                  >
-                    
+                  <div className="flex items-center gap-3">
+                    <span className="text-3xl font-bold text-secondary">{index + 1}</span>
+                    <h3 className="text-xl font-bold text-secondary">{step.title}</h3>
                   </div>
                 </div>
-              </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
+              </Card>
             ))}
           </div>
         </div>
