@@ -29,6 +29,7 @@ import BlogPostForm from "./pages/admin/blog/BlogPostForm";
 import BlogCategories from "./pages/admin/blog/BlogCategories";
 import BlogAds from "./pages/admin/blog/BlogAds";
 import BlogNewsletter from "./pages/admin/blog/BlogNewsletter";
+import NewsletterCampaigns from "./pages/admin/blog/NewsletterCampaigns";
 
 const queryClient = new QueryClient();
 
@@ -65,6 +66,7 @@ const App = () => (
             <Route path="/admin/blog/categorias" element={<ProtectedRoute><BlogCategories /></ProtectedRoute>} />
             <Route path="/admin/blog/anuncios" element={<ProtectedRoute><BlogAds /></ProtectedRoute>} />
             <Route path="/admin/blog/newsletter" element={<ProtectedRoute><BlogNewsletter /></ProtectedRoute>} />
+            <Route path="/admin/blog/campanhas" element={<ProtectedRoute><NewsletterCampaigns /></ProtectedRoute>} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

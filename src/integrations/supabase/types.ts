@@ -136,6 +136,48 @@ export type Database = {
           },
         ]
       }
+      newsletter_campaigns: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          opened_count: number | null
+          recipients_count: number | null
+          scheduled_at: string | null
+          sent_at: string | null
+          status: string
+          subject: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          opened_count?: number | null
+          recipients_count?: number | null
+          scheduled_at?: string | null
+          sent_at?: string | null
+          status?: string
+          subject: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          opened_count?: number | null
+          recipients_count?: number | null
+          scheduled_at?: string | null
+          sent_at?: string | null
+          status?: string
+          subject?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       newsletter_subscribers: {
         Row: {
           active: boolean

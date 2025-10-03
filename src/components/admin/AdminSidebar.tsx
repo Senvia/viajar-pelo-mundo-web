@@ -62,6 +62,11 @@ const blogItems = [
     url: "/admin/blog/newsletter",
     icon: Mail,
   },
+  {
+    title: "Campanhas",
+    url: "/admin/blog/campanhas",
+    icon: Mail,
+  },
 ];
 
 export function AdminSidebar() {
