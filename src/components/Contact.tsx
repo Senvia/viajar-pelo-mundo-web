@@ -76,8 +76,8 @@ const Contact = () => {
               </div>
               
               <div className="flex items-start md:items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
-                  <Instagram className="h-5 w-5 text-white" />
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <img src="/instagram-icon.png" alt="Instagram" className="w-7 h-7 object-contain" />
                 </div>
                 <div className="flex-1">
                   <p className="font-medium text-secondary">Instagram</p>
