@@ -40,7 +40,7 @@ const Blog = () => {
         <section className="bg-gradient-to-br from-primary/10 to-primary/5 py-16 pt-32">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
-              Blog Viajar para Europa
+              Blog Viajar Pelo Mundo
             </h1>
             <p className="text-xl text-center text-muted-foreground max-w-2xl mx-auto">
               Dicas, roteiros e tudo que você precisa saber para viajar pela Europa
