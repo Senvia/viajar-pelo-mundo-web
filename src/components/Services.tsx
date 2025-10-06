@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Plane, MapPin, Shield, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -211,6 +212,14 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
             ))}
           </ul>
           
+          <Link to={service.href}>
+            <Button 
+              size="lg" 
+              className="w-full bg-gradient-icons shadow-elegant text-white font-semibold hover:opacity-90"
+            >
+              Saber Mais
+            </Button>
+          </Link>
         </div>
       </div>
       
