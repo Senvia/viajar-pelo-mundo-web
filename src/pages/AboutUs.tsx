@@ -254,7 +254,7 @@ const AboutUs = () => {
             
             <div className="relative rounded-2xl overflow-hidden mb-8 shadow-elegant">
               <img 
-                src="/lovable-uploads/f0b04da2-316f-4e85-af49-72055d6e2e4f.png" 
+                src="/lovable-uploads/6ee4103f-197e-4089-a241-c16fbe356435.png" 
                 alt="Portugal Essence - Turismo de Luxo"
                 className="w-full h-[400px] object-cover"
               />
