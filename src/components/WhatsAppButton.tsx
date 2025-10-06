@@ -19,7 +19,7 @@ const WhatsAppButton = () => {
         <img 
           src="/whatsapp-icon.png" 
           alt="WhatsApp" 
-          className="h-14 w-14 rounded-full"
+          className="h-14 w-14 rounded-full object-cover scale-110"
         />
       </Button>
       <span className="absolute -top-1 -left-1 h-4 w-4 bg-red-500 rounded-full animate-ping"></span>
