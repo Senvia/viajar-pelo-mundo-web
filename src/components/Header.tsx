@@ -190,11 +190,8 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
           ) : (
             <Button 
               variant="outline"
-              className={`font-semibold px-6 py-3 transition-all duration-300 hover:scale-105 ${
-                shouldShowLightStyle 
-                  ? 'border-primary text-primary hover:bg-primary hover:text-white' 
-                  : 'border-white text-white hover:bg-white hover:text-primary'
-              }`}
+              size="sm"
+              className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
               onClick={() => window.location.href = '/admin/login'}
             >
               <User className="h-4 w-4 mr-2" />
@@ -300,6 +297,7 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
             ) : (
               <Button 
                 variant="outline"
+                size="sm"
                 className="w-full mt-4 border-primary text-primary hover:bg-primary hover:text-white"
                 onClick={() => window.location.href = '/admin/login'}
               >
