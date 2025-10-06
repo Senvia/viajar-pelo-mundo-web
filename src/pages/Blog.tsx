@@ -37,21 +37,21 @@ const Blog = () => {
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/10 to-primary/5 py-16 pt-32">
+        <section className="bg-gradient-to-br from-primary/10 to-primary/5 py-12 md:py-16 pt-24 md:pt-32">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
+            <h1 className="text-3xl md:text-5xl font-bold text-center mb-3 md:mb-4">
               Blog Viajar Pelo Mundo
             </h1>
-            <p className="text-xl text-center text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-center text-muted-foreground max-w-2xl mx-auto px-2">
               Dicas, roteiros e tudo que você precisa saber para viajar pela Europa
             </p>
           </div>
         </section>
 
         {/* Content Section */}
-        <section className="py-12">
+        <section className="py-6 md:py-12">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 md:gap-8">
               {/* Posts Column */}
               <div>
                 {isLoading ? (
@@ -66,7 +66,7 @@ const Blog = () => {
                   </div>
                 ) : data && data.posts.length > 0 ? (
                   <>
-                    <div className="space-y-8">
+                    <div className="space-y-6 md:space-y-8">
                       {data.posts.map((post) => (
                         <BlogPostCard key={post.id} post={post} />
                       ))}
@@ -74,7 +74,7 @@ const Blog = () => {
 
                     {/* Pagination */}
                     {totalPages > 1 && (
-                      <div className="mt-12">
+                      <div className="mt-8 md:mt-12">
                         <Pagination>
                           <PaginationContent>
                             {page > 1 && (

@@ -14,7 +14,7 @@ export const BlogSidebar = () => {
   const { data: mostReadPosts } = useMostReadPosts();
 
   return (
-    <aside className="space-y-6">
+    <aside className="space-y-4 md:space-y-6">
       {/* Anúncio Topo */}
       {topAd && topAd[0] && (
         <a 
@@ -26,8 +26,8 @@ export const BlogSidebar = () => {
           <img
             src={topAd[0].image}
             alt={topAd[0].title}
-            className="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow"
-            style={{ width: '300px', height: '250px', objectFit: 'cover' }}
+            className="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow max-w-[300px] mx-auto md:mx-0"
+            style={{ height: '250px', objectFit: 'cover' }}
           />
         </a>
       )}
@@ -43,8 +43,8 @@ export const BlogSidebar = () => {
           <img
             src={middleAd[0].image}
             alt={middleAd[0].title}
-            className="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow"
-            style={{ width: '300px', height: '250px', objectFit: 'cover' }}
+            className="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow max-w-[300px] mx-auto md:mx-0"
+            style={{ height: '250px', objectFit: 'cover' }}
           />
         </a>
       )}

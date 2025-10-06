@@ -14,8 +14,8 @@ export const BlogPostCard = ({ post }: BlogPostCardProps) => {
   return (
     <Link to={`/blog/${post.slug}`}>
       <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full">
-        <div className="flex gap-4 p-4">
-          <div className="w-48 h-32 relative overflow-hidden rounded-lg flex-shrink-0">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 p-3 sm:p-4">
+          <div className="w-full sm:w-48 h-48 sm:h-32 relative overflow-hidden rounded-lg sm:flex-shrink-0">
             <img
               src={post.featured_image}
               alt={post.title}
@@ -33,7 +33,7 @@ export const BlogPostCard = ({ post }: BlogPostCardProps) => {
               </Badge>
             )}
             
-            <h3 className="text-lg font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors">
+            <h3 className="text-base sm:text-lg font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors">
               {post.title}
             </h3>
             
@@ -41,7 +41,7 @@ export const BlogPostCard = ({ post }: BlogPostCardProps) => {
               {post.excerpt}
             </p>
             
-            <div className="flex items-center gap-4 text-xs text-muted-foreground mt-auto">
+            <div className="flex items-center gap-3 sm:gap-4 text-xs text-muted-foreground mt-auto">
               <div className="flex items-center gap-1">
                 <Calendar className="h-3 w-3" />
                 <span>
