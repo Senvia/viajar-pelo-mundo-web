@@ -242,14 +242,25 @@ const AboutUs = () => {
       {/* Portugal Essence */}
       <section className="py-20">
         <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-4 bg-brand-green/20 text-brand-green border-brand-green/30">
-              Projeto Especial
-            </Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Portugal Essence
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <Badge variant="secondary" className="mb-4 bg-brand-green/20 text-brand-green border-brand-green/30">
+                Projeto Especial
+              </Badge>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                Portugal Essence
+              </h2>
+            </div>
+            
+            <div className="relative rounded-2xl overflow-hidden mb-8 shadow-elegant">
+              <img 
+                src="/lovable-uploads/f0b04da2-316f-4e85-af49-72055d6e2e4f.png" 
+                alt="Portugal Essence - Turismo de Luxo"
+                className="w-full h-[400px] object-cover"
+              />
+            </div>
+            
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-center">
               Nosso projeto voltado ao turismo de luxo, oferecendo experiências sofisticadas, autênticas e inesquecíveis em território português para o público de alto padrão.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
