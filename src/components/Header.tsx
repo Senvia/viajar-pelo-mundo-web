@@ -161,7 +161,7 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
             Marcar Consultoria
           </Button>
 
-          {user && isAdmin && (
+          {user && isAdmin ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button 
@@ -187,6 +187,19 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+          ) : (
+            <Button 
+              variant="outline"
+              className={`font-semibold px-6 py-3 transition-all duration-300 hover:scale-105 ${
+                shouldShowLightStyle 
+                  ? 'border-primary text-primary hover:bg-primary hover:text-white' 
+                  : 'border-white text-white hover:bg-white hover:text-primary'
+              }`}
+              onClick={() => window.location.href = '/admin/login'}
+            >
+              <User className="h-4 w-4 mr-2" />
+              Entrar
+            </Button>
           )}
         </div>
 
@@ -264,6 +277,36 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
             >
               Marcar Consultoria
             </Button>
+
+            {user && isAdmin ? (
+              <div className="pt-4 border-t border-border/50">
+                <Button 
+                  variant="outline"
+                  className="w-full mb-2"
+                  onClick={() => window.location.href = '/admin/dashboard'}
+                >
+                  <LayoutDashboard className="mr-2 h-4 w-4" />
+                  Dashboard
+                </Button>
+                <Button 
+                  variant="outline"
+                  className="w-full"
+                  onClick={signOut}
+                >
+                  <LogOut className="mr-2 h-4 w-4" />
+                  Sair
+                </Button>
+              </div>
+            ) : (
+              <Button 
+                variant="outline"
+                className="w-full mt-4 border-primary text-primary hover:bg-primary hover:text-white"
+                onClick={() => window.location.href = '/admin/login'}
+              >
+                <User className="mr-2 h-4 w-4" />
+                Entrar
+              </Button>
+            )}
           </div>
         </div>
       )}
