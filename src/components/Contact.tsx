@@ -75,11 +75,11 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center">
+              <div className="flex items-start md:items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-icons flex items-center justify-center flex-shrink-0">
                   <Instagram className="h-5 w-5 text-white" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <p className="font-medium text-secondary">Instagram</p>
                   <div className="space-y-1">
                     <a 
